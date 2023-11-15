@@ -1,0 +1,33 @@
+{
+  "name": "@aubyn/utils",
+  "version": "1.1.0",
+  "description": "aubyn's utils",
+  "main": "lib/index.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "types",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aubyn"
+  ],
+  "author": "aubyn",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.20.7",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.4",
+    "decimal.js": "^10.4.3",
+    "lodash": "^4.17.21",
+    "vite": "^4.5.0"
+  },
+  "dependencies": {}
+}
