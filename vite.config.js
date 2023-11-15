@@ -1,5 +1,13 @@
 import { defineConfig } from 'vite';
 import babel from '@rollup/plugin-babel';
+import copy from 'rollup-plugin-copy';
+
+const folders = ['array', 'date', 'EventBus', 'file', 'magic', 'num', 'object', 'storage', 'str'];
+const entrys = folders.reduce((_, k) => {
+  // 'array/index': './src/array'
+  _[`${k}/index`] = `./src/${k}`;
+  return _;
+}, {});
 
 export default defineConfig({
   define: {
@@ -9,15 +17,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        array: './src/array',
-        date: './src/date',
-        EventBus: './src/EventBus',
-        file: './src/file',
-        magic: './src/magic',
-        num: './src/num',
-        object: './src/object',
-        storage: './src/storage',
-        str: './src/str',
+        ...entrys,
         index: './src/index.js'
       },
       formats: ['cjs']
@@ -29,7 +29,13 @@ export default defineConfig({
       output: {
         entryFileNames: '[name].js'
       },
-      plugins: [babel({ plugins: ['@babel/plugin-proposal-nullish-coalescing-operator', '@babel/plugin-proposal-logical-assignment-operators'] })]
+      plugins: [
+        babel({ plugins: ['@babel/plugin-proposal-nullish-coalescing-operator', '@babel/plugin-proposal-logical-assignment-operators'] }),
+        copy({
+          targets: [{ src: `types/*`, dest: `lib` }],
+          hook: 'writeBundle'
+        })
+      ]
     },
     minify: true
   }
