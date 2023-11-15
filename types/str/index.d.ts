@@ -1,5 +1,6 @@
 export * from './convert';
 export * from './supports';
+export * from './validate';
 /**
  * 获取随机字符串
  * @param { string | number } random 随机数 可选参数
