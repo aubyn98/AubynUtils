@@ -7,7 +7,7 @@
 type Time = number | string | Date
 export function getDate(time?: Time, formatter?: 'date' | 'datetime', isPad?: boolean): string;
 export function getDate(time?: Time, formatter?: string, isPad?: boolean): string;
-function getDate(
+export function getDate(
   time?: Time,
   formatter?: (dateInfo: { yyyy: string; MM: string; dd: string; HH: string; mm: string; ss: string; ms: string }) => string,
   isPad?: boolean

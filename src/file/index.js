@@ -181,12 +181,3 @@ export function base64ToBlob(url) {
     type: mime
   });
 }
-
-export function stringToBinary(str) {
-  const buf = new ArrayBuffer(str.length);
-  const ut8 = new Uint8Array(buf);
-  for (let i = 0; i < str.length; i++) {
-    ut8[i] = str[i].charCodeAt(i).toString(2);
-  }
-  return buf;
-}

@@ -5,9 +5,15 @@
 export function bufferToStr(buffer: ArrayBuffer): string;
 
 /** 字符串转为ArrayBuffer对象
- * @param { String  } str
+ * @param { string } str
  */
 export function strToBuffer(str: string): ArrayBuffer;
+
+/**
+ * 把字符串换ArrayBuffer对象(二进制数据)
+ * @param { string }   str     字符串;
+ */
+export function stringToBinary(str: string): ArrayBuffer;
 
 /**
  * ArrayBuffer转为16进制字符串

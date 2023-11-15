@@ -12,12 +12,12 @@ export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetA
  * 获取树型数据对应的数据项
  *  @param tree  树型数据
  *  @param fn    条件函数
- *  @param childrenKey  子节点的键
+ *  @param childrenKey  子节点的键 默认children
  */
 export function findTreeItem<T extends Record<string, any>[]>(
   tree: T,
   fn: (item: GetArrObj<T, null>) => boolean,
-  childrenKey = 'children'
+  childrenKey:string
 ): T extends Array<infer U> ? U : any;
 
 type TISP<T, C extends keyof any, P extends keyof any> = Omit<T, C> & {
@@ -63,7 +63,7 @@ type GruopByCbAll<T> = (item?: GetArrObj<T>, index?: number) => void;
  * @param {string}   join           可选参数;同组多项条件分组时用于连接的字符串，默认为 ","
  * @param {number}   num            可选参数;
  */
-function groupBy<T extends Record<string, any>[]>(
+export function groupBy<T extends Record<string, any>[]>(
   keys: [GetArrObjKeys<T>],
   arr: T,
   callback?: GruopByCb<T>,
@@ -71,7 +71,7 @@ function groupBy<T extends Record<string, any>[]>(
   join?: string,
   num?: number
 ): Array<{ key: string; value: GetArrObj<T>[] }>;
-function groupBy<T extends Record<string, any>[]>(
+export function groupBy<T extends Record<string, any>[]>(
   keys: [GetArrObjKeys<T>[]],
   arr: T,
   callback?: GruopByCb<T>,

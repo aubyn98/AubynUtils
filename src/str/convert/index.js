@@ -13,6 +13,16 @@ export function strToBuffer(str) {
   return buf;
 }
 
+/** 字符串转为ArrayBuffer对象 (二进制)*/
+export function stringToBinary(str) {
+  const buf = new ArrayBuffer(str.length);
+  const ut8 = new Uint8Array(buf);
+  for (let i = 0; i < str.length; i++) {
+    ut8[i] = str[i].charCodeAt(i).toString(2);
+  }
+  return buf;
+}
+
 /**
  * ArrayBuffer转为16进制字符串，参数为ArrayBuffer对象
  */

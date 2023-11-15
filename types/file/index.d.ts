@@ -32,21 +32,21 @@ export function imgFilesHandle(imgFiles: FileList | Array<Blob | File>): Promise
  * @param { function } opts  可选项
  * @param { boolean }  dataURL  默认false,开启则返回 dataURL -> base64
  */
-export function getImgFile(opts?: Opts, dataURL = false): Promise<{ dataURL?: string; file: Blob | File }[]>;
+export function getImgFile(opts?: Opts, dataURL?: boolean): Promise<{ dataURL?: string; file: Blob | File }[]>;
 
 /**
  * 获取图片文件2-input
  * @param { function } opts  可选项
  * @param { boolean }  dataURL  默认false,开启则返回 dataURL -> base64
  */
-export function getImgFile2(opts?: Opts, dataURL = false): Promise<{ dataURL?: string; file: Blob | File }[]>;
+export function getImgFile2(opts?: Opts, dataURL?: boolean): Promise<{ dataURL?: string; file: Blob | File }[]>;
 
 /**
  * 获取视频文件2-input
  * @param { function } opts  可选项
  * @param { boolean }  dataURL  默认false,开启则返回 dataURL -> base64
  */
-export function getVideoFile2(opts?: Opts, dataURL = false): Promise<{ dataURL?: string; file: Blob | File }[]>;
+export function getVideoFile2(opts?: Opts, dataURL?: boolean): Promise<{ dataURL?: string; file: Blob | File }[]>;
 
 /**
  * 获取Excel文件
@@ -89,8 +89,3 @@ export function exportFile(blob: Blob, name: string): void;
  */
 export function base64ToBlob(str: string): Blob;
 
-/**
- * 把字符串换成二进制数据
- * @param {string}   str     字符串;
- */
-export function stringToBinary(str: string): ArrayBuffer;
