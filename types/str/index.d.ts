@@ -12,7 +12,7 @@ export function getRandom(random?: string | number, sign?: string): string;
  * @param { number } len 字符串长度
  * @param { string } $chars 参考字符串
  */
-export function getRandomStr(len: number, $chars?: string): string;
+export function getRandomStr(len?: number, $chars?: string): string;
 /**
  * 将连字符名称转换为大写驼峰
  * @param { string } str 字符串
