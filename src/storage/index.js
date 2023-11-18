@@ -42,7 +42,7 @@ export class Storage {
   setItem_simple(key, val) {
     return this.storage.setItem(key, JSON.stringify(val));
   }
-  getItem_simple(key) {
+  getItem_simple(key, defaultVal) {
     const val = this.storage.getItem(key);
     return val ? JSON.parse(val) : defaultVal;
   }
