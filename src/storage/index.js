@@ -5,7 +5,7 @@ export class Storage {
     this.expire = config.expire || 0 // 过期时间 单位：秒
     // this.isEncrypt = config.isEncrypt // 默认加密 为了调试方便, 开发过程中可以不加密
   }
-  setStorage(key, val, { expire = 0, renewal = false } = {}) {
+  setItem(key, val, { expire = 0, renewal = false } = {}) {
     if (val === '' || val === null || val === undefined) val = null
     if (isNaN(expire) || expire < 0) throw new Error('Expire must be a number')
     expire = (expire || this.expire) * 1000
@@ -17,7 +17,7 @@ export class Storage {
     }
     this.storage.setItem(key, JSON.stringify(data))
   }
-  getStorage(key, defaultVal = null) {
+  getItem(key, defaultVal = null) {
     const _ = this.storage
     key = this.autoAddPrefix(key)
 
@@ -29,17 +29,17 @@ export class Storage {
 
     // 过期删除
     if (data.expire && data.expire < nowTime - data.time) {
-      this.removeStorage(key)
+      this.removeItem(key)
       return defaultVal
     } else if (data.expire && data.renewal) {
       //  是否持续使用时会自动续期
-      this.setStorage(this.autoRemovePrefix(key), data.value, data.expire / 1000)
+      this.setItem(this.autoRemovePrefix(key), data.value, data.expire / 1000)
     }
 
     return data.value
   }
 
-  removeStorage(key) {
+  removeItem(key) {
     this.storage.removeItem(this.autoAddPrefix(key))
   }
 

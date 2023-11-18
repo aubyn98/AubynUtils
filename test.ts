@@ -1,5 +1,5 @@
 import * as aubyn from './src';
-console.log(aubyn);
+console.log(window.aubyn = aubyn);
 import { getFile, getInputFile, getPdfFile } from './src';
 app.onclick = () =>
   getPdfFile(void 0, 'ArrayBuffer').then(res => {
