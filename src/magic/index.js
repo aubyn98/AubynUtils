@@ -60,14 +60,7 @@ export function compose(...fns) {
 
 // 复制
 export function copyText(text) {
-  return navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      console.log('复制成功');
-    })
-    .catch(e => {
-      console.log(e);
-    });
+  return navigator.clipboard.writeText(text);
 }
 
 // 日志
