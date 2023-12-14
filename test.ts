@@ -1,14 +1,14 @@
 import * as aubyn from './src';
-console.log(window.aubyn = aubyn);
+console.log((window.aubyn = aubyn));
 import { getFile, getInputFile, getPdfFile } from './src';
-app.onclick = () =>
-  getPdfFile(void 0, 'ArrayBuffer').then(res => {
+app.onclick = () => {
+  aubyn.getFile(void 0, ['ArrayBuffer', 'Text', 'DataURL']).then(res => {
     console.log(res);
-    res.forEach(r => {
-      r.ArrayBuffer;
-      r.Text;
-    });
+    /* aubyn.filesHandle(res, ['ArrayBuffer', 'Text']).then(r => {
+      console.log(r[0]);
+    }); */
   });
+};
 
 /* getImgFile(void 0, 'DataURL').then(res => {
   res.forEach(r => {

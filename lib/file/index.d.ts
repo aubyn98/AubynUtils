@@ -9,7 +9,7 @@ interface Opts {
   multiple: boolean;
 }
 /**
- * 获取文件DataURL
+ * 将文件读取为某个类型
  * @param { Blob | File } file 文件 Blob | File
  * @param { string } type 类型 'BinaryString' | 'DataURL' | 'Text' | 'ArrayBuffer'
  */
@@ -40,11 +40,31 @@ export function getFile<T extends Convert[]>(
 ): Promise<Array<{ file: File } & { [K in T extends Array<infer U> ? U : never]: GatFileResType<K> }>>;
 
 /**
- * 处理图片文件列表
+ * 处理文件列表，将文件读取为某个类型
+ * @param files 文件数组 Blob[] | File[]
  */
-export function imgFilesHandle(imgFiles: FileList): Promise<{ dataURL: string; file: File }[]>;
-export function imgFilesHandle(imgFiles: Array<File>): Promise<{ dataURL: string; file: File }[]>;
-export function imgFilesHandle(imgFiles: Array<Blob>): Promise<{ dataURL: string; file: Blob }[]>;
+export function filesHandle(files: FileList | Array<File>): Promise<{ DataURL: string; file: File }[]>;
+export function filesHandle(files: Array<Blob>): Promise<{ DataURL: string; file: Blob }[]>;
+/**
+ * 处理文件列表，将文件读取为某个类型
+ * @param files 文件数组 Blob[] | File[]
+ * @param { string | Array } convert 可选项 字符串或数组  转换类型 'BinaryString' | 'DataURL' | 'Text' | 'ArrayBuffer'
+ */
+export function filesHandle<T extends Convert>(files: FileList | Array<File>, convert?: T): Promise<Array<{ file: File } & { [K in T]: GatFileResType<T> }>>;
+export function filesHandle<T extends Convert>(files: Array<Blob>, convert?: T): Promise<Array<{ file: Blob } & { [K in T]: GatFileResType<T> }>>;
+/**
+ * 处理文件列表，将文件读取为某个类型
+ * @param files 文件数组 Blob[] | File[]
+ * @param { string | Array } convert 可选项 字符串或数组  转换类型 'BinaryString' | 'DataURL' | 'Text' | 'ArrayBuffer'
+ */
+export function filesHandle<T extends Convert[]>(
+  files: FileList | Array<File>,
+  convert?: T
+): Promise<Array<{ file: File } & { [K in T extends Array<infer U> ? U : never]: GatFileResType<K> }>>;
+export function filesHandle<T extends Convert[]>(
+  files: Array<Blob>,
+  convert?: T
+): Promise<Array<{ file: Blob } & { [K in T extends Array<infer U> ? U : never]: GatFileResType<K> }>>;
 
 /**
  * 获取图片文件

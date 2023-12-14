@@ -12,6 +12,8 @@ export function readFileAs(file, type) {
 }
 
 export async function getFile(opts = { multiple: false }, convert) {
+  const isString = typeof convert === 'string';
+  const len = convert && convert.length;
   try {
     const fileList = [];
     const fileHandles = await window.showOpenFilePicker(opts);
@@ -19,10 +21,10 @@ export async function getFile(opts = { multiple: false }, convert) {
       const file = await item.getFile();
       if (convert) {
         const res = { file };
-        if (typeof convert === 'string') {
+        if (isString) {
           res[convert] = await readFileAs(file, convert);
-        } else if (convert.length) {
-          for (let i = 0; i < convert.length; i++) {
+        } else if (len) {
+          for (let i = 0; i < len; i++) {
             const type = convert[i];
             res[type] = await readFileAs(file, type);
           }
@@ -38,14 +40,24 @@ export async function getFile(opts = { multiple: false }, convert) {
   }
 }
 
-export async function imgFilesHandle(imgFiles = []) {
+export async function filesHandle(files = [], convert = 'DataURL') {
+  const isString = typeof convert === 'string';
+  const len = convert && convert.length;
   try {
-    const imgList = [];
-    for (const file of imgFiles) {
-      const dataURL = await readFileAs(file, 'DataURL');
-      imgList.push({ dataURL, file });
+    const fileList = [];
+    for (const file of files) {
+      const res = { file };
+      if (isString) {
+        res[convert] = await readFileAs(file, convert);
+      } else if (len) {
+        for (let i = 0; i < len; i++) {
+          const type = convert[i];
+          res[type] = await readFileAs(file, type);
+        }
+      }
+      fileList.push(res);
     }
-    return imgList;
+    return fileList;
   } catch (e) {
     return Promise.reject(e);
   }
