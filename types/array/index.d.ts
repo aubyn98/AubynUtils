@@ -17,7 +17,7 @@ export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetA
 export function findTreeItem<T extends Record<string, any>[]>(
   tree: T,
   fn: (item: GetArrObj<T, null>) => boolean,
-  childrenKey:string
+  childrenKey?:string
 ): T extends Array<infer U> ? U : any;
 
 type TISP<T, C extends keyof any, P extends keyof any> = Omit<T, C> & {
