@@ -10,12 +10,35 @@ export function removeEventListener(target, event, fn) {
 // 防抖
 export function debounce(fn, delay) {
   let timer = null;
-  return function (...argvs) {
-    if (timer) clearTimeout(timer);
+  _.stop = () => timer && clearTimeout(timer);
+  function _(...argvs) {
+    _.stop();
     timer = setTimeout(() => {
       fn.apply(this, argvs);
     }, delay);
+  }
+  return _;
+}
+
+export function debouncePromise(fn, delay) {
+  let timer = null,
+    arr = [];
+  _.stop = () => {
+    if (timer) {
+      arr.shift()?.('cancel');
+      clearTimeout(timer);
+    }
   };
+  function _(...argvs) {
+    return new Promise((resolve, reject) => {
+      _.stop();
+      arr.push(reject);
+      timer = setTimeout(() => {
+        resolve(fn.apply(this, argvs));
+      }, delay);
+    });
+  }
+  return _;
 }
 
 // 节流

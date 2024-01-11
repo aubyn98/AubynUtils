@@ -20,7 +20,19 @@ export function removeEventListener<U, K extends keyof eventMaps>(target: U, eve
  * @param { function } fn  要执行的函数
  * @param { number } delay  防抖延迟时间
  */
-export function debounce<T extends (...argvs: any[]) => any>(
+export function debounce<A extends any[], R>(
+  fn: (...argvs: A) => R,
+  delay?: number
+): ((...argvs: A) => void) & {
+  stop(): void;
+};
+
+/**
+ * 防抖(Promise版)
+ * @param { function } fn  要执行的函数
+ * @param { number } delay  防抖延迟时间
+ */
+export function debouncePromise<T extends (...argvs: any[]) => any>(
   fn: T,
   delay?: number
 ): T & {
