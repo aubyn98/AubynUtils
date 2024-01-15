@@ -79,7 +79,8 @@ export function validPhone(str) {
  * @returns {Boolean}
  */
 export function validIDCard(str) {
-  const reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+  const reg =
+    /^([1-6][1-9]|50)\d{4}(18|19|20)\d{2}((0[1-9])|10|11|12)(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$|^([1-6][1-9]|50)\d{4}\d{2}((0[1-9])|10|11|12)(([0-2][1-9])|10|20|30|31)\d{3}$/;
   return reg.test(str);
 }
 
@@ -91,4 +92,3 @@ export function validPostalCode(str) {
   const reg = /[1-9]\d{5}(?!\d)/;
   return reg.test(str);
 }
-
