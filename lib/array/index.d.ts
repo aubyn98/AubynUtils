@@ -22,7 +22,7 @@ export function findTreeItem<T extends Record<string, any>[]>(
 
 type TISP<T, C extends keyof any, P extends keyof any> = Omit<T, C> & {
   [K in C]: TISP<T, C, P>[];
-} & { [K in P]: TISP<T, C, P> };
+} & { [K in P]: TISP<T, C, P> } & { $index: number };
 /**
  * 获取树型数据对应的数据项的父级引用
  *  @param tree          树型数据
