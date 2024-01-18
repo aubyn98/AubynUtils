@@ -1,7 +1,7 @@
 export function flatWithKey(tree, key = 'children', fn) {
-  return tree.reduce((prev, cur) => {
+  return tree.reduce((prev, cur, i) => {
     const temp = prev.concat(cur, Array.isArray(cur[key]) && cur[key].length ? flatWithKey(cur[key], key, fn) : []);
-    typeof fn === 'function' && fn(cur);
+    typeof fn === 'function' && fn(cur, i);
     return temp;
   }, []);
 }
@@ -18,14 +18,14 @@ export function findTreeItem(tree = [], fn, childrenKey = 'children') {
   return res;
 }
 
-export function treeItemSetParent(tree = [], childrenKey = 'children', parentKey = '$parent', parent = null) {
+export function treeItemSetParent(tree = [], childrenKey = 'children', parentKey = '$parent', parent = null, indexKey = '$index') {
   return tree.map((it, index) => {
     const temp = {
       ...it
     };
-    temp['$index'] = index;
+    temp[indexKey] = index;
     temp[parentKey] = parent;
-    temp[childrenKey] = treeItemSetParent(it[childrenKey], childrenKey, parentKey, temp);
+    temp[childrenKey] = treeItemSetParent(it[childrenKey], childrenKey, parentKey, temp, indexKey);
     return temp;
   });
 }

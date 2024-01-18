@@ -6,7 +6,7 @@ export type GetArrObjKeys<T, P = never> = T extends Array<infer U> ? keyof U : P
  *  @param key  要平铺的键
  *  @param fn   回调，参数1：迭代的每个元素
  */
-export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T, string>, fn?: (it: GetArrObj<T, null>) => void): T;
+export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T>, fn?: (it: GetArrObj<T, null>, i: number) => void): T;
 
 /**
  * 获取树型数据对应的数据项
@@ -14,43 +14,41 @@ export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetA
  *  @param fn    条件函数
  *  @param childrenKey  子节点的键 默认children
  */
-export function findTreeItem<T extends Record<string, any>[]>(
-  tree: T,
-  fn: (item: GetArrObj<T, null>, index: number) => boolean,
-  childrenKey?: string
-): T extends Array<infer U> ? U : any;
+export function findTreeItem<T extends Record<string, any>[]>(tree: T, fn: (item: GetArrObj<T>, index: number) => boolean, childrenKey?: GetArrObjKeys<T>): GetArrObj<T>;
 
-type TISP<T, C extends keyof any, P extends keyof any> = Omit<T, C> & {
-  [K in C]: TISP<T, C, P>[];
-} & { [K in P]: TISP<T, C, P> } & { $index: number };
+type TISP<T, C extends string, P extends string, I extends string> = Omit<T, C> & {
+  [K in C]: TISP<T, C, P, I>[];
+} & { [K in P]: TISP<T, C, P, I> } & { [K in I]: number };
 /**
  * 获取树型数据对应的数据项的父级引用
  *  @param tree          树型数据
- *  @param childrenKey   子节点的键
+ *  @param childrenKey   子节点的键 默认children
  *  @param parentKey     设置的父级引用的键
  *  @param parent        父级引用
  */
-export function treeItemSetParent<T extends Record<string, any>[], C extends keyof any = 'children', P extends keyof any = '$parent'>(
+export type Undef<T, C> = T extends void ? C : T;
+export function treeItemSetParent<T extends Record<string, any>[], C extends GetArrObjKeys<T> | void, P extends string | void, K extends string | void>(
   tree: T,
-  childrenKey?: GetArrObjKeys<T, string>,
+  childrenKey?: C,
   parentKey?: P,
-  parent?: GetArrObj<T, null>
-): T extends Array<infer U> ? TISP<U, C, P>[] : any[];
+  parent?: GetArrObj<T, null>,
+  indexKey?: K
+): T extends Array<infer U> ? TISP<U, Undef<C, 'children'>, Undef<P, '$parent'>, Undef<K, '$index'>>[] : any[];
 
 /**
  * 获取树型数据项的路径
  *  @param item          树型数据项
  *  @param key           父级引用的键
  */
-export function getTreePath<T extends Record<string, any>, P extends keyof any = '$parent'>(item: T, key?: P): T[];
+export function getTreePath<T extends Record<string, any>, P extends string = '$parent'>(item: T, key?: P): T[];
 
 /**
  * 过滤树形结构数据
  *  @param tree  树型数据
  *  @param fn    条件函数
- *  @param childrenKey  子节点的键
+ *  @param childrenKey  子节点的键 默认children
  */
-export function filterTree<T extends Record<string, any>[]>(tree: T, fn: (item: GetArrObj<T, null>, index: number) => boolean, childrenKey?: string): T;
+export function filterTree<T extends Record<string, any>[]>(tree: T, fn: (item: GetArrObj<T>, index: number) => boolean, childrenKey?: GetArrObjKeys<T>): T;
 
 type GruopByCb<T> = (item?: GetArrObj<T>, quote?: Record<string, any>) => void;
 type GruopByCbAll<T> = (item?: GetArrObj<T>, index?: number) => void;
