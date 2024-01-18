@@ -19,6 +19,7 @@ export function findTreeItem<T extends Record<string, any>[]>(tree: T, fn: (item
 type TISP<T, C extends string, P extends string, I extends string> = Omit<T, C> & {
   [K in C]: TISP<T, C, P, I>[];
 } & { [K in P]: TISP<T, C, P, I> } & { [K in I]: number };
+export type Undef<T, C> = T extends void ? C : T;
 /**
  * 获取树型数据对应的数据项的父级引用
  *  @param tree          树型数据
@@ -27,7 +28,6 @@ type TISP<T, C extends string, P extends string, I extends string> = Omit<T, C> 
  *  @param parent        父级引用
  *  @param indexKey      设置子节点在父节点中的索引键
  */
-export type Undef<T, C> = T extends void ? C : T;
 export function treeItemSetParent<T extends Record<string, any>[], C extends GetArrObjKeys<T> | void, P extends string | void, K extends string | void>(
   tree: T,
   childrenKey?: C,
