@@ -6,7 +6,7 @@ export type GetArrObjKeys<T, P = never> = T extends Array<infer U> ? keyof U : P
  *  @param key  要平铺的键
  *  @param fn   回调，参数1：迭代的每个元素
  */
-export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T>, fn?: (it: GetArrObj<T, null>, i: number) => void): T;
+export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T>, fn?: (it: GetArrObj<T>, i: number) => void): T;
 
 /**
  * 获取树型数据对应的数据项
@@ -32,7 +32,7 @@ export function treeItemSetParent<T extends Record<string, any>[], C extends Get
   tree: T,
   childrenKey?: C,
   parentKey?: P,
-  parent?: GetArrObj<T, null>,
+  parent?: GetArrObj<T> | null,
   indexKey?: K
 ): T extends Array<infer U> ? TISP<U, Undef<C, 'children'>, Undef<P, '$parent'>, Undef<K, '$index'>>[] : any[];
 
