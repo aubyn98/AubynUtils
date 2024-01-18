@@ -25,6 +25,7 @@ type TISP<T, C extends string, P extends string, I extends string> = Omit<T, C> 
  *  @param childrenKey   子节点的键 默认children
  *  @param parentKey     设置的父级引用的键
  *  @param parent        父级引用
+ *  @param indexKey      设置子节点在父节点中的索引键
  */
 export type Undef<T, C> = T extends void ? C : T;
 export function treeItemSetParent<T extends Record<string, any>[], C extends GetArrObjKeys<T> | void, P extends string | void, K extends string | void>(
