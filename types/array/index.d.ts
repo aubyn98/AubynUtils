@@ -6,7 +6,7 @@ export type GetArrObjKeys<T, P = never> = T extends Array<infer U> ? keyof U : P
  *  @param key  要平铺的键
  *  @param fn   回调，参数1：迭代的每个元素
  */
-export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T, string>, fn?: (it: T extends Array<infer U> ? U : T) => void): T;
+export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetArrObjKeys<T, string>, fn?: (it: GetArrObj<T, null>) => void): T;
 
 /**
  * 获取树型数据对应的数据项
@@ -16,8 +16,8 @@ export function flatWithKey<T extends Record<string, any>[]>(tree: T, key?: GetA
  */
 export function findTreeItem<T extends Record<string, any>[]>(
   tree: T,
-  fn: (item: GetArrObj<T, null>) => boolean,
-  childrenKey?:string
+  fn: (item: GetArrObj<T, null>, index: number) => boolean,
+  childrenKey?: string
 ): T extends Array<infer U> ? U : any;
 
 type TISP<T, C extends keyof any, P extends keyof any> = Omit<T, C> & {
@@ -50,7 +50,7 @@ export function getTreePath<T extends Record<string, any>, P extends keyof any =
  *  @param fn    条件函数
  *  @param childrenKey  子节点的键
  */
-export function filterTree<T extends Record<string, any>[]>(tree: T, fn: (item: GetArrObj<T, null>) => boolean, childrenKey?: string): T;
+export function filterTree<T extends Record<string, any>[]>(tree: T, fn: (item: GetArrObj<T, null>, index: number) => boolean, childrenKey?: string): T;
 
 type GruopByCb<T> = (item?: GetArrObj<T>, quote?: Record<string, any>) => void;
 type GruopByCbAll<T> = (item?: GetArrObj<T>, index?: number) => void;

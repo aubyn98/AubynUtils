@@ -8,8 +8,8 @@ export function flatWithKey(tree, key = 'children', fn) {
 
 export function findTreeItem(tree = [], fn, childrenKey = 'children') {
   let res = null;
-  tree.some(it => {
-    if (fn(it)) {
+  tree.some((it, index) => {
+    if (fn(it, index)) {
       res = it;
       return true;
     }
