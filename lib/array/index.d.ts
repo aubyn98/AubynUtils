@@ -28,7 +28,12 @@ export type Undef<T, C> = T extends void ? C : T;
  *  @param parent        父级引用
  *  @param indexKey      设置子节点在父节点中的索引键
  */
-export function treeItemSetParent<T extends Record<string, any>[], C extends GetArrObjKeys<T> | void, P extends string | void, K extends string | void>(
+export function treeItemSetParent<
+  T extends Record<string, any>[],
+  C extends string | void = 'children',
+  P extends string | void = '$parent',
+  K extends string | void = '$index'
+>(
   tree: T,
   childrenKey?: C,
   parentKey?: P,
