@@ -143,3 +143,69 @@ export function convertFn(string) {
   /* eslint-disable-next-line */
   return new Function(body);
 }
+
+// 插入一个函数在空闲时调用
+export const idleHandle = (function () {
+  if (requestIdleCallback) return requestIdleCallback;
+  if (requestAnimationFrame)
+    return cb => {
+      const start = Date.now();
+      return requestAnimationFrame(() => {
+        cb({
+          timeRemaining() {
+            return 16.6 + start - Date.now();
+          }
+        });
+      });
+    };
+  return cb =>
+    setTimeout(() => {
+      const now = performance.now();
+      cb({
+        timeRemaining() {
+          return 10 + now - performance.now();
+        }
+      });
+    }, 1000);
+})();
+
+// 空闲时间执行任务，不阻塞渲染
+export function idleRunTask(task) {
+  return idleHandle(e => {
+    if (e.timeRemaining() > 0) {
+      task();
+    } else {
+      idleRunTask(task);
+    }
+  });
+}
+
+// 分时函数
+export function performChunk(
+  datas,
+  taskHandler,
+  scheduler = task => {
+    idleHandle(e => {
+      e.timeRemaining() > 0;
+      task(() => e.timeRemaining() > 0);
+    });
+  }
+) {
+  if (typeof datas === 'number')
+    datas = {
+      length: datas
+    };
+  if (datas.length === 0) return;
+  let i = 0;
+  function _run() {
+    if (i >= datas.length) return;
+    scheduler(goOn => {
+      while (goOn() && i < datas.length) {
+        taskHandler(datas[i], i, datas);
+        i++;
+      }
+      _run();
+    });
+  }
+  _run();
+}

@@ -84,3 +84,27 @@ export function _setTimeout<TArgs extends any[]>(callback: (...args: TArgs) => v
  * @returns { Function } function 匿名函数
  */
 export function convertFn(string: string): Function;
+
+/**
+ * 插入一个函数在空闲时调用
+ * @param { Function } cb 插入的函数
+ */
+export function idleHandle(cb: (e: { timeRemaining: () => number }) => any): number;
+
+/**
+ * 空闲时间执行任务，不阻塞渲染
+ * @param { Function } task 任务函数
+ */
+export function idleRunTask(task: (...argvs: any[]) => any): number;
+
+/**
+ * 分时函数 - 分批处理任务（空闲时）
+ * @param { number | Array } datas 任务数据
+ * @param { Function } taskHandler 任务处理器
+ * @param { Function } scheduler   空闲调度器
+ */
+export function performChunk<T extends any[] | number>(
+  datas: T,
+  taskHandler: (item: T extends any[] ? T[number] : void, i: number, source: T) => any,
+  scheduler?: (task: (goOn: () => boolean) => void) => void
+): void;

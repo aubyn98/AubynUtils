@@ -1,48 +1,20 @@
-import * as aubyn from './src';
-console.log((window.aubyn = aubyn));
-import { getFile, getInputFile, getPdfFile, getTreePath, findTreeItem, treeItemSetParent } from './lib';
-treeItemSetParent([{ a: 1 }] as any[], void 0, void 0, void 0, 'i2').forEach(i => {
-  i.children.filter(i=>i.p.children)
-  i.
-});
-findTreeItem(
-  [{ a: 1, chilren: [] }],
-  e => {
-    return true;
+/* import * as aubyn from './src';
+console.log((window.aubyn = aubyn)); */
+import { getFile, getInputFile, getPdfFile, getTreePath, findTreeItem, treeItemSetParent, performChunk, idleHandle } from './lib';
+performChunk(
+  1000,
+  (item, i, a) => {
+    console.log(1)
   },
-  void 0
+  task => {
+    idleHandle(e => {
+      e.timeRemaining() > 0;
+      task(() => e.timeRemaining() > 0);
+    });
+  }
 );
-getTreePath([], 1);
-app.onclick = () => {
-  aubyn.getFile(void 0, ['ArrayBuffer', 'Text', 'DataURL']).then(res => {
-    console.log(res);
-    /* aubyn.filesHandle(res, ['ArrayBuffer', 'Text']).then(r => {
-      console.log(r[0]);
-    }); */
-  });
-};
-
-/* getImgFile(void 0, 'DataURL').then(res => {
-  res.forEach(r => {
-    r.DataURL;
-  });
+performChunk(1000, (item, i, a) => {
+  item;
+  i;
+  a;
 });
-
-getImgFile(void 0, 'Text').then(res => {
-  res.forEach(r => {
-    r.Text;
-  });
-});
-
-getImgFile(void 0, 'ArrayBuffer').then(res => {
-  res.forEach(r => {
-    r.ArrayBuffer;
-  });
-});
-
-getZipFile(void 0, ['ArrayBuffer', 'Text']).then(res => {
-  res.forEach(r => {
-    r.ArrayBuffer;
-    r.Text;
-  });
-}); */
