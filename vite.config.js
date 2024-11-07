@@ -30,7 +30,14 @@ export default defineConfig({
         entryFileNames: '[name].js'
       },
       plugins: [
-        babel({ plugins: ['@babel/plugin-proposal-nullish-coalescing-operator', '@babel/plugin-proposal-logical-assignment-operators'] }),
+        babel({
+          plugins: [
+            '@babel/plugin-proposal-nullish-coalescing-operator',
+            '@babel/plugin-proposal-logical-assignment-operators',
+            '@babel/plugin-proposal-optional-chaining',
+            '@babel/plugin-transform-parameters',
+          ]
+        }),
         copy({
           targets: [{ src: `types/*`, dest: `lib` }],
           hook: 'writeBundle'
