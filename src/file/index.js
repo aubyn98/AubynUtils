@@ -230,3 +230,28 @@ export function base64ToBlob(url) {
     type: mime
   });
 }
+
+export function arrayBufferToBase64(arrayBuffer) {
+  const uint8Array = new Uint8Array(arrayBuffer);
+  let binaryString = '';
+  for (let i = 0; i < uint8Array.length; i++) {
+      binaryString += String.fromCharCode(uint8Array[i]);
+  }
+  // 对二进制字符串进行 encodeURIComponent 处理
+  const encodedString = encodeURIComponent(binaryString);
+  // 将处理后的字符串转换为 base64 编码的字符串
+  const base64String = btoa(encodedString);
+  return base64String;
+}
+
+export function base64ToArrayBuffer(base64String) {
+  // 对 base64 字符串进行解码
+  const decodedString = atob(base64String);
+  // 对解码后的字符串进行 decodeURIComponent 处理
+  const originalString = decodeURIComponent(decodedString);
+  const uint8Array = new Uint8Array(originalString.length);
+  for (let i = 0; i < originalString.length; i++) {
+      uint8Array[i] = originalString.charCodeAt(i);
+  }
+  return uint8Array.buffer;
+}

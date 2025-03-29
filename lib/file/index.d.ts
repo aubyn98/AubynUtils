@@ -155,3 +155,15 @@ export function exportFile(blob: Blob, name: string): void;
  * @param {string} str 字符串;
  */
 export function base64ToBlob(str: string): Blob;
+
+/**
+ * arrayBuffer转换成base64
+ * @param {ArrayBuffer} arrayBuffer 字符串;
+ */
+export function arrayBufferToBase64(arrayBuffer: ArrayBuffer): str;
+
+/**
+ * base64转换成arrayBuffer
+ * @param {string} str 字符串;
+ */
+export function base64ToArrayBuffer(str: string): ArrayBuffer;
