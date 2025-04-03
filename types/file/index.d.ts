@@ -160,7 +160,7 @@ export function base64ToBlob(str: string): Blob;
  * arrayBuffer转换成base64
  * @param {ArrayBuffer} arrayBuffer 字符串;
  */
-export function arrayBufferToBase64(arrayBuffer: ArrayBuffer): str;
+export function arrayBufferToBase64(arrayBuffer: ArrayBuffer): string;
 
 /**
  * base64转换成arrayBuffer
