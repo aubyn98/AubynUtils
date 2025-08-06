@@ -7,3 +7,4 @@ export * from './num';
 export * from './object';
 export * from './storage';
 export * from './str';
+export * from './WebSocketClient';
