@@ -1,6 +1,6 @@
 {
   "name": "@aubyn/utils",
-  "version": "1.3.9",
+  "version": "1.4.0",
   "description": "aubyn's utils",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

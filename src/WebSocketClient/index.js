@@ -2,7 +2,7 @@ export class WebSocketClient {
   constructor(url, options = {}) {
     this.url = url;
     this.reconnectDelay = options.reconnectDelay || 1000; // 重连间隔时间
-    this.heartbeatInterval = options.heartbeatInterval || 5000; // 心跳间隔时间
+    this.heartbeatInterval = options.heartbeatInterval || 60000; // 心跳间隔时间
     this.heartbeatMsg = options.heartbeatMsg || 'ping'; // 心跳消息
     this.ws = null;
     this.isConnected = false;
