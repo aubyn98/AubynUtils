@@ -37,10 +37,10 @@ export function getSearchParams(str) {
 
 export function getSearchString(params) {
   return Object.keys(params)
-    .reduce((_, k) => {
-      _.push(`${k}=${params[k]}`);
-      return _;
-    }, [])
+    .map(key => {
+      const v = params[key];
+      return `${key}=${v && typeof v === 'object' ? JSON.stringify(v) : v}`;
+    })
     .join('&');
 }
 
