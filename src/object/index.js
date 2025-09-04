@@ -70,17 +70,16 @@ export function cloneDeepWithDescriptors(data) {
         break;
 
       case 'Error':
-        const ErrCtor = val.constructor;
-        cloneRes = new ErrCtor(val.message);
+        cloneRes = new val.constructor(val.message);
         Object.getOwnPropertyNames(val).forEach(key => {
+          if (key === 'stack') return;
           cloneRes[key] = clone(val[key]);
         });
         map.set(val, cloneRes);
         break;
 
       default:
-        const prototype = Object.getPrototypeOf(val);
-        cloneRes = Object.create(prototype);
+        cloneRes = Object.create(Object.getPrototypeOf(val));
         map.set(val, cloneRes);
 
         const descriptors = Object.getOwnPropertyDescriptors(val);
