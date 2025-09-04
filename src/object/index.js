@@ -28,72 +28,72 @@ export function cloneWithDescriptors(val) {
 export function cloneDeepWithDescriptors(data) {
   const map = new WeakMap();
 
+  const cloneHandlers = {
+    Array: (val) => {
+      const res = [];
+      map.set(val, res);
+      val.forEach(item => res.push(clone(item)));
+      return res;
+    },
+
+    Date: (val) => {
+      const res = new Date(val);
+      map.set(val, res);
+      return res;
+    },
+
+    RegExp: (val) => {
+      const res = new RegExp(val.source, val.flags);
+      res.lastIndex = val.lastIndex;
+      map.set(val, res);
+      return res;
+    },
+
+    Map: (val) => {
+      const res = new Map();
+      map.set(val, res);
+      val.forEach((v, k) => res.set(clone(k), clone(v)));
+      return res;
+    },
+
+    Set: (val) => {
+      const res = new Set();
+      map.set(val, res);
+      val.forEach(v => res.add(clone(v)));
+      return res;
+    },
+
+    Error: (val) => {
+      const res = new val.constructor(val.message);
+      map.set(val, res);
+      Object.getOwnPropertyNames(val).forEach(key => {
+        if (key === 'stack') return;
+        res[key] = clone(val[key]);
+      });
+      return res;
+    },
+
+    default: (val) => {
+      const res = Object.create(Object.getPrototypeOf(val));
+      map.set(val, res);
+      const descriptors = Object.getOwnPropertyDescriptors(val);
+      Object.getOwnPropertyNames(descriptors).forEach(key => {
+        const desc = descriptors[key];
+        if (desc.value !== undefined) desc.value = clone(desc.value);
+        Object.defineProperty(res, key, desc);
+      });
+      return res;
+    }
+  };
+
   function clone(val) {
     if (val === null || val === undefined) return val;
     const type = getRawType(val);
-
-    // 基础类型直接返回
     if (['String', 'Number', 'Boolean', 'Symbol', 'BigInt', 'Function'].includes(type)) return val;
-    // 循环引用返回缓存
+
     if (map.has(val)) return map.get(val);
 
-    let cloneRes;
-
-    switch (type) {
-      case 'Array':
-        cloneRes = [];
-        map.set(val, cloneRes);
-        val.forEach(item => cloneRes.push(clone(item)));
-        break;
-
-      case 'Date':
-        cloneRes = new Date(val);
-        map.set(val, cloneRes);
-        break;
-
-      case 'RegExp':
-        cloneRes = new RegExp(val.source, val.flags);
-        cloneRes.lastIndex = val.lastIndex;
-        map.set(val, cloneRes);
-        break;
-
-      case 'Map':
-        cloneRes = new Map();
-        map.set(val, cloneRes);
-        val.forEach((v, k) => cloneRes.set(clone(k), clone(v)));
-        break;
-
-      case 'Set':
-        cloneRes = new Set();
-        map.set(val, cloneRes);
-        val.forEach(v => cloneRes.add(clone(v)));
-        break;
-
-      case 'Error':
-        cloneRes = new val.constructor(val.message);
-        Object.getOwnPropertyNames(val).forEach(key => {
-          if (key === 'stack') return;
-          cloneRes[key] = clone(val[key]);
-        });
-        map.set(val, cloneRes);
-        break;
-
-      default:
-        cloneRes = Object.create(Object.getPrototypeOf(val));
-        map.set(val, cloneRes);
-
-        const descriptors = Object.getOwnPropertyDescriptors(val);
-        Object.getOwnPropertyNames(descriptors).forEach(key => {
-          const desc = descriptors[key];
-          if (desc.value !== undefined) {
-            desc.value = clone(desc.value);
-          }
-          Object.defineProperty(cloneRes, key, desc);
-        });
-        break;
-    }
-
-    return cloneRes;
+    return cloneHandlers[type] ? cloneHandlers[type](val) : cloneHandlers.default(val);
   }
 
   return clone(data);
