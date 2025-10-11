@@ -207,12 +207,16 @@ export async function getZipFile2(opts = { multiple: false }, convert) {
   return getInputFile({ ...opts, accept: '.zip,.rar,.7z' }, convert);
 }
 
-export function exportFile(blob, name) {
-  const url = URL.createObjectURL(blob);
+export function aTagDownloadFile(url, name) {
   const a = document.createElement('a');
   a.href = url;
   a.download = name;
   a.click();
+}
+
+export function exportFile(blob, name) {
+  const url = URL.createObjectURL(blob);
+  aTagDownloadFile(url, name);
   setTimeout(() => {
     URL.revokeObjectURL(url);
   }, 5000);
@@ -235,7 +239,7 @@ export function arrayBufferToBase64(arrayBuffer) {
   const uint8Array = new Uint8Array(arrayBuffer);
   let binaryString = '';
   for (let i = 0; i < uint8Array.length; i++) {
-      binaryString += String.fromCharCode(uint8Array[i]);
+    binaryString += String.fromCharCode(uint8Array[i]);
   }
   // 对二进制字符串进行 encodeURIComponent 处理
   const encodedString = encodeURIComponent(binaryString);
@@ -251,7 +255,7 @@ export function base64ToArrayBuffer(base64String) {
   const originalString = decodeURIComponent(decodedString);
   const uint8Array = new Uint8Array(originalString.length);
   for (let i = 0; i < originalString.length; i++) {
-      uint8Array[i] = originalString.charCodeAt(i);
+    uint8Array[i] = originalString.charCodeAt(i);
   }
   return uint8Array.buffer;
 }

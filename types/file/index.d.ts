@@ -144,6 +144,13 @@ export const getPdfFile2: typeof getInputFile;
 export const getZipFile2: typeof getInputFile;
 
 /**
+ * 下载文件
+ * @param { string } url  下载地址 url / base64
+ * @param { string } name  文件名称
+ */
+export function aTagDownloadFile(url: string, name: string): void;
+
+/**
  * 导出文件
  * @param { Blob } blob  blob或file数据类型
  * @param { string } name  文件名称
