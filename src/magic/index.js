@@ -186,7 +186,6 @@ export function performChunk(
   taskHandler,
   scheduler = task => {
     idleHandle(e => {
-      e.timeRemaining() > 0;
       task(() => e.timeRemaining() > 0);
     });
   }
