@@ -67,18 +67,61 @@ export function throttle(func, wait = 500, immediate = true) {
 
 // 组合函数
 export function compose(...fns) {
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('compose 参数必须是函数');
+  }
+  if (fns.length === 0) return (...args) => (args.length === 1 ? args[0] : args);
   return fns.reduce(
     (l, r) =>
       function (...argv) {
-        return r.call(
-          this,
-          (...opt) => {
-            return l.apply(this, [...argv, ...opt]);
-          },
-          ...argv
-        );
+        return r.call(this, () => l.apply(this, argv), ...argv);
       }
   );
+}
+
+export function composeAsync(...fns) {
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('composeAsync 参数必须是函数');
+  }
+
+  if (fns.length === 0) {
+    return async (...args) => (args.length === 1 ? args[0] : args);
+  }
+
+  return fns.reduce((l, r) => {
+    return async function (...argv) {
+      return r.call(this, async () => l.apply(this, argv), ...argv);
+    };
+  });
+}
+
+export function pipe(...fns) {
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('pipe 参数必须是函数');
+  }
+  if (fns.length === 0) return (...args) => (args.length === 1 ? args[0] : args);
+  return fns.reduce(
+    (l, r) =>
+      function (...argv) {
+        return l.call(this, () => r.apply(this, argv), ...argv);
+      }
+  );
+}
+
+export function pipeAsync(...fns) {
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('pipeAsync 参数必须是函数');
+  }
+
+  if (fns.length === 0) {
+    return async (...args) => (args.length === 1 ? args[0] : args);
+  }
+
+  return fns.reduce((l, r) => {
+    return async function (...argv) {
+      return l.call(this, async () => r.apply(this, argv), ...argv);
+    };
+  });
 }
 
 // 复制

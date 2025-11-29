@@ -47,10 +47,44 @@ export function debouncePromise<T extends (...argvs: any[]) => any>(
  */
 export function throttle<T extends (...argvs: any[]) => any>(func: T, wait?: number, immediate?: boolean): T;
 
-/**
- * 组合函数
- */
-export function compose<T extends (...params: any[]) => any>(fn: T, ...params: Array<(...params: any[]) => any>): T;
+// 基础组合类型
+type Compose<T extends any[]> = T extends [infer F]
+  ? F
+  : T extends [infer F, ...infer R]
+  ? F extends (...args: any[]) => any
+    ? Compose<R> extends (...args: any[]) => any
+      ? (...args: Parameters<Compose<R>>) => ReturnType<F>
+      : never
+    : never
+  : never;
+
+type ComposeAsync<T extends any[]> = T extends [infer F]
+  ? F
+  : T extends [infer F, ...infer R]
+  ? F extends (...args: any[]) => any
+    ? ComposeAsync<R> extends (...args: any[]) => any
+      ? (...args: Parameters<ComposeAsync<R>>) => Promise<Awaited<ReturnType<F>>>
+      : never
+    : never
+  : never;
+
+// 反转数组类型用于 pipe
+type Reverse<T extends any[]> = T extends [infer First, ...infer Rest] ? [...Reverse<Rest>, First] : [];
+
+type Pipe<T extends any[]> = Compose<Reverse<T>>;
+type PipeAsync<T extends any[]> = ComposeAsync<Reverse<T>>;
+
+/** 同步 compose - 支持任意数量函数 */
+export function compose<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => U : Compose<T>;
+
+/** 异步 compose - 支持任意数量函数 */
+export function composeAsync<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : ComposeAsync<T>;
+
+/** 同步 pipe - 支持任意数量函数 */
+export function pipe<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => U : Pipe<T>;
+
+/** 异步 pipe - 支持任意数量函数 */
+export function pipeAsync<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : PipeAsync<T>;
 
 /**
  * 复制文字
