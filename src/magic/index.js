@@ -189,11 +189,12 @@ export function convertFn(string) {
 
 // 插入一个函数在空闲时调用
 export const idleHandle = (function () {
-  if (requestIdleCallback) return requestIdleCallback;
-  if (requestAnimationFrame)
+  const target = (window || global || {})
+  if (target.requestIdleCallback) return target.requestIdleCallback;
+  if (target.requestAnimationFrame)
     return cb => {
       const start = Date.now();
-      return requestAnimationFrame(() => {
+      return target.requestAnimationFrame(() => {
         cb({
           timeRemaining() {
             return 16.6 + start - Date.now();
