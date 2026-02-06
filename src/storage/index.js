@@ -257,7 +257,6 @@ export class Storage {
 // 生产环境静默日志（兼容Webpack/Vite/纯浏览器环境）
 const isProd = (() => {
   if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') return true;
-  if (typeof import.meta !== 'undefined' && import.meta.env?.MODE === 'production') return true;
   return false;
 })();
 
