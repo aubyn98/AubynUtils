@@ -36,6 +36,8 @@ export default defineConfig({
             '@babel/plugin-proposal-logical-assignment-operators',
             '@babel/plugin-proposal-optional-chaining',
             '@babel/plugin-transform-parameters',
+            '@babel/plugin-transform-async-to-generator',
+            '@babel/plugin-proposal-async-generator-functions'
           ]
         }),
         copy({
