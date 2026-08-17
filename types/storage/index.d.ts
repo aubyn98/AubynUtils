@@ -1,198 +1,126 @@
 /**
- * 工业级 Web 存储工具类 - TypeScript 类型声明
- * 特性：容量容错、类型校验、轻量化续期、环境解耦、可配置日志、LRU兜底、特殊值序列化
+ * 工业级 Web Storage 工具类型声明 v1.4.0
  */
-declare class Storage {
-  /**
-   * 存储实例（localStorage/sessionStorage 或自定义 mock 实例）
-   */
-  private storage: Storage;
-  /**
-   * 键前缀
-   */
-  private prefix: string;
-  /**
-   * 默认过期时间（秒），0 表示永不过期
-   */
-  private defaultExpire: number;
-  /**
-   * 拼接后的前缀字符串（prefix + '_'）
-   */
-  private prefixStr: string;
-  /**
-   * 是否静默日志（生产环境建议开启）
-   */
-  private silent: boolean;
+
+export interface StorageConstructorOptions {
+  /** localStorage / sessionStorage */
+  type?: 'localStorage' | 'sessionStorage';
+  /** 命名空间前缀 */
+  prefix?: string;
+  /** 默认过期时间 单位：秒 */
+  expire?: number;
+  /** 生产环境静默日志 */
+  silent?: boolean;
+  /** 自定义storage实例（兼容封装后的storage） */
+  storageInstance?: Storage | null;
+  /** 容量溢出时自动GC后重试写入 */
+  autoGcOnQuota?: boolean;
+}
+
+export interface SetItemOptions {
+  /** 过期时长，单位：秒；0=永不过期 */
+  expire?: number;
+}
+
+export interface StorageInfo {
+  available: boolean;
+  totalKeys: number;
+  namespaceKeys: number;
+  estimatedSize: string;
+  namespace: string;
+}
+
+export declare class Storage {
+  constructor(options?: StorageConstructorOptions);
 
   /**
-   * 构造函数
-   * @param config 配置项
-   */
-  constructor(config?: {
-    /** 存储类型：'localStorage' | 'sessionStorage' */
-    type?: string;
-    /** 键前缀，默认空字符串 */
-    prefix?: string;
-    /** 默认过期时间（秒），默认 0（永不过期） */
-    expire?: number;
-    /** 是否静默日志，默认 false */
-    silent?: boolean;
-    /** 自定义存储实例（用于测试/mock） */
-    storageInstance?: Storage;
-  });
-
-  /**
-   * 统一日志输出（私有方法）
-   * @param level 日志级别：'log' | 'warn' | 'error'
-   * @param msg 日志信息
-   * @param err 错误对象（可选）
-   */
-  #log(level: 'log' | 'warn' | 'error', msg: string, err?: Error | string): void;
-
-  /**
-   * 校验 key 类型是否为字符串（私有方法）
-   * @param key 待校验的键名
-   * @returns 校验结果
-   */
-  #validateKey(key: unknown): key is string;
-
-  /**
-   * 安全 JSON 序列化（兼容 undefined/Symbol 等特殊值）（私有方法）
-   * @param data 待序列化的数据
-   * @returns 序列化后的字符串
-   */
-  #safeStringify(data: unknown): string;
-
-  /**
-   * 轻量化续期（私有方法）
+   * 设置【带过期缓存】
    * @param key 键名
-   * @param value 存储值
-   * @param expire 过期时间（毫秒）
-   * @param renewal 是否自动续期
-   */
-  #refreshItem(key: string, value: unknown, expire: number, renewal: boolean): void;
-
-  /**
-   * LRU 兜底 - 批量删除过期数据并重试存储（私有方法）
-   * @param key 待存储的键名（带前缀）
-   * @param dataStr 序列化后的存储数据
-   */
-  #trySetWithLRU(key: string, dataStr: string): void;
-
-  /**
-   * 带过期时间的存储设置
-   * @param key 存储键名
    * @param val 存储值
-   * @param options 可选配置
-   * @param options.expire 过期时间（秒），默认 0
-   * @param options.renewal 是否自动续期，默认 false
-   * @throws {Error} key 非字符串 / 过期时间为负数时抛出错误
+   * @param options {expire:秒}
    */
-  setItem(
-    key: string,
-    val: unknown,
-    options?: {
-      expire?: number;
-      renewal?: boolean;
-    }
-  ): void;
+  setItem<T = unknown>(key: string, val: T, options?: SetItemOptions): this;
 
   /**
-   * 带过期时间的存储获取
-   * @param key 存储键名
-   * @param defaultVal 默认值，默认 null
-   * @returns 存储值或默认值
+   * 获取【带过期缓存】
+   * @param key
+   * @param defaultVal 取不到/过期返回默认值
    */
-  getItem<T = unknown>(key: string, defaultVal?: T): T;
+  getItem<T = unknown>(key: string, defaultVal?: T): T | null;
 
   /**
-   * 简易存储设置（无过期时间、无前缀）
-   * @param key 存储键名
-   * @param val 存储值
-   * @throws {Error} key 非字符串时抛出错误
+   * 续期缓存
+   * @param key
+   * @param newExpire 新过期时间(秒)，不传沿用原有时长
+   * @returns 是否成功
    */
-  setItem_simple(key: string, val: unknown): void;
+  renewItem(key: string, newExpire?: number): boolean;
 
-  /**
-   * 简易存储获取（无过期时间、无前缀）
-   * @param key 存储键名
-   * @param defaultVal 默认值
-   * @returns 存储值或默认值
-   */
-  getItem_simple<T = unknown>(key: string, defaultVal?: T): T;
+  /** 判断带过期缓存key是否存在且未过期 */
+  hasItem(key: string): boolean;
 
-  /**
-   * 移除简易存储项（无前缀）
-   * @param key 存储键名
-   * @throws {Error} key 非字符串时抛出错误
-   */
-  removeItem_simple(key: string): void;
+  /** 删除带过期缓存单项 */
+  removeItem(key: string): this;
 
-  /**
-   * 移除带前缀的存储项
-   * @param key 存储键名
-   * @throws {Error} key 非字符串时抛出错误
-   */
-  removeItem(key: string): void;
+  /** 批量删除带过期缓存 */
+  removeItems(keys: string[]): this;
 
-  /**
-   * 给键名添加前缀
-   * @param key 原始键名
-   * @returns 带前缀的键名（若 key 非字符串则返回原值）
-   */
-  addPrefix(key: string): string;
-  addPrefix(key: unknown): unknown;
-
-  /**
-   * 移除键名的前缀
-   * @param key 带前缀的键名
-   * @returns 原始键名（若 key 非字符串/无前缀则返回原值）
-   */
-  removePrefix(key: string): string;
-  removePrefix(key: unknown): unknown;
-
-  /**
-   * 清空当前存储类型的所有数据
-   * @throws {Error} 清空失败时抛出错误
-   */
-  clear(): void;
-
-  /**
-   * 获取所有带前缀的键名（原始键名，不含前缀）
-   * @returns 键名数组
-   */
+  /** 获取当前命名空间下所有【带过期缓存】原始key列表 */
   getKeys(): string[];
 
   /**
-   * 批量移除带前缀的存储项
-   * @param keys 键名数组
-   * @throws {Error} keys 非数组时抛出错误
+   * ⚠️ 仅清理带过期缓存(CACHE)
+   * 不会清除 setItem_simple 永久数据
    */
-  removeItems(keys: string[]): void;
+  clearCache(): this;
 
   /**
-   * 检查带前缀的键是否存在
-   * @param key 存储键名
-   * @returns 是否存在
+   * GC垃圾回收：自动清理当前命名空间过期缓存
+   * @returns 清理数量
    */
-  hasItem(key: string): boolean;
+  gc(): number;
 
-  /**
-   * 检查简易存储键是否存在（无前缀）
-   * @param key 存储键名
-   * @returns 是否存在
-   */
+  // ========== Simple 永久存储系列（无过期） ==========
+  setItem_simple<T = unknown>(key: string, val: T): this;
+
+  getItem_simple<T = unknown>(key: string, defaultVal?: T): T | null;
+
   hasItem_simple(key: string): boolean;
+
+  removeItem_simple(key: string): this;
+
+  removeItems_simple(keys: string[]): this;
+
+  getKeys_simple(): string[];
+
+  /** 仅清理当前命名空间所有 simple 永久存储 */
+  clearSimple(): this;
+
+  /** 【推荐】清空当前命名空间全部数据（CACHE + SIMPLE） */
+  clearNamespaceAll(): this;
+
+  /**
+   * ⚠️ 高危！清空当前域名下全部原生 storage
+   * 不受prefix命名空间隔离，谨慎使用
+   */
+  dangerouslyClearAllOriginStorage(): this;
+
+  /** 获取存储概览信息（key数量、预估大小） */
+  getStorageInfo(): StorageInfo;
+
+  // ========== 内部前缀工具（业务一般不用） ==========
+  addCachePrefix(key: string): string;
+  addSimplePrefix(key: string): string;
+  removePrefix(fullKey: string): string;
 }
 
-/**
- * localStorage 实例
- */
-declare const local: Storage;
+/** 默认 localStorage 实例 */
+export declare const local: Storage;
 
-/**
- * sessionStorage 实例
- */
-declare const session: Storage;
+/** 默认 sessionStorage 实例 */
+export declare const session: Storage;
 
-export { Storage, local, session };
+/** 创建新Storage实例工厂函数 */
+export declare function createStorage(config?: StorageConstructorOptions): Storage;
+
+export default Storage;
