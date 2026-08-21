@@ -162,9 +162,10 @@ const dict = {
 
 function timerFactory(key) {
   return function (...arvgs) {
-    let timerId = dict[key].set.call(window || global, ...arvgs);
+    const target = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : {})
+    let timerId = dict[key].set.call(target, ...arvgs);
     function remove() {
-      dict[key].clear.call(window || global, timerId);
+      dict[key].clear.call(target, timerId);
       timerId = null;
     }
     remove.timerId = timerId;
@@ -189,7 +190,7 @@ export function convertFn(string) {
 
 // 插入一个函数在空闲时调用
 export const idleHandle = (function () {
-  const target = (window || global || {})
+  const target = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : {})
   if (target.requestIdleCallback) return target.requestIdleCallback;
   if (target.requestAnimationFrame)
     return cb => {
