@@ -35,7 +35,7 @@ export function getSearchParams(str) {
   return collect;
 }
 
-export function getSearchString(params) {
+export function toQueryString(params) {
   return Object.keys(params)
     .map(key => {
       const v = params[key];

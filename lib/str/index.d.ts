@@ -21,15 +21,17 @@ export function getPascalCase(str: string): string;
 
 /**
  * 获取URL参数
- * @param { string } str 字符串
+ * @param {string} str url或者query字符串
+ * @returns {Object} 参数对象
  */
 export function getSearchParams(str: string): Record<string, any>;
 
 /**
  * 生成URL查询字符串
- * @param { string } str 字符串
+ * @param {Record<string, any>} obj 参数对象
+ * @returns {string} query字符串
  */
-export function getSearchString(str: Record<string, any>): string;
+export function toQueryString(str: Record<string, any>): string;
 
 /**
  * 版本号比较
