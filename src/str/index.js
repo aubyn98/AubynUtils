@@ -24,7 +24,7 @@ export function getPascalCase(str) {
     .replace(/-/g, '');
 }
 
-export function getSearchParams(str) {
+export function getQueryParams(str) {
   const collect = {};
   decodeURIComponent(str).replace(/([^?^&]*?)=([^?^&]*)/g, (match, k, v) => {
     const temp = collect[k];

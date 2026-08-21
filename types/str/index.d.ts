@@ -24,7 +24,7 @@ export function getPascalCase(str: string): string;
  * @param {string} str url或者query字符串
  * @returns {Object} 参数对象
  */
-export function getSearchParams(str: string): Record<string, any>;
+export function getQueryParams(str: string): Record<string, any>;
 
 /**
  * 生成URL查询字符串
