@@ -20,18 +20,54 @@ export function getRandomStr(len?: number, $chars?: string): string;
 export function getPascalCase(str: string): string;
 
 /**
- * 获取URL参数
- * @param {string} str url或者query字符串
- * @returns {Object} 参数对象
+ * 解析 URL query 字符串，相同 key 自动转为数组
+ * 支持传入完整 URL / query 字符串，自动剔除 hash
+ *
+ * @param str 完整 url / query 字符串，可以带开头 ?，可携带 #hash
+ * @param options 配置选项
+ * @returns 解析结果
  */
-export function getQueryParams(str: string): Record<string, any>;
+export declare function getQueryParams(
+    str?: string,
+    options?: GetQueryParamsOptions
+  ): Record<string, string | string[]>;
+  
+  /**
+   * 从当前页面 URL 的 search 部分解析参数（仅浏览器环境）
+   * @param options 同 getQueryParams 的 options
+   * @returns 解析结果
+   */
+  export declare function getQueryParamsFromSearch(
+    options?: GetQueryParamsOptions
+  ): Record<string, string | string[]>;
+  
+  /**
+   * 从当前页面 URL 的 hash 部分解析参数（仅浏览器环境）
+   * 自动提取 hash 中 ? 后的 query 参数
+   *
+   * @example
+   * // URL: https://example.com#/pages/index?a=1&b=2
+   * getQueryParamsFromHash() // => { a: '1', b: '2' }
+   *
+   * @param options 同 getQueryParams 的 options
+   * @returns 解析结果
+   */
+  export declare function getQueryParamsFromHash(
+    options?: GetQueryParamsOptions
+  ): Record<string, string | string[]>;
+  
 
 /**
- * 生成URL查询字符串
- * @param {Record<string, any>} obj 参数对象
- * @returns {string} query字符串
+ * 对象转url query字符串
+ * 数组自动展开为重复key，与 getQueryParams 解析行为双向对称
+ * @param params 参数对象
+ * @param addQuestionMark 是否添加开头问号 ?
+ * @returns query串
  */
-export function toQueryString(str: Record<string, any>): string;
+export declare function toQueryString(
+    params: Record<string, any>,
+    addQuestionMark?: boolean
+  ): string;
 
 /**
  * 版本号比较
