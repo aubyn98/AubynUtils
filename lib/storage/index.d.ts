@@ -1,5 +1,5 @@
 /**
- * 工业级 Web Storage 工具类型声明 v1.4.0
+ * 工业级 Web Storage 工具类型声明
  */
 
 export interface StorageConstructorOptions {
@@ -15,6 +15,8 @@ export interface StorageConstructorOptions {
   storageInstance?: Storage | null;
   /** 容量溢出时自动GC后重试写入 */
   autoGcOnQuota?: boolean;
+  /** 命名空间版本号，版本不匹配自动丢弃旧数据 */
+  version?: string;
 }
 
 export interface SetItemOptions {
@@ -28,10 +30,20 @@ export interface StorageInfo {
   namespaceKeys: number;
   estimatedSize: string;
   namespace: string;
+  /** 当前实例版本号 */
+  version: string;
 }
 
 export declare class Storage {
   constructor(options?: StorageConstructorOptions);
+
+  readonly storage: Storage | null;
+  readonly prefix: string;
+  readonly defaultExpire: number;
+  readonly prefixStr: string;
+  readonly silent: boolean;
+  readonly autoGcOnQuota: boolean;
+  readonly version: string;
 
   /**
    * 设置【带过期缓存】
@@ -42,11 +54,16 @@ export declare class Storage {
   setItem<T = unknown>(key: string, val: T, options?: SetItemOptions): this;
 
   /**
+     * 获取【带过期缓存】
+     * @param key
+     */
+  getItem<T = unknown>(key: string): T | null;
+  /**
    * 获取【带过期缓存】
    * @param key
    * @param defaultVal 取不到/过期返回默认值
    */
-  getItem<T = unknown>(key: string, defaultVal?: T): T | null;
+  getItem<T = unknown>(key: string, defaultVal: T): T;
 
   /**
    * 续期缓存
@@ -76,14 +93,25 @@ export declare class Storage {
 
   /**
    * GC垃圾回收：自动清理当前命名空间过期缓存
-   * @returns 清理数量
+   * ⚠️ 只处理cache，不会处理simple系列数据
+   * @returns 清理过期/版本失效cache key数量
    */
   gc(): number;
 
   // ========== Simple 永久存储系列（无过期） ==========
   setItem_simple<T = unknown>(key: string, val: T): this;
 
-  getItem_simple<T = unknown>(key: string, defaultVal?: T): T | null;
+  /**
+   * 获取【永久simple存储】
+   * @param key
+   */
+  getItem_simple<T = unknown>(key: string): T | null;
+  /**
+   * 获取【永久simple存储】
+   * @param key
+   * @param defaultVal 取不到返回默认值
+   */
+  getItem_simple<T = unknown>(key: string, defaultVal: T): T;
 
   hasItem_simple(key: string): boolean;
 
@@ -104,6 +132,12 @@ export declare class Storage {
    * 不受prefix命名空间隔离，谨慎使用
    */
   dangerouslyClearAllOriginStorage(): this;
+
+  /**
+   * 清理当前命名空间下版本不等于实例version的旧缓存+simple数据
+   * @returns 逻辑判定失效key总数；不等于实际物理删除计数（部分key可能已惰性删除）
+   */
+  clearNamespaceByVersion(): number;
 
   /** 获取存储概览信息（key数量、预估大小） */
   getStorageInfo(): StorageInfo;
