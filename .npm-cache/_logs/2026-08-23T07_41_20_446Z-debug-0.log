@@ -1,0 +1,448 @@
+0 verbose cli E:\node\nodejs\node.exe E:\node\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.16.0
+2 info using node@v24.18.0
+3 silly config load:file:E:\node\nvm\v24.18.0\node_modules\npm\npmrc
+4 silly config load:file:D:\workspaces\project-template-v3\utils\.npmrc
+5 silly config load:file:C:\Users\Administrator\.npmrc
+6 silly config load:file:E:\node\node_global\etc\npmrc
+7 verbose title npm i @babel/preset-env@^7.26.0
+8 verbose argv "i" "--save-dev" "@babel/preset-env@^7.26.0" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_20_446Z-
+10 verbose logfile D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_20_446Z-debug-0.log
+11 warn Unknown user config "sass_binary_site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+12 warn Unknown user config "electron_mirror". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+13 warn Unknown user config "electron_builder_binaries_mirror". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+14 warn Unknown user config "electron_custom_dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+15 warn Unknown user config "chromedriver_cdnurl". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+16 warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+17 warn Unknown user config "msvs_version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+18 warn Unknown user config "python". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+19 warn Unknown user config "node_gyp". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+20 warn Unknown user config "npm_config_node_gyp". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+21 warn Unknown user config "timeout". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+22 silly logfile done cleaning log files
+23 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+24 silly idealTree buildDeps
+25 silly fetch manifest @babel/preset-env@^7.26.0
+26 silly packumentCache full:https://registry.npmjs.org/@babel%2fpreset-env cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/npm 1527ms
+28 http fetch GET 200 https://registry.npmjs.org/@babel%2fpreset-env 1279ms (cache miss)
+29 silly packumentCache full:https://registry.npmjs.org/@babel%2fpreset-env set size:undefined disposed:false
+30 silly fetch manifest @babel/core@^7.23.3
+31 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore cache-miss
+32 http fetch GET 200 https://registry.npmjs.org/@babel%2fcore 336ms (cache miss)
+33 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore set size:undefined disposed:false
+34 silly placeDep ROOT @babel/preset-env@7.29.7 REPLACE for: @aubyn/utils@1.5.9 want: ^7.26.0
+35 silly fetch manifest semver@^6.3.1
+36 silly packumentCache full:https://registry.npmjs.org/semver cache-miss
+37 silly fetch manifest core-js-compat@^3.48.0
+38 silly packumentCache full:https://registry.npmjs.org/core-js-compat cache-miss
+39 silly fetch manifest @babel/compat-data@^7.29.7
+40 silly packumentCache full:https://registry.npmjs.org/@babel%2fcompat-data cache-miss
+41 silly fetch manifest @babel/preset-modules@0.1.6-no-external-plugins
+42 silly packumentCache full:https://registry.npmjs.org/@babel%2fpreset-modules cache-miss
+43 silly fetch manifest @babel/helper-plugin-utils@^7.29.7
+44 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-plugin-utils cache-miss
+45 silly fetch manifest babel-plugin-polyfill-corejs2@^0.4.15
+46 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-corejs2 cache-miss
+47 silly fetch manifest babel-plugin-polyfill-corejs3@^0.14.0
+48 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-corejs3 cache-miss
+49 silly fetch manifest @babel/helper-validator-option@^7.29.7
+50 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-validator-option cache-miss
+51 silly fetch manifest @babel/plugin-transform-for-of@^7.29.7
+52 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-for-of cache-miss
+53 silly fetch manifest @babel/plugin-transform-spread@^7.29.7
+54 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-spread cache-miss
+55 silly fetch manifest @babel/plugin-transform-classes@^7.29.7
+56 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-classes cache-miss
+57 http fetch GET 200 https://registry.npmjs.org/semver 280ms (cache miss)
+58 silly packumentCache full:https://registry.npmjs.org/semver set size:undefined disposed:false
+59 silly fetch manifest @babel/plugin-transform-literals@^7.29.7
+60 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-literals cache-miss
+61 http fetch GET 200 https://registry.npmjs.org/core-js-compat 284ms (cache miss)
+62 silly packumentCache full:https://registry.npmjs.org/core-js-compat set size:undefined disposed:false
+63 silly fetch manifest @babel/helper-compilation-targets@^7.29.7
+64 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-compilation-targets cache-miss
+65 http fetch GET 200 https://registry.npmjs.org/@babel%2fhelper-compilation-targets 271ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-compilation-targets set size:undefined disposed:false
+67 silly fetch manifest babel-plugin-polyfill-regenerator@^0.6.6
+68 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-regenerator cache-miss
+69 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-literals 291ms (cache miss)
+70 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-literals set size:undefined disposed:false
+71 silly fetch manifest @babel/plugin-transform-new-target@^7.29.7
+72 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-new-target cache-miss
+73 http fetch GET 200 https://registry.npmjs.org/babel-plugin-polyfill-regenerator 291ms (cache miss)
+74 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-regenerator set size:undefined disposed:false
+75 silly fetch manifest @babel/plugin-transform-parameters@^7.29.7
+76 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-parameters cache-miss
+77 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-new-target 319ms (cache miss)
+78 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-new-target set size:undefined disposed:false
+79 silly fetch manifest @babel/plugin-transform-modules-amd@^7.29.7
+80 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-amd cache-miss
+81 http fetch GET 200 https://registry.npmjs.org/@babel%2fpreset-modules 913ms (cache miss)
+82 silly packumentCache full:https://registry.npmjs.org/@babel%2fpreset-modules set size:undefined disposed:false
+83 silly fetch manifest @babel/plugin-transform-modules-umd@^7.29.7
+84 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-umd cache-miss
+85 http fetch GET 200 https://registry.npmjs.org/@babel%2fhelper-validator-option 939ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-validator-option set size:undefined disposed:false
+87 silly fetch manifest @babel/plugin-transform-regenerator@^7.29.7
+88 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-regenerator cache-miss
+89 http fetch GET 200 https://registry.npmjs.org/babel-plugin-polyfill-corejs2 941ms (cache miss)
+90 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-corejs2 set size:undefined disposed:false
+91 silly fetch manifest @babel/plugin-transform-dotall-regex@^7.29.7
+92 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-dotall-regex cache-miss
+93 http fetch GET 200 https://registry.npmjs.org/@babel%2fhelper-plugin-utils 947ms (cache miss)
+94 silly packumentCache full:https://registry.npmjs.org/@babel%2fhelper-plugin-utils set size:undefined disposed:false
+95 silly fetch manifest @babel/plugin-transform-json-strings@^7.29.7
+96 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-json-strings cache-miss
+97 http fetch GET 200 https://registry.npmjs.org/babel-plugin-polyfill-corejs3 949ms (cache miss)
+98 silly packumentCache full:https://registry.npmjs.org/babel-plugin-polyfill-corejs3 set size:undefined disposed:false
+99 silly fetch manifest @babel/plugin-transform-object-super@^7.29.7
+100 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-object-super cache-miss
+101 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-for-of 968ms (cache miss)
+102 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-for-of set size:undefined disposed:false
+103 silly fetch manifest @babel/plugin-transform-sticky-regex@^7.29.7
+104 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-sticky-regex cache-miss
+105 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-classes 975ms (cache miss)
+106 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-classes set size:undefined disposed:false
+107 silly fetch manifest @babel/plugin-transform-block-scoping@^7.29.7
+108 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-block-scoping cache-miss
+109 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-spread 981ms (cache miss)
+110 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-spread set size:undefined disposed:false
+111 silly fetch manifest @babel/plugin-transform-destructuring@^7.29.7
+112 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-destructuring cache-miss
+113 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-json-strings 293ms (cache miss)
+114 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-json-strings set size:undefined disposed:false
+115 silly fetch manifest @babel/plugin-transform-function-name@^7.29.7
+116 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-function-name cache-miss
+117 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-modules-umd 328ms (cache miss)
+118 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-umd set size:undefined disposed:false
+119 silly fetch manifest @babel/plugin-transform-typeof-symbol@^7.29.7
+120 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-typeof-symbol cache-miss
+121 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-object-super 313ms (cache miss)
+122 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-object-super set size:undefined disposed:false
+123 silly fetch manifest @babel/plugin-transform-unicode-regex@^7.29.7
+124 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-regex cache-miss
+125 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-sticky-regex 313ms (cache miss)
+126 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-sticky-regex set size:undefined disposed:false
+127 silly fetch manifest @babel/plugin-syntax-import-assertions@^7.29.7
+128 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-import-assertions cache-miss
+129 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-dotall-regex 349ms (cache miss)
+130 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-dotall-regex set size:undefined disposed:false
+131 silly fetch manifest @babel/plugin-syntax-import-attributes@^7.29.7
+132 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-import-attributes cache-miss
+133 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-block-scoping 328ms (cache miss)
+134 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-block-scoping set size:undefined disposed:false
+135 silly fetch manifest @babel/plugin-transform-duplicate-keys@^7.29.7
+136 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-keys cache-miss
+137 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-destructuring 333ms (cache miss)
+138 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-destructuring set size:undefined disposed:false
+139 silly fetch manifest @babel/plugin-transform-dynamic-import@^7.29.7
+140 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-dynamic-import cache-miss
+141 http fetch GET 200 https://registry.npmjs.org/@babel%2fcompat-data 1408ms (cache miss)
+142 silly packumentCache full:https://registry.npmjs.org/@babel%2fcompat-data set size:undefined disposed:false
+143 silly fetch manifest @babel/plugin-transform-reserved-words@^7.29.7
+144 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-reserved-words cache-miss
+145 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-parameters 568ms (cache miss)
+146 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-parameters set size:undefined disposed:false
+147 silly fetch manifest @babel/plugin-syntax-unicode-sets-regex@^7.18.6
+148 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-unicode-sets-regex cache-miss
+149 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-modules-amd 527ms (cache miss)
+150 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-amd set size:undefined disposed:false
+151 silly fetch manifest @babel/plugin-transform-arrow-functions@^7.29.7
+152 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-arrow-functions cache-miss
+153 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-regenerator 509ms (cache miss)
+154 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-regenerator set size:undefined disposed:false
+155 silly fetch manifest @babel/plugin-transform-private-methods@^7.29.7
+156 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-private-methods cache-miss
+157 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-function-name 261ms (cache miss)
+158 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-function-name set size:undefined disposed:false
+159 silly fetch manifest @babel/plugin-transform-unicode-escapes@^7.29.7
+160 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-escapes cache-miss
+161 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-typeof-symbol 266ms (cache miss)
+162 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-typeof-symbol set size:undefined disposed:false
+163 silly fetch manifest @babel/plugin-transform-class-properties@^7.29.7
+164 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-class-properties cache-miss
+165 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-unicode-regex 257ms (cache miss)
+166 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-regex set size:undefined disposed:false
+167 silly fetch manifest @babel/plugin-transform-modules-commonjs@^7.29.7
+168 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-commonjs cache-miss
+169 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-syntax-import-attributes 235ms (cache miss)
+170 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-import-attributes set size:undefined disposed:false
+171 silly fetch manifest @babel/plugin-transform-modules-systemjs@^7.29.7
+172 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-systemjs cache-miss
+173 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-keys 250ms (cache miss)
+174 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-keys set size:undefined disposed:false
+175 silly fetch manifest @babel/plugin-transform-regexp-modifiers@^7.29.7
+176 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-regexp-modifiers cache-miss
+177 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-syntax-import-assertions 286ms (cache miss)
+178 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-import-assertions set size:undefined disposed:false
+179 silly fetch manifest @babel/plugin-transform-numeric-separator@^7.29.7
+180 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-numeric-separator cache-miss
+181 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-dynamic-import 259ms (cache miss)
+182 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-dynamic-import set size:undefined disposed:false
+183 silly fetch manifest @babel/plugin-transform-optional-chaining@^7.29.7
+184 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-optional-chaining cache-miss
+185 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-reserved-words 264ms (cache miss)
+186 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-reserved-words set size:undefined disposed:false
+187 silly fetch manifest @babel/plugin-transform-property-literals@^7.29.7
+188 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-property-literals cache-miss
+189 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-syntax-unicode-sets-regex 262ms (cache miss)
+190 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-syntax-unicode-sets-regex set size:undefined disposed:false
+191 silly fetch manifest @babel/plugin-transform-template-literals@^7.29.7
+192 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-template-literals cache-miss
+193 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-private-methods 239ms (cache miss)
+194 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-private-methods set size:undefined disposed:false
+195 silly fetch manifest @babel/plugin-transform-async-to-generator@^7.29.7
+196 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-async-to-generator cache-miss
+197 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-arrow-functions 270ms (cache miss)
+198 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-arrow-functions set size:undefined disposed:false
+199 silly fetch manifest @babel/plugin-transform-class-static-block@^7.29.7
+200 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-class-static-block cache-miss
+201 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-unicode-escapes 242ms (cache miss)
+202 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-escapes set size:undefined disposed:false
+203 silly fetch manifest @babel/plugin-transform-object-rest-spread@^7.29.7
+204 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-object-rest-spread cache-miss
+205 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-class-properties 237ms (cache miss)
+206 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-class-properties set size:undefined disposed:false
+207 silly fetch manifest @babel/plugin-transform-unicode-sets-regex@^7.29.7
+208 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-sets-regex cache-miss
+209 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-numeric-separator 235ms (cache miss)
+210 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-numeric-separator set size:undefined disposed:false
+211 silly fetch manifest @babel/plugin-transform-computed-properties@^7.29.7
+212 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-computed-properties cache-miss
+213 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-modules-commonjs 298ms (cache miss)
+214 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-commonjs set size:undefined disposed:false
+215 silly fetch manifest @babel/plugin-transform-shorthand-properties@^7.29.7
+216 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-shorthand-properties cache-miss
+217 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-regexp-modifiers 264ms (cache miss)
+218 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-regexp-modifiers set size:undefined disposed:false
+219 silly fetch manifest @babel/plugin-transform-export-namespace-from@^7.29.7
+220 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-export-namespace-from cache-miss
+221 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-modules-systemjs 305ms (cache miss)
+222 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-modules-systemjs set size:undefined disposed:false
+223 silly fetch manifest @babel/plugin-transform-block-scoped-functions@^7.29.7
+224 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-block-scoped-functions cache-miss
+225 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-optional-chaining 263ms (cache miss)
+226 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-optional-chaining set size:undefined disposed:false
+227 silly fetch manifest @babel/plugin-transform-optional-catch-binding@^7.29.7
+228 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-optional-catch-binding cache-miss
+229 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-template-literals 266ms (cache miss)
+230 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-template-literals set size:undefined disposed:false
+231 silly fetch manifest @babel/plugin-transform-unicode-property-regex@^7.29.7
+232 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-property-regex cache-miss
+233 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-class-static-block 261ms (cache miss)
+234 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-class-static-block set size:undefined disposed:false
+235 silly fetch manifest @babel/plugin-transform-exponentiation-operator@^7.29.7
+236 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-exponentiation-operator cache-miss
+237 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-property-literals 290ms (cache miss)
+238 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-property-literals set size:undefined disposed:false
+239 silly fetch manifest @babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2
+240 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-proposal-private-property-in-object cache-miss
+241 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-async-to-generator 292ms (cache miss)
+242 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-async-to-generator set size:undefined disposed:false
+243 silly fetch manifest @babel/plugin-transform-async-generator-functions@^7.29.7
+244 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-async-generator-functions cache-miss
+245 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-object-rest-spread 267ms (cache miss)
+246 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-object-rest-spread set size:undefined disposed:false
+247 silly fetch manifest @babel/plugin-transform-member-expression-literals@^7.29.7
+248 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-member-expression-literals cache-miss
+249 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-unicode-sets-regex 269ms (cache miss)
+250 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-sets-regex set size:undefined disposed:false
+251 silly fetch manifest @babel/plugin-transform-private-property-in-object@^7.29.7
+252 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-private-property-in-object cache-miss
+253 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-export-namespace-from 254ms (cache miss)
+254 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-export-namespace-from set size:undefined disposed:false
+255 silly fetch manifest @babel/plugin-transform-nullish-coalescing-operator@^7.29.7
+256 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-nullish-coalescing-operator cache-miss
+257 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-computed-properties 303ms (cache miss)
+258 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-computed-properties set size:undefined disposed:false
+259 silly fetch manifest @babel/plugin-transform-explicit-resource-management@^7.29.7
+260 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-explicit-resource-management cache-miss
+261 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-optional-catch-binding 273ms (cache miss)
+262 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-optional-catch-binding set size:undefined disposed:false
+263 silly fetch manifest @babel/plugin-transform-logical-assignment-operators@^7.29.7
+264 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-logical-assignment-operators cache-miss
+265 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-shorthand-properties 300ms (cache miss)
+266 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-shorthand-properties set size:undefined disposed:false
+267 silly fetch manifest @babel/plugin-transform-named-capturing-groups-regex@^7.29.7
+268 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-named-capturing-groups-regex cache-miss
+269 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-block-scoped-functions 305ms (cache miss)
+270 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-block-scoped-functions set size:undefined disposed:false
+271 silly fetch manifest @babel/plugin-bugfix-firefox-class-in-computed-class-key@^7.29.7
+272 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-firefox-class-in-computed-class-key cache-miss
+273 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-unicode-property-regex 263ms (cache miss)
+274 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-unicode-property-regex set size:undefined disposed:false
+275 silly fetch manifest @babel/plugin-bugfix-safari-rest-destructuring-rhs-array@^7.29.7
+276 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-rest-destructuring-rhs-array cache-miss
+277 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-proposal-private-property-in-object 272ms (cache miss)
+278 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-proposal-private-property-in-object set size:undefined disposed:false
+279 silly fetch manifest @babel/plugin-bugfix-safari-class-field-initializer-scope@^7.29.7
+280 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-class-field-initializer-scope cache-miss
+281 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-exponentiation-operator 309ms (cache miss)
+282 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-exponentiation-operator set size:undefined disposed:false
+283 silly fetch manifest @babel/plugin-bugfix-v8-static-class-fields-redefine-readonly@^7.29.7
+284 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-static-class-fields-redefine-readonly cache-miss
+285 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-async-generator-functions 284ms (cache miss)
+286 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-async-generator-functions set size:undefined disposed:false
+287 silly fetch manifest @babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@^7.29.7
+288 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-spread-parameters-in-optional-chaining cache-miss
+289 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-private-property-in-object 278ms (cache miss)
+290 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-private-property-in-object set size:undefined disposed:false
+291 silly fetch manifest @babel/plugin-transform-duplicate-named-capturing-groups-regex@^7.29.7
+292 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-named-capturing-groups-regex cache-miss
+293 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-member-expression-literals 307ms (cache miss)
+294 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-member-expression-literals set size:undefined disposed:false
+295 silly fetch manifest @babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.29.7
+296 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-id-destructuring-collision-in-function-expression cache-miss
+297 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-nullish-coalescing-operator 268ms (cache miss)
+298 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-nullish-coalescing-operator set size:undefined disposed:false
+299 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-logical-assignment-operators 282ms (cache miss)
+300 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-logical-assignment-operators set size:undefined disposed:false
+301 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-explicit-resource-management 304ms (cache miss)
+302 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-explicit-resource-management set size:undefined disposed:false
+303 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-named-capturing-groups-regex 306ms (cache miss)
+304 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-named-capturing-groups-regex set size:undefined disposed:false
+305 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-firefox-class-in-computed-class-key 291ms (cache miss)
+306 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-firefox-class-in-computed-class-key set size:undefined disposed:false
+307 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-rest-destructuring-rhs-array 266ms (cache miss)
+308 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-rest-destructuring-rhs-array set size:undefined disposed:false
+309 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-class-field-initializer-scope 307ms (cache miss)
+310 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-class-field-initializer-scope set size:undefined disposed:false
+311 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-static-class-fields-redefine-readonly 281ms (cache miss)
+312 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-static-class-fields-redefine-readonly set size:undefined disposed:false
+313 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-spread-parameters-in-optional-chaining 287ms (cache miss)
+314 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-v8-spread-parameters-in-optional-chaining set size:undefined disposed:false
+315 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-id-destructuring-collision-in-function-expression 284ms (cache miss)
+316 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-bugfix-safari-id-destructuring-collision-in-function-expression set size:undefined disposed:false
+317 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-named-capturing-groups-regex 538ms (cache miss)
+318 silly packumentCache full:https://registry.npmjs.org/@babel%2fplugin-transform-duplicate-named-capturing-groups-regex set size:undefined disposed:false
+319 silly fetch manifest @babel/core@^8.0.0
+320 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore cache-miss
+321 http cache https://registry.npmjs.org/@babel%2fcore 12ms (cache hit)
+322 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore set size:788273 disposed:false
+323 warn ERESOLVE overriding peer dependency {
+323 warn ERESOLVE   code: 'ERESOLVE',
+323 warn ERESOLVE   edge: {
+323 warn ERESOLVE     type: 'peer',
+323 warn ERESOLVE     name: '@babel/core',
+323 warn ERESOLVE     spec: '^8.0.0',
+323 warn ERESOLVE     error: 'INVALID',
+323 warn ERESOLVE     from: {
+323 warn ERESOLVE       name: '@babel/helper-plugin-utils',
+323 warn ERESOLVE       version: '8.0.1',
+323 warn ERESOLVE       location: 'node_modules/@babel/helper-plugin-utils',
+323 warn ERESOLVE       isWorkspace: false,
+323 warn ERESOLVE       dependents: [Array]
+323 warn ERESOLVE     }
+323 warn ERESOLVE   },
+323 warn ERESOLVE   dep: {
+323 warn ERESOLVE     name: '@babel/core',
+323 warn ERESOLVE     version: '8.0.1',
+323 warn ERESOLVE     whileInstalling: {
+323 warn ERESOLVE       name: '@babel/helper-plugin-utils',
+323 warn ERESOLVE       version: '8.0.1',
+323 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-plugin-utils'
+323 warn ERESOLVE     },
+323 warn ERESOLVE     location: 'node_modules/@babel/core',
+323 warn ERESOLVE     isWorkspace: false,
+323 warn ERESOLVE     dependents: [ [Object] ]
+323 warn ERESOLVE   },
+323 warn ERESOLVE   force: false,
+323 warn ERESOLVE   isMine: false,
+323 warn ERESOLVE   strictPeerDeps: false,
+323 warn ERESOLVE   current: {
+323 warn ERESOLVE     name: '@babel/core',
+323 warn ERESOLVE     version: '7.26.0',
+323 warn ERESOLVE     location: 'node_modules/@babel/core',
+323 warn ERESOLVE     isWorkspace: false,
+323 warn ERESOLVE     dependents: [
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object], [Object],
+323 warn ERESOLVE       [Object]
+323 warn ERESOLVE     ]
+323 warn ERESOLVE   },
+323 warn ERESOLVE   peerConflict: {
+323 warn ERESOLVE     current: {
+323 warn ERESOLVE       name: '@babel/core',
+323 warn ERESOLVE       version: '7.26.0',
+323 warn ERESOLVE       location: 'node_modules/@babel/core',
+323 warn ERESOLVE       isWorkspace: false,
+323 warn ERESOLVE       dependents: [Array]
+323 warn ERESOLVE     },
+323 warn ERESOLVE     peer: {
+323 warn ERESOLVE       name: '@babel/core',
+323 warn ERESOLVE       version: '8.0.1',
+323 warn ERESOLVE       whileInstalling: [Object],
+323 warn ERESOLVE       location: 'node_modules/@babel/core',
+323 warn ERESOLVE       isWorkspace: false,
+323 warn ERESOLVE       dependents: [Array]
+323 warn ERESOLVE     }
+323 warn ERESOLVE   }
+323 warn ERESOLVE }
+324 verbose stack Error: could not resolve
+324 verbose stack     at PlaceDep.failPeerConflict (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:503:25)
+324 verbose stack     at new PlaceDep (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:157:21)
+324 verbose stack     at #buildDepStep (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:995:18)
+324 verbose stack     at async Arborist.buildIdealTree (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:178:7)
+324 verbose stack     at async Promise.all (index 1)
+324 verbose stack     at async Arborist.reify (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:112:5)
+324 verbose stack     at async Install.exec (E:\node\nvm\v24.18.0\node_modules\npm\lib\commands\install.js:157:5)
+324 verbose stack     at async Npm.exec (E:\node\nvm\v24.18.0\node_modules\npm\lib\npm.js:193:9)
+324 verbose stack     at async module.exports (E:\node\nvm\v24.18.0\node_modules\npm\lib\cli\entry.js:67:5)
+325 error code ERESOLVE
+326 error ERESOLVE could not resolve
+327 error
+328 error While resolving: @babel/plugin-transform-runtime@8.0.1
+328 error Found: @babel/core@7.26.0[2m[22m
+328 error [2mnode_modules/@babel/core[22m
+328 error   [95mpeer[39m @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.26.0[2m[22m
+328 error   [2mnode_modules/@babel/core/node_modules/@babel/helper-module-transforms[22m
+328 error     @babel/helper-module-transforms@"^7.26.0" from @babel/core@7.26.0
+328 error   [95mpeer[39m @babel/core@"^7.0.0" from @babel/helper-remap-async-to-generator@7.27.1[2m[22m
+328 error   [2mnode_modules/@babel/helper-remap-async-to-generator[22m
+328 error     @babel/helper-remap-async-to-generator@"^7.27.1" from @babel/plugin-transform-async-to-generator@7.28.6[2m[22m
+328 error     [2mnode_modules/@babel/plugin-transform-async-to-generator[22m
+328 error       [34mdev[39m @babel/plugin-transform-async-to-generator@"^7.28.6" from the root project
+328 error     @babel/helper-remap-async-to-generator@"^7.18.9" from @babel/plugin-proposal-async-generator-functions@7.20.7[2m[22m
+328 error     [2mnode_modules/@babel/plugin-proposal-async-generator-functions[22m
+328 error       [34mdev[39m @babel/plugin-proposal-async-generator-functions@"^7.20.7" from the root project
+328 error   13 more (...)
+328 error
+328 error Could not resolve dependency:
+328 error [95mpeer[39m @babel/core@"^8.0.0" from @babel/plugin-transform-runtime@8.0.1[2m[22m
+328 error [2mnode_modules/@babel/plugin-transform-runtime[22m
+328 error   [34mdev[39m @babel/plugin-transform-runtime@"^8.0.1" from the root project
+328 error
+328 error Conflicting peer dependency: @babel/core@8.0.1[2m[22m
+328 error [2mnode_modules/@babel/core[22m
+328 error   [95mpeer[39m @babel/core@"^8.0.0" from @babel/plugin-transform-runtime@8.0.1[2m[22m
+328 error   [2mnode_modules/@babel/plugin-transform-runtime[22m
+328 error     [34mdev[39m @babel/plugin-transform-runtime@"^8.0.1" from the root project
+328 error
+328 error Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
+329 error
+329 error
+329 error For a full report see:
+329 error D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_20_446Z-eresolve-report.txt
+330 silly unfinished npm timer reify 1787470882059
+331 silly unfinished npm timer reify:loadTrees 1787470882060
+332 silly unfinished npm timer idealTree:buildDeps 1787470882688
+333 silly unfinished npm timer idealTree:node_modules/@babel/plugin-transform-runtime 1787470887210
+334 verbose cwd D:\workspaces\project-template-v3\utils
+335 verbose os Windows_NT 10.0.19045
+336 verbose node v24.18.0
+337 verbose npm  v11.16.0
+338 notice
+338 notice New [31mmajor[39m version of npm available! [31m11.16.0[39m -> [34m12.0.2[39m
+338 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v12.0.2[39m
+338 notice To update run: [4mnpm install -g npm@12.0.2[24m
+338 notice  { force: true, Symbol(proc-log.meta): true }
+339 verbose exit 1
+340 verbose code 1
+341 error A complete log of this run can be found in: D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_20_446Z-debug-0.log

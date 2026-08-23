@@ -1,0 +1,3986 @@
+0 verbose cli E:\node\nodejs\node.exe E:\node\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.16.0
+2 info using node@v24.18.0
+3 silly config load:file:E:\node\nvm\v24.18.0\node_modules\npm\npmrc
+4 silly config load:file:D:\workspaces\project-template-v3\utils\.npmrc
+5 silly config load:file:C:\Users\Administrator\.npmrc
+6 silly config load:file:E:\node\node_global\etc\npmrc
+7 verbose title npm rm @babel/plugin-transform-runtime @babel/plugin-proposal-async-generator-functions @babel/plugin-proposal-logical-assignment-operators @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-transform-async-to-generator @babel/plugin-transform-parameters
+8 verbose argv "rm" "--save-dev" "@babel/plugin-transform-runtime" "@babel/plugin-proposal-async-generator-functions" "@babel/plugin-proposal-logical-assignment-operators" "@babel/plugin-proposal-nullish-coalescing-operator" "@babel/plugin-proposal-optional-chaining" "@babel/plugin-transform-async-to-generator" "@babel/plugin-transform-parameters" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_27_769Z-
+10 verbose logfile D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_27_769Z-debug-0.log
+11 warn Unknown user config "sass_binary_site". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+12 warn Unknown user config "electron_mirror". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+13 warn Unknown user config "electron_builder_binaries_mirror". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+14 warn Unknown user config "electron_custom_dir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+15 warn Unknown user config "chromedriver_cdnurl". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+16 warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+17 warn Unknown user config "msvs_version". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+18 warn Unknown user config "python". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+19 warn Unknown user config "node_gyp". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+20 warn Unknown user config "npm_config_node_gyp". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+21 warn Unknown user config "timeout". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+22 silly logfile done cleaning log files
+23 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+24 silly idealTree buildDeps
+25 silly fetch manifest @babel/core@^8.0.0
+26 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore cache-miss
+27 http cache https://registry.npmjs.org/@babel%2fcore 19ms (cache hit)
+28 silly packumentCache full:https://registry.npmjs.org/@babel%2fcore set size:788273 disposed:false
+29 warn ERESOLVE overriding peer dependency {
+29 warn ERESOLVE   code: 'ERESOLVE',
+29 warn ERESOLVE   edge: {
+29 warn ERESOLVE     type: 'peer',
+29 warn ERESOLVE     name: '@babel/core',
+29 warn ERESOLVE     spec: '^8.0.0',
+29 warn ERESOLVE     error: 'INVALID',
+29 warn ERESOLVE     from: {
+29 warn ERESOLVE       name: '@babel/helper-create-class-features-plugin',
+29 warn ERESOLVE       version: '8.0.1',
+29 warn ERESOLVE       location: 'node_modules/@babel/helper-create-class-features-plugin',
+29 warn ERESOLVE       isWorkspace: false,
+29 warn ERESOLVE       dependents: [Array]
+29 warn ERESOLVE     }
+29 warn ERESOLVE   },
+29 warn ERESOLVE   dep: {
+29 warn ERESOLVE     name: '@babel/core',
+29 warn ERESOLVE     version: '8.0.1',
+29 warn ERESOLVE     whileInstalling: {
+29 warn ERESOLVE       name: '@babel/helper-create-class-features-plugin',
+29 warn ERESOLVE       version: '8.0.1',
+29 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-create-class-features-plugin'
+29 warn ERESOLVE     },
+29 warn ERESOLVE     location: 'node_modules/@babel/core',
+29 warn ERESOLVE     isWorkspace: false,
+29 warn ERESOLVE     dependents: [ [Object] ]
+29 warn ERESOLVE   },
+29 warn ERESOLVE   force: false,
+29 warn ERESOLVE   isMine: false,
+29 warn ERESOLVE   strictPeerDeps: false,
+29 warn ERESOLVE   current: {
+29 warn ERESOLVE     name: '@babel/core',
+29 warn ERESOLVE     version: '7.26.0',
+29 warn ERESOLVE     location: 'node_modules/@babel/core',
+29 warn ERESOLVE     isWorkspace: false,
+29 warn ERESOLVE     dependents: [
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object],
+29 warn ERESOLVE       [Object], [Object]
+29 warn ERESOLVE     ]
+29 warn ERESOLVE   },
+29 warn ERESOLVE   peerConflict: {
+29 warn ERESOLVE     current: {
+29 warn ERESOLVE       name: '@babel/core',
+29 warn ERESOLVE       version: '7.26.0',
+29 warn ERESOLVE       location: 'node_modules/@babel/core',
+29 warn ERESOLVE       isWorkspace: false,
+29 warn ERESOLVE       dependents: [Array]
+29 warn ERESOLVE     },
+29 warn ERESOLVE     peer: {
+29 warn ERESOLVE       name: '@babel/core',
+29 warn ERESOLVE       version: '8.0.1',
+29 warn ERESOLVE       whileInstalling: [Object],
+29 warn ERESOLVE       location: 'node_modules/@babel/core',
+29 warn ERESOLVE       isWorkspace: false,
+29 warn ERESOLVE       dependents: [Array]
+29 warn ERESOLVE     }
+29 warn ERESOLVE   }
+29 warn ERESOLVE }
+30 warn ERESOLVE overriding peer dependency {
+30 warn ERESOLVE   code: 'ERESOLVE',
+30 warn ERESOLVE   edge: {
+30 warn ERESOLVE     type: 'peer',
+30 warn ERESOLVE     name: '@babel/core',
+30 warn ERESOLVE     spec: '^8.0.0',
+30 warn ERESOLVE     error: 'INVALID',
+30 warn ERESOLVE     from: {
+30 warn ERESOLVE       name: '@babel/helper-create-regexp-features-plugin',
+30 warn ERESOLVE       version: '8.0.1',
+30 warn ERESOLVE       location: 'node_modules/@babel/helper-create-regexp-features-plugin',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     }
+30 warn ERESOLVE   },
+30 warn ERESOLVE   dep: {
+30 warn ERESOLVE     name: '@babel/core',
+30 warn ERESOLVE     version: '8.0.1',
+30 warn ERESOLVE     whileInstalling: {
+30 warn ERESOLVE       name: '@babel/helper-create-regexp-features-plugin',
+30 warn ERESOLVE       version: '8.0.1',
+30 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-create-regexp-features-plugin'
+30 warn ERESOLVE     },
+30 warn ERESOLVE     location: 'node_modules/@babel/core',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [ [Object] ]
+30 warn ERESOLVE   },
+30 warn ERESOLVE   force: false,
+30 warn ERESOLVE   isMine: false,
+30 warn ERESOLVE   strictPeerDeps: false,
+30 warn ERESOLVE   current: {
+30 warn ERESOLVE     name: '@babel/core',
+30 warn ERESOLVE     version: '7.26.0',
+30 warn ERESOLVE     location: 'node_modules/@babel/core',
+30 warn ERESOLVE     isWorkspace: false,
+30 warn ERESOLVE     dependents: [
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object],
+30 warn ERESOLVE       [Object], [Object]
+30 warn ERESOLVE     ]
+30 warn ERESOLVE   },
+30 warn ERESOLVE   peerConflict: {
+30 warn ERESOLVE     current: {
+30 warn ERESOLVE       name: '@babel/core',
+30 warn ERESOLVE       version: '7.26.0',
+30 warn ERESOLVE       location: 'node_modules/@babel/core',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     },
+30 warn ERESOLVE     peer: {
+30 warn ERESOLVE       name: '@babel/core',
+30 warn ERESOLVE       version: '8.0.1',
+30 warn ERESOLVE       whileInstalling: [Object],
+30 warn ERESOLVE       location: 'node_modules/@babel/core',
+30 warn ERESOLVE       isWorkspace: false,
+30 warn ERESOLVE       dependents: [Array]
+30 warn ERESOLVE     }
+30 warn ERESOLVE   }
+30 warn ERESOLVE }
+31 warn ERESOLVE overriding peer dependency {
+31 warn ERESOLVE   code: 'ERESOLVE',
+31 warn ERESOLVE   edge: {
+31 warn ERESOLVE     type: 'peer',
+31 warn ERESOLVE     name: '@babel/core',
+31 warn ERESOLVE     spec: '^8.0.0',
+31 warn ERESOLVE     error: 'INVALID',
+31 warn ERESOLVE     from: {
+31 warn ERESOLVE       name: '@babel/helper-module-transforms',
+31 warn ERESOLVE       version: '8.0.1',
+31 warn ERESOLVE       location: 'node_modules/@babel/helper-module-transforms',
+31 warn ERESOLVE       isWorkspace: false,
+31 warn ERESOLVE       dependents: [Array]
+31 warn ERESOLVE     }
+31 warn ERESOLVE   },
+31 warn ERESOLVE   dep: {
+31 warn ERESOLVE     name: '@babel/core',
+31 warn ERESOLVE     version: '8.0.1',
+31 warn ERESOLVE     whileInstalling: {
+31 warn ERESOLVE       name: '@babel/helper-module-transforms',
+31 warn ERESOLVE       version: '8.0.1',
+31 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-module-transforms'
+31 warn ERESOLVE     },
+31 warn ERESOLVE     location: 'node_modules/@babel/core',
+31 warn ERESOLVE     isWorkspace: false,
+31 warn ERESOLVE     dependents: [ [Object] ]
+31 warn ERESOLVE   },
+31 warn ERESOLVE   force: false,
+31 warn ERESOLVE   isMine: false,
+31 warn ERESOLVE   strictPeerDeps: false,
+31 warn ERESOLVE   current: {
+31 warn ERESOLVE     name: '@babel/core',
+31 warn ERESOLVE     version: '7.26.0',
+31 warn ERESOLVE     location: 'node_modules/@babel/core',
+31 warn ERESOLVE     isWorkspace: false,
+31 warn ERESOLVE     dependents: [
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object],
+31 warn ERESOLVE       [Object], [Object]
+31 warn ERESOLVE     ]
+31 warn ERESOLVE   },
+31 warn ERESOLVE   peerConflict: {
+31 warn ERESOLVE     current: {
+31 warn ERESOLVE       name: '@babel/core',
+31 warn ERESOLVE       version: '7.26.0',
+31 warn ERESOLVE       location: 'node_modules/@babel/core',
+31 warn ERESOLVE       isWorkspace: false,
+31 warn ERESOLVE       dependents: [Array]
+31 warn ERESOLVE     },
+31 warn ERESOLVE     peer: {
+31 warn ERESOLVE       name: '@babel/core',
+31 warn ERESOLVE       version: '8.0.1',
+31 warn ERESOLVE       whileInstalling: [Object],
+31 warn ERESOLVE       location: 'node_modules/@babel/core',
+31 warn ERESOLVE       isWorkspace: false,
+31 warn ERESOLVE       dependents: [Array]
+31 warn ERESOLVE     }
+31 warn ERESOLVE   }
+31 warn ERESOLVE }
+32 warn ERESOLVE overriding peer dependency {
+32 warn ERESOLVE   code: 'ERESOLVE',
+32 warn ERESOLVE   edge: {
+32 warn ERESOLVE     type: 'peer',
+32 warn ERESOLVE     name: '@babel/core',
+32 warn ERESOLVE     spec: '^8.0.0',
+32 warn ERESOLVE     error: 'INVALID',
+32 warn ERESOLVE     from: {
+32 warn ERESOLVE       name: '@babel/helper-plugin-utils',
+32 warn ERESOLVE       version: '8.0.1',
+32 warn ERESOLVE       location: 'node_modules/@babel/helper-plugin-utils',
+32 warn ERESOLVE       isWorkspace: false,
+32 warn ERESOLVE       dependents: [Array]
+32 warn ERESOLVE     }
+32 warn ERESOLVE   },
+32 warn ERESOLVE   dep: {
+32 warn ERESOLVE     name: '@babel/core',
+32 warn ERESOLVE     version: '8.0.1',
+32 warn ERESOLVE     whileInstalling: {
+32 warn ERESOLVE       name: '@babel/helper-plugin-utils',
+32 warn ERESOLVE       version: '8.0.1',
+32 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-plugin-utils'
+32 warn ERESOLVE     },
+32 warn ERESOLVE     location: 'node_modules/@babel/core',
+32 warn ERESOLVE     isWorkspace: false,
+32 warn ERESOLVE     dependents: [ [Object] ]
+32 warn ERESOLVE   },
+32 warn ERESOLVE   force: false,
+32 warn ERESOLVE   isMine: false,
+32 warn ERESOLVE   strictPeerDeps: false,
+32 warn ERESOLVE   current: {
+32 warn ERESOLVE     name: '@babel/core',
+32 warn ERESOLVE     version: '7.26.0',
+32 warn ERESOLVE     location: 'node_modules/@babel/core',
+32 warn ERESOLVE     isWorkspace: false,
+32 warn ERESOLVE     dependents: [
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object],
+32 warn ERESOLVE       [Object], [Object]
+32 warn ERESOLVE     ]
+32 warn ERESOLVE   },
+32 warn ERESOLVE   peerConflict: {
+32 warn ERESOLVE     current: {
+32 warn ERESOLVE       name: '@babel/core',
+32 warn ERESOLVE       version: '7.26.0',
+32 warn ERESOLVE       location: 'node_modules/@babel/core',
+32 warn ERESOLVE       isWorkspace: false,
+32 warn ERESOLVE       dependents: [Array]
+32 warn ERESOLVE     },
+32 warn ERESOLVE     peer: {
+32 warn ERESOLVE       name: '@babel/core',
+32 warn ERESOLVE       version: '8.0.1',
+32 warn ERESOLVE       whileInstalling: [Object],
+32 warn ERESOLVE       location: 'node_modules/@babel/core',
+32 warn ERESOLVE       isWorkspace: false,
+32 warn ERESOLVE       dependents: [Array]
+32 warn ERESOLVE     }
+32 warn ERESOLVE   }
+32 warn ERESOLVE }
+33 warn ERESOLVE overriding peer dependency {
+33 warn ERESOLVE   code: 'ERESOLVE',
+33 warn ERESOLVE   edge: {
+33 warn ERESOLVE     type: 'peer',
+33 warn ERESOLVE     name: '@babel/core',
+33 warn ERESOLVE     spec: '^8.0.0',
+33 warn ERESOLVE     error: 'INVALID',
+33 warn ERESOLVE     from: {
+33 warn ERESOLVE       name: '@babel/helper-replace-supers',
+33 warn ERESOLVE       version: '8.0.1',
+33 warn ERESOLVE       location: 'node_modules/@babel/helper-replace-supers',
+33 warn ERESOLVE       isWorkspace: false,
+33 warn ERESOLVE       dependents: [Array]
+33 warn ERESOLVE     }
+33 warn ERESOLVE   },
+33 warn ERESOLVE   dep: {
+33 warn ERESOLVE     name: '@babel/core',
+33 warn ERESOLVE     version: '8.0.1',
+33 warn ERESOLVE     whileInstalling: {
+33 warn ERESOLVE       name: '@babel/helper-replace-supers',
+33 warn ERESOLVE       version: '8.0.1',
+33 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\helper-replace-supers'
+33 warn ERESOLVE     },
+33 warn ERESOLVE     location: 'node_modules/@babel/core',
+33 warn ERESOLVE     isWorkspace: false,
+33 warn ERESOLVE     dependents: [ [Object] ]
+33 warn ERESOLVE   },
+33 warn ERESOLVE   force: false,
+33 warn ERESOLVE   isMine: false,
+33 warn ERESOLVE   strictPeerDeps: false,
+33 warn ERESOLVE   current: {
+33 warn ERESOLVE     name: '@babel/core',
+33 warn ERESOLVE     version: '7.26.0',
+33 warn ERESOLVE     location: 'node_modules/@babel/core',
+33 warn ERESOLVE     isWorkspace: false,
+33 warn ERESOLVE     dependents: [
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object],
+33 warn ERESOLVE       [Object], [Object]
+33 warn ERESOLVE     ]
+33 warn ERESOLVE   },
+33 warn ERESOLVE   peerConflict: {
+33 warn ERESOLVE     current: {
+33 warn ERESOLVE       name: '@babel/core',
+33 warn ERESOLVE       version: '7.26.0',
+33 warn ERESOLVE       location: 'node_modules/@babel/core',
+33 warn ERESOLVE       isWorkspace: false,
+33 warn ERESOLVE       dependents: [Array]
+33 warn ERESOLVE     },
+33 warn ERESOLVE     peer: {
+33 warn ERESOLVE       name: '@babel/core',
+33 warn ERESOLVE       version: '8.0.1',
+33 warn ERESOLVE       whileInstalling: [Object],
+33 warn ERESOLVE       location: 'node_modules/@babel/core',
+33 warn ERESOLVE       isWorkspace: false,
+33 warn ERESOLVE       dependents: [Array]
+33 warn ERESOLVE     }
+33 warn ERESOLVE   }
+33 warn ERESOLVE }
+34 warn ERESOLVE overriding peer dependency {
+34 warn ERESOLVE   code: 'ERESOLVE',
+34 warn ERESOLVE   edge: {
+34 warn ERESOLVE     type: 'peer',
+34 warn ERESOLVE     name: '@babel/core',
+34 warn ERESOLVE     spec: '^8.0.0',
+34 warn ERESOLVE     error: 'INVALID',
+34 warn ERESOLVE     from: {
+34 warn ERESOLVE       name: '@babel/plugin-bugfix-firefox-class-in-computed-class-key',
+34 warn ERESOLVE       version: '8.0.1',
+34 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-firefox-class-in-computed-class-key',
+34 warn ERESOLVE       isWorkspace: false,
+34 warn ERESOLVE       dependents: [Array]
+34 warn ERESOLVE     }
+34 warn ERESOLVE   },
+34 warn ERESOLVE   dep: {
+34 warn ERESOLVE     name: '@babel/core',
+34 warn ERESOLVE     version: '8.0.1',
+34 warn ERESOLVE     whileInstalling: {
+34 warn ERESOLVE       name: '@babel/plugin-bugfix-firefox-class-in-computed-class-key',
+34 warn ERESOLVE       version: '8.0.1',
+34 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-firefox-class-in-computed-class-key'
+34 warn ERESOLVE     },
+34 warn ERESOLVE     location: 'node_modules/@babel/core',
+34 warn ERESOLVE     isWorkspace: false,
+34 warn ERESOLVE     dependents: [ [Object] ]
+34 warn ERESOLVE   },
+34 warn ERESOLVE   force: false,
+34 warn ERESOLVE   isMine: false,
+34 warn ERESOLVE   strictPeerDeps: false,
+34 warn ERESOLVE   current: {
+34 warn ERESOLVE     name: '@babel/core',
+34 warn ERESOLVE     version: '7.26.0',
+34 warn ERESOLVE     location: 'node_modules/@babel/core',
+34 warn ERESOLVE     isWorkspace: false,
+34 warn ERESOLVE     dependents: [
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object],
+34 warn ERESOLVE       [Object], [Object]
+34 warn ERESOLVE     ]
+34 warn ERESOLVE   },
+34 warn ERESOLVE   peerConflict: {
+34 warn ERESOLVE     current: {
+34 warn ERESOLVE       name: '@babel/core',
+34 warn ERESOLVE       version: '7.26.0',
+34 warn ERESOLVE       location: 'node_modules/@babel/core',
+34 warn ERESOLVE       isWorkspace: false,
+34 warn ERESOLVE       dependents: [Array]
+34 warn ERESOLVE     },
+34 warn ERESOLVE     peer: {
+34 warn ERESOLVE       name: '@babel/core',
+34 warn ERESOLVE       version: '8.0.1',
+34 warn ERESOLVE       whileInstalling: [Object],
+34 warn ERESOLVE       location: 'node_modules/@babel/core',
+34 warn ERESOLVE       isWorkspace: false,
+34 warn ERESOLVE       dependents: [Array]
+34 warn ERESOLVE     }
+34 warn ERESOLVE   }
+34 warn ERESOLVE }
+35 warn ERESOLVE overriding peer dependency {
+35 warn ERESOLVE   code: 'ERESOLVE',
+35 warn ERESOLVE   edge: {
+35 warn ERESOLVE     type: 'peer',
+35 warn ERESOLVE     name: '@babel/core',
+35 warn ERESOLVE     spec: '^8.0.0',
+35 warn ERESOLVE     error: 'INVALID',
+35 warn ERESOLVE     from: {
+35 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-class-field-initializer-scope',
+35 warn ERESOLVE       version: '8.0.1',
+35 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-safari-class-field-initializer-scope',
+35 warn ERESOLVE       isWorkspace: false,
+35 warn ERESOLVE       dependents: [Array]
+35 warn ERESOLVE     }
+35 warn ERESOLVE   },
+35 warn ERESOLVE   dep: {
+35 warn ERESOLVE     name: '@babel/core',
+35 warn ERESOLVE     version: '8.0.1',
+35 warn ERESOLVE     whileInstalling: {
+35 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-class-field-initializer-scope',
+35 warn ERESOLVE       version: '8.0.1',
+35 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-safari-class-field-initializer-scope'
+35 warn ERESOLVE     },
+35 warn ERESOLVE     location: 'node_modules/@babel/core',
+35 warn ERESOLVE     isWorkspace: false,
+35 warn ERESOLVE     dependents: [ [Object] ]
+35 warn ERESOLVE   },
+35 warn ERESOLVE   force: false,
+35 warn ERESOLVE   isMine: false,
+35 warn ERESOLVE   strictPeerDeps: false,
+35 warn ERESOLVE   current: {
+35 warn ERESOLVE     name: '@babel/core',
+35 warn ERESOLVE     version: '7.26.0',
+35 warn ERESOLVE     location: 'node_modules/@babel/core',
+35 warn ERESOLVE     isWorkspace: false,
+35 warn ERESOLVE     dependents: [
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object],
+35 warn ERESOLVE       [Object], [Object]
+35 warn ERESOLVE     ]
+35 warn ERESOLVE   },
+35 warn ERESOLVE   peerConflict: {
+35 warn ERESOLVE     current: {
+35 warn ERESOLVE       name: '@babel/core',
+35 warn ERESOLVE       version: '7.26.0',
+35 warn ERESOLVE       location: 'node_modules/@babel/core',
+35 warn ERESOLVE       isWorkspace: false,
+35 warn ERESOLVE       dependents: [Array]
+35 warn ERESOLVE     },
+35 warn ERESOLVE     peer: {
+35 warn ERESOLVE       name: '@babel/core',
+35 warn ERESOLVE       version: '8.0.1',
+35 warn ERESOLVE       whileInstalling: [Object],
+35 warn ERESOLVE       location: 'node_modules/@babel/core',
+35 warn ERESOLVE       isWorkspace: false,
+35 warn ERESOLVE       dependents: [Array]
+35 warn ERESOLVE     }
+35 warn ERESOLVE   }
+35 warn ERESOLVE }
+36 warn ERESOLVE overriding peer dependency {
+36 warn ERESOLVE   code: 'ERESOLVE',
+36 warn ERESOLVE   edge: {
+36 warn ERESOLVE     type: 'peer',
+36 warn ERESOLVE     name: '@babel/core',
+36 warn ERESOLVE     spec: '^8.0.0',
+36 warn ERESOLVE     error: 'INVALID',
+36 warn ERESOLVE     from: {
+36 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression',
+36 warn ERESOLVE       version: '8.0.1',
+36 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression',
+36 warn ERESOLVE       isWorkspace: false,
+36 warn ERESOLVE       dependents: [Array]
+36 warn ERESOLVE     }
+36 warn ERESOLVE   },
+36 warn ERESOLVE   dep: {
+36 warn ERESOLVE     name: '@babel/core',
+36 warn ERESOLVE     version: '8.0.1',
+36 warn ERESOLVE     whileInstalling: {
+36 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression',
+36 warn ERESOLVE       version: '8.0.1',
+36 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-safari-id-destructuring-collision-in-function-expression'
+36 warn ERESOLVE     },
+36 warn ERESOLVE     location: 'node_modules/@babel/core',
+36 warn ERESOLVE     isWorkspace: false,
+36 warn ERESOLVE     dependents: [ [Object] ]
+36 warn ERESOLVE   },
+36 warn ERESOLVE   force: false,
+36 warn ERESOLVE   isMine: false,
+36 warn ERESOLVE   strictPeerDeps: false,
+36 warn ERESOLVE   current: {
+36 warn ERESOLVE     name: '@babel/core',
+36 warn ERESOLVE     version: '7.26.0',
+36 warn ERESOLVE     location: 'node_modules/@babel/core',
+36 warn ERESOLVE     isWorkspace: false,
+36 warn ERESOLVE     dependents: [
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object],
+36 warn ERESOLVE       [Object], [Object]
+36 warn ERESOLVE     ]
+36 warn ERESOLVE   },
+36 warn ERESOLVE   peerConflict: {
+36 warn ERESOLVE     current: {
+36 warn ERESOLVE       name: '@babel/core',
+36 warn ERESOLVE       version: '7.26.0',
+36 warn ERESOLVE       location: 'node_modules/@babel/core',
+36 warn ERESOLVE       isWorkspace: false,
+36 warn ERESOLVE       dependents: [Array]
+36 warn ERESOLVE     },
+36 warn ERESOLVE     peer: {
+36 warn ERESOLVE       name: '@babel/core',
+36 warn ERESOLVE       version: '8.0.1',
+36 warn ERESOLVE       whileInstalling: [Object],
+36 warn ERESOLVE       location: 'node_modules/@babel/core',
+36 warn ERESOLVE       isWorkspace: false,
+36 warn ERESOLVE       dependents: [Array]
+36 warn ERESOLVE     }
+36 warn ERESOLVE   }
+36 warn ERESOLVE }
+37 warn ERESOLVE overriding peer dependency {
+37 warn ERESOLVE   code: 'ERESOLVE',
+37 warn ERESOLVE   edge: {
+37 warn ERESOLVE     type: 'peer',
+37 warn ERESOLVE     name: '@babel/core',
+37 warn ERESOLVE     spec: '^8.0.0',
+37 warn ERESOLVE     error: 'INVALID',
+37 warn ERESOLVE     from: {
+37 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-rest-destructuring-rhs-array',
+37 warn ERESOLVE       version: '8.0.1',
+37 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-safari-rest-destructuring-rhs-array',
+37 warn ERESOLVE       isWorkspace: false,
+37 warn ERESOLVE       dependents: [Array]
+37 warn ERESOLVE     }
+37 warn ERESOLVE   },
+37 warn ERESOLVE   dep: {
+37 warn ERESOLVE     name: '@babel/core',
+37 warn ERESOLVE     version: '8.0.1',
+37 warn ERESOLVE     whileInstalling: {
+37 warn ERESOLVE       name: '@babel/plugin-bugfix-safari-rest-destructuring-rhs-array',
+37 warn ERESOLVE       version: '8.0.1',
+37 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-safari-rest-destructuring-rhs-array'
+37 warn ERESOLVE     },
+37 warn ERESOLVE     location: 'node_modules/@babel/core',
+37 warn ERESOLVE     isWorkspace: false,
+37 warn ERESOLVE     dependents: [ [Object] ]
+37 warn ERESOLVE   },
+37 warn ERESOLVE   force: false,
+37 warn ERESOLVE   isMine: false,
+37 warn ERESOLVE   strictPeerDeps: false,
+37 warn ERESOLVE   current: {
+37 warn ERESOLVE     name: '@babel/core',
+37 warn ERESOLVE     version: '7.26.0',
+37 warn ERESOLVE     location: 'node_modules/@babel/core',
+37 warn ERESOLVE     isWorkspace: false,
+37 warn ERESOLVE     dependents: [
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object],
+37 warn ERESOLVE       [Object], [Object]
+37 warn ERESOLVE     ]
+37 warn ERESOLVE   },
+37 warn ERESOLVE   peerConflict: {
+37 warn ERESOLVE     current: {
+37 warn ERESOLVE       name: '@babel/core',
+37 warn ERESOLVE       version: '7.26.0',
+37 warn ERESOLVE       location: 'node_modules/@babel/core',
+37 warn ERESOLVE       isWorkspace: false,
+37 warn ERESOLVE       dependents: [Array]
+37 warn ERESOLVE     },
+37 warn ERESOLVE     peer: {
+37 warn ERESOLVE       name: '@babel/core',
+37 warn ERESOLVE       version: '8.0.1',
+37 warn ERESOLVE       whileInstalling: [Object],
+37 warn ERESOLVE       location: 'node_modules/@babel/core',
+37 warn ERESOLVE       isWorkspace: false,
+37 warn ERESOLVE       dependents: [Array]
+37 warn ERESOLVE     }
+37 warn ERESOLVE   }
+37 warn ERESOLVE }
+38 warn ERESOLVE overriding peer dependency {
+38 warn ERESOLVE   code: 'ERESOLVE',
+38 warn ERESOLVE   edge: {
+38 warn ERESOLVE     type: 'peer',
+38 warn ERESOLVE     name: '@babel/core',
+38 warn ERESOLVE     spec: '^8.0.0',
+38 warn ERESOLVE     error: 'INVALID',
+38 warn ERESOLVE     from: {
+38 warn ERESOLVE       name: '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining',
+38 warn ERESOLVE       version: '8.0.1',
+38 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining',
+38 warn ERESOLVE       isWorkspace: false,
+38 warn ERESOLVE       dependents: [Array]
+38 warn ERESOLVE     }
+38 warn ERESOLVE   },
+38 warn ERESOLVE   dep: {
+38 warn ERESOLVE     name: '@babel/core',
+38 warn ERESOLVE     version: '8.0.1',
+38 warn ERESOLVE     whileInstalling: {
+38 warn ERESOLVE       name: '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining',
+38 warn ERESOLVE       version: '8.0.1',
+38 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-v8-spread-parameters-in-optional-chaining'
+38 warn ERESOLVE     },
+38 warn ERESOLVE     location: 'node_modules/@babel/core',
+38 warn ERESOLVE     isWorkspace: false,
+38 warn ERESOLVE     dependents: [ [Object] ]
+38 warn ERESOLVE   },
+38 warn ERESOLVE   force: false,
+38 warn ERESOLVE   isMine: false,
+38 warn ERESOLVE   strictPeerDeps: false,
+38 warn ERESOLVE   current: {
+38 warn ERESOLVE     name: '@babel/core',
+38 warn ERESOLVE     version: '7.26.0',
+38 warn ERESOLVE     location: 'node_modules/@babel/core',
+38 warn ERESOLVE     isWorkspace: false,
+38 warn ERESOLVE     dependents: [
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object],
+38 warn ERESOLVE       [Object], [Object]
+38 warn ERESOLVE     ]
+38 warn ERESOLVE   },
+38 warn ERESOLVE   peerConflict: {
+38 warn ERESOLVE     current: {
+38 warn ERESOLVE       name: '@babel/core',
+38 warn ERESOLVE       version: '7.26.0',
+38 warn ERESOLVE       location: 'node_modules/@babel/core',
+38 warn ERESOLVE       isWorkspace: false,
+38 warn ERESOLVE       dependents: [Array]
+38 warn ERESOLVE     },
+38 warn ERESOLVE     peer: {
+38 warn ERESOLVE       name: '@babel/core',
+38 warn ERESOLVE       version: '8.0.1',
+38 warn ERESOLVE       whileInstalling: [Object],
+38 warn ERESOLVE       location: 'node_modules/@babel/core',
+38 warn ERESOLVE       isWorkspace: false,
+38 warn ERESOLVE       dependents: [Array]
+38 warn ERESOLVE     }
+38 warn ERESOLVE   }
+38 warn ERESOLVE }
+39 warn ERESOLVE overriding peer dependency {
+39 warn ERESOLVE   code: 'ERESOLVE',
+39 warn ERESOLVE   edge: {
+39 warn ERESOLVE     type: 'peer',
+39 warn ERESOLVE     name: '@babel/core',
+39 warn ERESOLVE     spec: '^8.0.0',
+39 warn ERESOLVE     error: 'INVALID',
+39 warn ERESOLVE     from: {
+39 warn ERESOLVE       name: '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly',
+39 warn ERESOLVE       version: '8.0.1',
+39 warn ERESOLVE       location: 'node_modules/@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly',
+39 warn ERESOLVE       isWorkspace: false,
+39 warn ERESOLVE       dependents: [Array]
+39 warn ERESOLVE     }
+39 warn ERESOLVE   },
+39 warn ERESOLVE   dep: {
+39 warn ERESOLVE     name: '@babel/core',
+39 warn ERESOLVE     version: '8.0.1',
+39 warn ERESOLVE     whileInstalling: {
+39 warn ERESOLVE       name: '@babel/plugin-bugfix-v8-static-class-fields-redefine-readonly',
+39 warn ERESOLVE       version: '8.0.1',
+39 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-bugfix-v8-static-class-fields-redefine-readonly'
+39 warn ERESOLVE     },
+39 warn ERESOLVE     location: 'node_modules/@babel/core',
+39 warn ERESOLVE     isWorkspace: false,
+39 warn ERESOLVE     dependents: [ [Object] ]
+39 warn ERESOLVE   },
+39 warn ERESOLVE   force: false,
+39 warn ERESOLVE   isMine: false,
+39 warn ERESOLVE   strictPeerDeps: false,
+39 warn ERESOLVE   current: {
+39 warn ERESOLVE     name: '@babel/core',
+39 warn ERESOLVE     version: '7.26.0',
+39 warn ERESOLVE     location: 'node_modules/@babel/core',
+39 warn ERESOLVE     isWorkspace: false,
+39 warn ERESOLVE     dependents: [
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object],
+39 warn ERESOLVE       [Object], [Object]
+39 warn ERESOLVE     ]
+39 warn ERESOLVE   },
+39 warn ERESOLVE   peerConflict: {
+39 warn ERESOLVE     current: {
+39 warn ERESOLVE       name: '@babel/core',
+39 warn ERESOLVE       version: '7.26.0',
+39 warn ERESOLVE       location: 'node_modules/@babel/core',
+39 warn ERESOLVE       isWorkspace: false,
+39 warn ERESOLVE       dependents: [Array]
+39 warn ERESOLVE     },
+39 warn ERESOLVE     peer: {
+39 warn ERESOLVE       name: '@babel/core',
+39 warn ERESOLVE       version: '8.0.1',
+39 warn ERESOLVE       whileInstalling: [Object],
+39 warn ERESOLVE       location: 'node_modules/@babel/core',
+39 warn ERESOLVE       isWorkspace: false,
+39 warn ERESOLVE       dependents: [Array]
+39 warn ERESOLVE     }
+39 warn ERESOLVE   }
+39 warn ERESOLVE }
+40 warn ERESOLVE overriding peer dependency {
+40 warn ERESOLVE   code: 'ERESOLVE',
+40 warn ERESOLVE   edge: {
+40 warn ERESOLVE     type: 'peer',
+40 warn ERESOLVE     name: '@babel/core',
+40 warn ERESOLVE     spec: '^8.0.0',
+40 warn ERESOLVE     error: 'INVALID',
+40 warn ERESOLVE     from: {
+40 warn ERESOLVE       name: '@babel/plugin-transform-arrow-functions',
+40 warn ERESOLVE       version: '8.0.1',
+40 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-arrow-functions',
+40 warn ERESOLVE       isWorkspace: false,
+40 warn ERESOLVE       dependents: [Array]
+40 warn ERESOLVE     }
+40 warn ERESOLVE   },
+40 warn ERESOLVE   dep: {
+40 warn ERESOLVE     name: '@babel/core',
+40 warn ERESOLVE     version: '8.0.1',
+40 warn ERESOLVE     whileInstalling: {
+40 warn ERESOLVE       name: '@babel/plugin-transform-arrow-functions',
+40 warn ERESOLVE       version: '8.0.1',
+40 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-arrow-functions'
+40 warn ERESOLVE     },
+40 warn ERESOLVE     location: 'node_modules/@babel/core',
+40 warn ERESOLVE     isWorkspace: false,
+40 warn ERESOLVE     dependents: [ [Object] ]
+40 warn ERESOLVE   },
+40 warn ERESOLVE   force: false,
+40 warn ERESOLVE   isMine: false,
+40 warn ERESOLVE   strictPeerDeps: false,
+40 warn ERESOLVE   current: {
+40 warn ERESOLVE     name: '@babel/core',
+40 warn ERESOLVE     version: '7.26.0',
+40 warn ERESOLVE     location: 'node_modules/@babel/core',
+40 warn ERESOLVE     isWorkspace: false,
+40 warn ERESOLVE     dependents: [
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object],
+40 warn ERESOLVE       [Object], [Object]
+40 warn ERESOLVE     ]
+40 warn ERESOLVE   },
+40 warn ERESOLVE   peerConflict: {
+40 warn ERESOLVE     current: {
+40 warn ERESOLVE       name: '@babel/core',
+40 warn ERESOLVE       version: '7.26.0',
+40 warn ERESOLVE       location: 'node_modules/@babel/core',
+40 warn ERESOLVE       isWorkspace: false,
+40 warn ERESOLVE       dependents: [Array]
+40 warn ERESOLVE     },
+40 warn ERESOLVE     peer: {
+40 warn ERESOLVE       name: '@babel/core',
+40 warn ERESOLVE       version: '8.0.1',
+40 warn ERESOLVE       whileInstalling: [Object],
+40 warn ERESOLVE       location: 'node_modules/@babel/core',
+40 warn ERESOLVE       isWorkspace: false,
+40 warn ERESOLVE       dependents: [Array]
+40 warn ERESOLVE     }
+40 warn ERESOLVE   }
+40 warn ERESOLVE }
+41 warn ERESOLVE overriding peer dependency {
+41 warn ERESOLVE   code: 'ERESOLVE',
+41 warn ERESOLVE   edge: {
+41 warn ERESOLVE     type: 'peer',
+41 warn ERESOLVE     name: '@babel/core',
+41 warn ERESOLVE     spec: '^8.0.0',
+41 warn ERESOLVE     error: 'INVALID',
+41 warn ERESOLVE     from: {
+41 warn ERESOLVE       name: '@babel/plugin-transform-async-generator-functions',
+41 warn ERESOLVE       version: '8.0.1',
+41 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-async-generator-functions',
+41 warn ERESOLVE       isWorkspace: false,
+41 warn ERESOLVE       dependents: [Array]
+41 warn ERESOLVE     }
+41 warn ERESOLVE   },
+41 warn ERESOLVE   dep: {
+41 warn ERESOLVE     name: '@babel/core',
+41 warn ERESOLVE     version: '8.0.1',
+41 warn ERESOLVE     whileInstalling: {
+41 warn ERESOLVE       name: '@babel/plugin-transform-async-generator-functions',
+41 warn ERESOLVE       version: '8.0.1',
+41 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-async-generator-functions'
+41 warn ERESOLVE     },
+41 warn ERESOLVE     location: 'node_modules/@babel/core',
+41 warn ERESOLVE     isWorkspace: false,
+41 warn ERESOLVE     dependents: [ [Object] ]
+41 warn ERESOLVE   },
+41 warn ERESOLVE   force: false,
+41 warn ERESOLVE   isMine: false,
+41 warn ERESOLVE   strictPeerDeps: false,
+41 warn ERESOLVE   current: {
+41 warn ERESOLVE     name: '@babel/core',
+41 warn ERESOLVE     version: '7.26.0',
+41 warn ERESOLVE     location: 'node_modules/@babel/core',
+41 warn ERESOLVE     isWorkspace: false,
+41 warn ERESOLVE     dependents: [
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object],
+41 warn ERESOLVE       [Object], [Object]
+41 warn ERESOLVE     ]
+41 warn ERESOLVE   },
+41 warn ERESOLVE   peerConflict: {
+41 warn ERESOLVE     current: {
+41 warn ERESOLVE       name: '@babel/core',
+41 warn ERESOLVE       version: '7.26.0',
+41 warn ERESOLVE       location: 'node_modules/@babel/core',
+41 warn ERESOLVE       isWorkspace: false,
+41 warn ERESOLVE       dependents: [Array]
+41 warn ERESOLVE     },
+41 warn ERESOLVE     peer: {
+41 warn ERESOLVE       name: '@babel/core',
+41 warn ERESOLVE       version: '8.0.1',
+41 warn ERESOLVE       whileInstalling: [Object],
+41 warn ERESOLVE       location: 'node_modules/@babel/core',
+41 warn ERESOLVE       isWorkspace: false,
+41 warn ERESOLVE       dependents: [Array]
+41 warn ERESOLVE     }
+41 warn ERESOLVE   }
+41 warn ERESOLVE }
+42 warn ERESOLVE overriding peer dependency {
+42 warn ERESOLVE   code: 'ERESOLVE',
+42 warn ERESOLVE   edge: {
+42 warn ERESOLVE     type: 'peer',
+42 warn ERESOLVE     name: '@babel/core',
+42 warn ERESOLVE     spec: '^8.0.0',
+42 warn ERESOLVE     error: 'INVALID',
+42 warn ERESOLVE     from: {
+42 warn ERESOLVE       name: '@babel/plugin-transform-block-scoped-functions',
+42 warn ERESOLVE       version: '8.0.1',
+42 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-block-scoped-functions',
+42 warn ERESOLVE       isWorkspace: false,
+42 warn ERESOLVE       dependents: [Array]
+42 warn ERESOLVE     }
+42 warn ERESOLVE   },
+42 warn ERESOLVE   dep: {
+42 warn ERESOLVE     name: '@babel/core',
+42 warn ERESOLVE     version: '8.0.1',
+42 warn ERESOLVE     whileInstalling: {
+42 warn ERESOLVE       name: '@babel/plugin-transform-block-scoped-functions',
+42 warn ERESOLVE       version: '8.0.1',
+42 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-block-scoped-functions'
+42 warn ERESOLVE     },
+42 warn ERESOLVE     location: 'node_modules/@babel/core',
+42 warn ERESOLVE     isWorkspace: false,
+42 warn ERESOLVE     dependents: [ [Object] ]
+42 warn ERESOLVE   },
+42 warn ERESOLVE   force: false,
+42 warn ERESOLVE   isMine: false,
+42 warn ERESOLVE   strictPeerDeps: false,
+42 warn ERESOLVE   current: {
+42 warn ERESOLVE     name: '@babel/core',
+42 warn ERESOLVE     version: '7.26.0',
+42 warn ERESOLVE     location: 'node_modules/@babel/core',
+42 warn ERESOLVE     isWorkspace: false,
+42 warn ERESOLVE     dependents: [
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object],
+42 warn ERESOLVE       [Object], [Object]
+42 warn ERESOLVE     ]
+42 warn ERESOLVE   },
+42 warn ERESOLVE   peerConflict: {
+42 warn ERESOLVE     current: {
+42 warn ERESOLVE       name: '@babel/core',
+42 warn ERESOLVE       version: '7.26.0',
+42 warn ERESOLVE       location: 'node_modules/@babel/core',
+42 warn ERESOLVE       isWorkspace: false,
+42 warn ERESOLVE       dependents: [Array]
+42 warn ERESOLVE     },
+42 warn ERESOLVE     peer: {
+42 warn ERESOLVE       name: '@babel/core',
+42 warn ERESOLVE       version: '8.0.1',
+42 warn ERESOLVE       whileInstalling: [Object],
+42 warn ERESOLVE       location: 'node_modules/@babel/core',
+42 warn ERESOLVE       isWorkspace: false,
+42 warn ERESOLVE       dependents: [Array]
+42 warn ERESOLVE     }
+42 warn ERESOLVE   }
+42 warn ERESOLVE }
+43 warn ERESOLVE overriding peer dependency {
+43 warn ERESOLVE   code: 'ERESOLVE',
+43 warn ERESOLVE   edge: {
+43 warn ERESOLVE     type: 'peer',
+43 warn ERESOLVE     name: '@babel/core',
+43 warn ERESOLVE     spec: '^8.0.0',
+43 warn ERESOLVE     error: 'INVALID',
+43 warn ERESOLVE     from: {
+43 warn ERESOLVE       name: '@babel/plugin-transform-block-scoping',
+43 warn ERESOLVE       version: '8.0.1',
+43 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-block-scoping',
+43 warn ERESOLVE       isWorkspace: false,
+43 warn ERESOLVE       dependents: [Array]
+43 warn ERESOLVE     }
+43 warn ERESOLVE   },
+43 warn ERESOLVE   dep: {
+43 warn ERESOLVE     name: '@babel/core',
+43 warn ERESOLVE     version: '8.0.1',
+43 warn ERESOLVE     whileInstalling: {
+43 warn ERESOLVE       name: '@babel/plugin-transform-block-scoping',
+43 warn ERESOLVE       version: '8.0.1',
+43 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-block-scoping'
+43 warn ERESOLVE     },
+43 warn ERESOLVE     location: 'node_modules/@babel/core',
+43 warn ERESOLVE     isWorkspace: false,
+43 warn ERESOLVE     dependents: [ [Object] ]
+43 warn ERESOLVE   },
+43 warn ERESOLVE   force: false,
+43 warn ERESOLVE   isMine: false,
+43 warn ERESOLVE   strictPeerDeps: false,
+43 warn ERESOLVE   current: {
+43 warn ERESOLVE     name: '@babel/core',
+43 warn ERESOLVE     version: '7.26.0',
+43 warn ERESOLVE     location: 'node_modules/@babel/core',
+43 warn ERESOLVE     isWorkspace: false,
+43 warn ERESOLVE     dependents: [
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object],
+43 warn ERESOLVE       [Object], [Object]
+43 warn ERESOLVE     ]
+43 warn ERESOLVE   },
+43 warn ERESOLVE   peerConflict: {
+43 warn ERESOLVE     current: {
+43 warn ERESOLVE       name: '@babel/core',
+43 warn ERESOLVE       version: '7.26.0',
+43 warn ERESOLVE       location: 'node_modules/@babel/core',
+43 warn ERESOLVE       isWorkspace: false,
+43 warn ERESOLVE       dependents: [Array]
+43 warn ERESOLVE     },
+43 warn ERESOLVE     peer: {
+43 warn ERESOLVE       name: '@babel/core',
+43 warn ERESOLVE       version: '8.0.1',
+43 warn ERESOLVE       whileInstalling: [Object],
+43 warn ERESOLVE       location: 'node_modules/@babel/core',
+43 warn ERESOLVE       isWorkspace: false,
+43 warn ERESOLVE       dependents: [Array]
+43 warn ERESOLVE     }
+43 warn ERESOLVE   }
+43 warn ERESOLVE }
+44 warn ERESOLVE overriding peer dependency {
+44 warn ERESOLVE   code: 'ERESOLVE',
+44 warn ERESOLVE   edge: {
+44 warn ERESOLVE     type: 'peer',
+44 warn ERESOLVE     name: '@babel/core',
+44 warn ERESOLVE     spec: '^8.0.0',
+44 warn ERESOLVE     error: 'INVALID',
+44 warn ERESOLVE     from: {
+44 warn ERESOLVE       name: '@babel/plugin-transform-class-properties',
+44 warn ERESOLVE       version: '8.0.1',
+44 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-class-properties',
+44 warn ERESOLVE       isWorkspace: false,
+44 warn ERESOLVE       dependents: [Array]
+44 warn ERESOLVE     }
+44 warn ERESOLVE   },
+44 warn ERESOLVE   dep: {
+44 warn ERESOLVE     name: '@babel/core',
+44 warn ERESOLVE     version: '8.0.1',
+44 warn ERESOLVE     whileInstalling: {
+44 warn ERESOLVE       name: '@babel/plugin-transform-class-properties',
+44 warn ERESOLVE       version: '8.0.1',
+44 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-class-properties'
+44 warn ERESOLVE     },
+44 warn ERESOLVE     location: 'node_modules/@babel/core',
+44 warn ERESOLVE     isWorkspace: false,
+44 warn ERESOLVE     dependents: [ [Object] ]
+44 warn ERESOLVE   },
+44 warn ERESOLVE   force: false,
+44 warn ERESOLVE   isMine: false,
+44 warn ERESOLVE   strictPeerDeps: false,
+44 warn ERESOLVE   current: {
+44 warn ERESOLVE     name: '@babel/core',
+44 warn ERESOLVE     version: '7.26.0',
+44 warn ERESOLVE     location: 'node_modules/@babel/core',
+44 warn ERESOLVE     isWorkspace: false,
+44 warn ERESOLVE     dependents: [
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object],
+44 warn ERESOLVE       [Object], [Object]
+44 warn ERESOLVE     ]
+44 warn ERESOLVE   },
+44 warn ERESOLVE   peerConflict: {
+44 warn ERESOLVE     current: {
+44 warn ERESOLVE       name: '@babel/core',
+44 warn ERESOLVE       version: '7.26.0',
+44 warn ERESOLVE       location: 'node_modules/@babel/core',
+44 warn ERESOLVE       isWorkspace: false,
+44 warn ERESOLVE       dependents: [Array]
+44 warn ERESOLVE     },
+44 warn ERESOLVE     peer: {
+44 warn ERESOLVE       name: '@babel/core',
+44 warn ERESOLVE       version: '8.0.1',
+44 warn ERESOLVE       whileInstalling: [Object],
+44 warn ERESOLVE       location: 'node_modules/@babel/core',
+44 warn ERESOLVE       isWorkspace: false,
+44 warn ERESOLVE       dependents: [Array]
+44 warn ERESOLVE     }
+44 warn ERESOLVE   }
+44 warn ERESOLVE }
+45 warn ERESOLVE overriding peer dependency {
+45 warn ERESOLVE   code: 'ERESOLVE',
+45 warn ERESOLVE   edge: {
+45 warn ERESOLVE     type: 'peer',
+45 warn ERESOLVE     name: '@babel/core',
+45 warn ERESOLVE     spec: '^8.0.0',
+45 warn ERESOLVE     error: 'INVALID',
+45 warn ERESOLVE     from: {
+45 warn ERESOLVE       name: '@babel/plugin-transform-class-static-block',
+45 warn ERESOLVE       version: '8.0.1',
+45 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-class-static-block',
+45 warn ERESOLVE       isWorkspace: false,
+45 warn ERESOLVE       dependents: [Array]
+45 warn ERESOLVE     }
+45 warn ERESOLVE   },
+45 warn ERESOLVE   dep: {
+45 warn ERESOLVE     name: '@babel/core',
+45 warn ERESOLVE     version: '8.0.1',
+45 warn ERESOLVE     whileInstalling: {
+45 warn ERESOLVE       name: '@babel/plugin-transform-class-static-block',
+45 warn ERESOLVE       version: '8.0.1',
+45 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-class-static-block'
+45 warn ERESOLVE     },
+45 warn ERESOLVE     location: 'node_modules/@babel/core',
+45 warn ERESOLVE     isWorkspace: false,
+45 warn ERESOLVE     dependents: [ [Object] ]
+45 warn ERESOLVE   },
+45 warn ERESOLVE   force: false,
+45 warn ERESOLVE   isMine: false,
+45 warn ERESOLVE   strictPeerDeps: false,
+45 warn ERESOLVE   current: {
+45 warn ERESOLVE     name: '@babel/core',
+45 warn ERESOLVE     version: '7.26.0',
+45 warn ERESOLVE     location: 'node_modules/@babel/core',
+45 warn ERESOLVE     isWorkspace: false,
+45 warn ERESOLVE     dependents: [
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object],
+45 warn ERESOLVE       [Object], [Object]
+45 warn ERESOLVE     ]
+45 warn ERESOLVE   },
+45 warn ERESOLVE   peerConflict: {
+45 warn ERESOLVE     current: {
+45 warn ERESOLVE       name: '@babel/core',
+45 warn ERESOLVE       version: '7.26.0',
+45 warn ERESOLVE       location: 'node_modules/@babel/core',
+45 warn ERESOLVE       isWorkspace: false,
+45 warn ERESOLVE       dependents: [Array]
+45 warn ERESOLVE     },
+45 warn ERESOLVE     peer: {
+45 warn ERESOLVE       name: '@babel/core',
+45 warn ERESOLVE       version: '8.0.1',
+45 warn ERESOLVE       whileInstalling: [Object],
+45 warn ERESOLVE       location: 'node_modules/@babel/core',
+45 warn ERESOLVE       isWorkspace: false,
+45 warn ERESOLVE       dependents: [Array]
+45 warn ERESOLVE     }
+45 warn ERESOLVE   }
+45 warn ERESOLVE }
+46 warn ERESOLVE overriding peer dependency {
+46 warn ERESOLVE   code: 'ERESOLVE',
+46 warn ERESOLVE   edge: {
+46 warn ERESOLVE     type: 'peer',
+46 warn ERESOLVE     name: '@babel/core',
+46 warn ERESOLVE     spec: '^8.0.0',
+46 warn ERESOLVE     error: 'INVALID',
+46 warn ERESOLVE     from: {
+46 warn ERESOLVE       name: '@babel/plugin-transform-classes',
+46 warn ERESOLVE       version: '8.0.1',
+46 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-classes',
+46 warn ERESOLVE       isWorkspace: false,
+46 warn ERESOLVE       dependents: [Array]
+46 warn ERESOLVE     }
+46 warn ERESOLVE   },
+46 warn ERESOLVE   dep: {
+46 warn ERESOLVE     name: '@babel/core',
+46 warn ERESOLVE     version: '8.0.1',
+46 warn ERESOLVE     whileInstalling: {
+46 warn ERESOLVE       name: '@babel/plugin-transform-classes',
+46 warn ERESOLVE       version: '8.0.1',
+46 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-classes'
+46 warn ERESOLVE     },
+46 warn ERESOLVE     location: 'node_modules/@babel/core',
+46 warn ERESOLVE     isWorkspace: false,
+46 warn ERESOLVE     dependents: [ [Object] ]
+46 warn ERESOLVE   },
+46 warn ERESOLVE   force: false,
+46 warn ERESOLVE   isMine: false,
+46 warn ERESOLVE   strictPeerDeps: false,
+46 warn ERESOLVE   current: {
+46 warn ERESOLVE     name: '@babel/core',
+46 warn ERESOLVE     version: '7.26.0',
+46 warn ERESOLVE     location: 'node_modules/@babel/core',
+46 warn ERESOLVE     isWorkspace: false,
+46 warn ERESOLVE     dependents: [
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object],
+46 warn ERESOLVE       [Object], [Object]
+46 warn ERESOLVE     ]
+46 warn ERESOLVE   },
+46 warn ERESOLVE   peerConflict: {
+46 warn ERESOLVE     current: {
+46 warn ERESOLVE       name: '@babel/core',
+46 warn ERESOLVE       version: '7.26.0',
+46 warn ERESOLVE       location: 'node_modules/@babel/core',
+46 warn ERESOLVE       isWorkspace: false,
+46 warn ERESOLVE       dependents: [Array]
+46 warn ERESOLVE     },
+46 warn ERESOLVE     peer: {
+46 warn ERESOLVE       name: '@babel/core',
+46 warn ERESOLVE       version: '8.0.1',
+46 warn ERESOLVE       whileInstalling: [Object],
+46 warn ERESOLVE       location: 'node_modules/@babel/core',
+46 warn ERESOLVE       isWorkspace: false,
+46 warn ERESOLVE       dependents: [Array]
+46 warn ERESOLVE     }
+46 warn ERESOLVE   }
+46 warn ERESOLVE }
+47 warn ERESOLVE overriding peer dependency {
+47 warn ERESOLVE   code: 'ERESOLVE',
+47 warn ERESOLVE   edge: {
+47 warn ERESOLVE     type: 'peer',
+47 warn ERESOLVE     name: '@babel/core',
+47 warn ERESOLVE     spec: '^8.0.0',
+47 warn ERESOLVE     error: 'INVALID',
+47 warn ERESOLVE     from: {
+47 warn ERESOLVE       name: '@babel/plugin-transform-computed-properties',
+47 warn ERESOLVE       version: '8.0.1',
+47 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-computed-properties',
+47 warn ERESOLVE       isWorkspace: false,
+47 warn ERESOLVE       dependents: [Array]
+47 warn ERESOLVE     }
+47 warn ERESOLVE   },
+47 warn ERESOLVE   dep: {
+47 warn ERESOLVE     name: '@babel/core',
+47 warn ERESOLVE     version: '8.0.1',
+47 warn ERESOLVE     whileInstalling: {
+47 warn ERESOLVE       name: '@babel/plugin-transform-computed-properties',
+47 warn ERESOLVE       version: '8.0.1',
+47 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-computed-properties'
+47 warn ERESOLVE     },
+47 warn ERESOLVE     location: 'node_modules/@babel/core',
+47 warn ERESOLVE     isWorkspace: false,
+47 warn ERESOLVE     dependents: [ [Object] ]
+47 warn ERESOLVE   },
+47 warn ERESOLVE   force: false,
+47 warn ERESOLVE   isMine: false,
+47 warn ERESOLVE   strictPeerDeps: false,
+47 warn ERESOLVE   current: {
+47 warn ERESOLVE     name: '@babel/core',
+47 warn ERESOLVE     version: '7.26.0',
+47 warn ERESOLVE     location: 'node_modules/@babel/core',
+47 warn ERESOLVE     isWorkspace: false,
+47 warn ERESOLVE     dependents: [
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object],
+47 warn ERESOLVE       [Object], [Object]
+47 warn ERESOLVE     ]
+47 warn ERESOLVE   },
+47 warn ERESOLVE   peerConflict: {
+47 warn ERESOLVE     current: {
+47 warn ERESOLVE       name: '@babel/core',
+47 warn ERESOLVE       version: '7.26.0',
+47 warn ERESOLVE       location: 'node_modules/@babel/core',
+47 warn ERESOLVE       isWorkspace: false,
+47 warn ERESOLVE       dependents: [Array]
+47 warn ERESOLVE     },
+47 warn ERESOLVE     peer: {
+47 warn ERESOLVE       name: '@babel/core',
+47 warn ERESOLVE       version: '8.0.1',
+47 warn ERESOLVE       whileInstalling: [Object],
+47 warn ERESOLVE       location: 'node_modules/@babel/core',
+47 warn ERESOLVE       isWorkspace: false,
+47 warn ERESOLVE       dependents: [Array]
+47 warn ERESOLVE     }
+47 warn ERESOLVE   }
+47 warn ERESOLVE }
+48 warn ERESOLVE overriding peer dependency {
+48 warn ERESOLVE   code: 'ERESOLVE',
+48 warn ERESOLVE   edge: {
+48 warn ERESOLVE     type: 'peer',
+48 warn ERESOLVE     name: '@babel/core',
+48 warn ERESOLVE     spec: '^8.0.0',
+48 warn ERESOLVE     error: 'INVALID',
+48 warn ERESOLVE     from: {
+48 warn ERESOLVE       name: '@babel/plugin-transform-destructuring',
+48 warn ERESOLVE       version: '8.0.1',
+48 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-destructuring',
+48 warn ERESOLVE       isWorkspace: false,
+48 warn ERESOLVE       dependents: [Array]
+48 warn ERESOLVE     }
+48 warn ERESOLVE   },
+48 warn ERESOLVE   dep: {
+48 warn ERESOLVE     name: '@babel/core',
+48 warn ERESOLVE     version: '8.0.1',
+48 warn ERESOLVE     whileInstalling: {
+48 warn ERESOLVE       name: '@babel/plugin-transform-destructuring',
+48 warn ERESOLVE       version: '8.0.1',
+48 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-destructuring'
+48 warn ERESOLVE     },
+48 warn ERESOLVE     location: 'node_modules/@babel/core',
+48 warn ERESOLVE     isWorkspace: false,
+48 warn ERESOLVE     dependents: [ [Object] ]
+48 warn ERESOLVE   },
+48 warn ERESOLVE   force: false,
+48 warn ERESOLVE   isMine: false,
+48 warn ERESOLVE   strictPeerDeps: false,
+48 warn ERESOLVE   current: {
+48 warn ERESOLVE     name: '@babel/core',
+48 warn ERESOLVE     version: '7.26.0',
+48 warn ERESOLVE     location: 'node_modules/@babel/core',
+48 warn ERESOLVE     isWorkspace: false,
+48 warn ERESOLVE     dependents: [
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object],
+48 warn ERESOLVE       [Object], [Object]
+48 warn ERESOLVE     ]
+48 warn ERESOLVE   },
+48 warn ERESOLVE   peerConflict: {
+48 warn ERESOLVE     current: {
+48 warn ERESOLVE       name: '@babel/core',
+48 warn ERESOLVE       version: '7.26.0',
+48 warn ERESOLVE       location: 'node_modules/@babel/core',
+48 warn ERESOLVE       isWorkspace: false,
+48 warn ERESOLVE       dependents: [Array]
+48 warn ERESOLVE     },
+48 warn ERESOLVE     peer: {
+48 warn ERESOLVE       name: '@babel/core',
+48 warn ERESOLVE       version: '8.0.1',
+48 warn ERESOLVE       whileInstalling: [Object],
+48 warn ERESOLVE       location: 'node_modules/@babel/core',
+48 warn ERESOLVE       isWorkspace: false,
+48 warn ERESOLVE       dependents: [Array]
+48 warn ERESOLVE     }
+48 warn ERESOLVE   }
+48 warn ERESOLVE }
+49 warn ERESOLVE overriding peer dependency {
+49 warn ERESOLVE   code: 'ERESOLVE',
+49 warn ERESOLVE   edge: {
+49 warn ERESOLVE     type: 'peer',
+49 warn ERESOLVE     name: '@babel/core',
+49 warn ERESOLVE     spec: '^8.0.0',
+49 warn ERESOLVE     error: 'INVALID',
+49 warn ERESOLVE     from: {
+49 warn ERESOLVE       name: '@babel/plugin-transform-dotall-regex',
+49 warn ERESOLVE       version: '8.0.1',
+49 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-dotall-regex',
+49 warn ERESOLVE       isWorkspace: false,
+49 warn ERESOLVE       dependents: [Array]
+49 warn ERESOLVE     }
+49 warn ERESOLVE   },
+49 warn ERESOLVE   dep: {
+49 warn ERESOLVE     name: '@babel/core',
+49 warn ERESOLVE     version: '8.0.1',
+49 warn ERESOLVE     whileInstalling: {
+49 warn ERESOLVE       name: '@babel/plugin-transform-dotall-regex',
+49 warn ERESOLVE       version: '8.0.1',
+49 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-dotall-regex'
+49 warn ERESOLVE     },
+49 warn ERESOLVE     location: 'node_modules/@babel/core',
+49 warn ERESOLVE     isWorkspace: false,
+49 warn ERESOLVE     dependents: [ [Object] ]
+49 warn ERESOLVE   },
+49 warn ERESOLVE   force: false,
+49 warn ERESOLVE   isMine: false,
+49 warn ERESOLVE   strictPeerDeps: false,
+49 warn ERESOLVE   current: {
+49 warn ERESOLVE     name: '@babel/core',
+49 warn ERESOLVE     version: '7.26.0',
+49 warn ERESOLVE     location: 'node_modules/@babel/core',
+49 warn ERESOLVE     isWorkspace: false,
+49 warn ERESOLVE     dependents: [
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object],
+49 warn ERESOLVE       [Object], [Object]
+49 warn ERESOLVE     ]
+49 warn ERESOLVE   },
+49 warn ERESOLVE   peerConflict: {
+49 warn ERESOLVE     current: {
+49 warn ERESOLVE       name: '@babel/core',
+49 warn ERESOLVE       version: '7.26.0',
+49 warn ERESOLVE       location: 'node_modules/@babel/core',
+49 warn ERESOLVE       isWorkspace: false,
+49 warn ERESOLVE       dependents: [Array]
+49 warn ERESOLVE     },
+49 warn ERESOLVE     peer: {
+49 warn ERESOLVE       name: '@babel/core',
+49 warn ERESOLVE       version: '8.0.1',
+49 warn ERESOLVE       whileInstalling: [Object],
+49 warn ERESOLVE       location: 'node_modules/@babel/core',
+49 warn ERESOLVE       isWorkspace: false,
+49 warn ERESOLVE       dependents: [Array]
+49 warn ERESOLVE     }
+49 warn ERESOLVE   }
+49 warn ERESOLVE }
+50 warn ERESOLVE overriding peer dependency {
+50 warn ERESOLVE   code: 'ERESOLVE',
+50 warn ERESOLVE   edge: {
+50 warn ERESOLVE     type: 'peer',
+50 warn ERESOLVE     name: '@babel/core',
+50 warn ERESOLVE     spec: '^8.0.0',
+50 warn ERESOLVE     error: 'INVALID',
+50 warn ERESOLVE     from: {
+50 warn ERESOLVE       name: '@babel/plugin-transform-duplicate-keys',
+50 warn ERESOLVE       version: '8.0.1',
+50 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-duplicate-keys',
+50 warn ERESOLVE       isWorkspace: false,
+50 warn ERESOLVE       dependents: [Array]
+50 warn ERESOLVE     }
+50 warn ERESOLVE   },
+50 warn ERESOLVE   dep: {
+50 warn ERESOLVE     name: '@babel/core',
+50 warn ERESOLVE     version: '8.0.1',
+50 warn ERESOLVE     whileInstalling: {
+50 warn ERESOLVE       name: '@babel/plugin-transform-duplicate-keys',
+50 warn ERESOLVE       version: '8.0.1',
+50 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-duplicate-keys'
+50 warn ERESOLVE     },
+50 warn ERESOLVE     location: 'node_modules/@babel/core',
+50 warn ERESOLVE     isWorkspace: false,
+50 warn ERESOLVE     dependents: [ [Object] ]
+50 warn ERESOLVE   },
+50 warn ERESOLVE   force: false,
+50 warn ERESOLVE   isMine: false,
+50 warn ERESOLVE   strictPeerDeps: false,
+50 warn ERESOLVE   current: {
+50 warn ERESOLVE     name: '@babel/core',
+50 warn ERESOLVE     version: '7.26.0',
+50 warn ERESOLVE     location: 'node_modules/@babel/core',
+50 warn ERESOLVE     isWorkspace: false,
+50 warn ERESOLVE     dependents: [
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object],
+50 warn ERESOLVE       [Object], [Object]
+50 warn ERESOLVE     ]
+50 warn ERESOLVE   },
+50 warn ERESOLVE   peerConflict: {
+50 warn ERESOLVE     current: {
+50 warn ERESOLVE       name: '@babel/core',
+50 warn ERESOLVE       version: '7.26.0',
+50 warn ERESOLVE       location: 'node_modules/@babel/core',
+50 warn ERESOLVE       isWorkspace: false,
+50 warn ERESOLVE       dependents: [Array]
+50 warn ERESOLVE     },
+50 warn ERESOLVE     peer: {
+50 warn ERESOLVE       name: '@babel/core',
+50 warn ERESOLVE       version: '8.0.1',
+50 warn ERESOLVE       whileInstalling: [Object],
+50 warn ERESOLVE       location: 'node_modules/@babel/core',
+50 warn ERESOLVE       isWorkspace: false,
+50 warn ERESOLVE       dependents: [Array]
+50 warn ERESOLVE     }
+50 warn ERESOLVE   }
+50 warn ERESOLVE }
+51 warn ERESOLVE overriding peer dependency {
+51 warn ERESOLVE   code: 'ERESOLVE',
+51 warn ERESOLVE   edge: {
+51 warn ERESOLVE     type: 'peer',
+51 warn ERESOLVE     name: '@babel/core',
+51 warn ERESOLVE     spec: '^8.0.0',
+51 warn ERESOLVE     error: 'INVALID',
+51 warn ERESOLVE     from: {
+51 warn ERESOLVE       name: '@babel/plugin-transform-duplicate-named-capturing-groups-regex',
+51 warn ERESOLVE       version: '8.0.1',
+51 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-duplicate-named-capturing-groups-regex',
+51 warn ERESOLVE       isWorkspace: false,
+51 warn ERESOLVE       dependents: [Array]
+51 warn ERESOLVE     }
+51 warn ERESOLVE   },
+51 warn ERESOLVE   dep: {
+51 warn ERESOLVE     name: '@babel/core',
+51 warn ERESOLVE     version: '8.0.1',
+51 warn ERESOLVE     whileInstalling: {
+51 warn ERESOLVE       name: '@babel/plugin-transform-duplicate-named-capturing-groups-regex',
+51 warn ERESOLVE       version: '8.0.1',
+51 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-duplicate-named-capturing-groups-regex'
+51 warn ERESOLVE     },
+51 warn ERESOLVE     location: 'node_modules/@babel/core',
+51 warn ERESOLVE     isWorkspace: false,
+51 warn ERESOLVE     dependents: [ [Object] ]
+51 warn ERESOLVE   },
+51 warn ERESOLVE   force: false,
+51 warn ERESOLVE   isMine: false,
+51 warn ERESOLVE   strictPeerDeps: false,
+51 warn ERESOLVE   current: {
+51 warn ERESOLVE     name: '@babel/core',
+51 warn ERESOLVE     version: '7.26.0',
+51 warn ERESOLVE     location: 'node_modules/@babel/core',
+51 warn ERESOLVE     isWorkspace: false,
+51 warn ERESOLVE     dependents: [
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object],
+51 warn ERESOLVE       [Object], [Object]
+51 warn ERESOLVE     ]
+51 warn ERESOLVE   },
+51 warn ERESOLVE   peerConflict: {
+51 warn ERESOLVE     current: {
+51 warn ERESOLVE       name: '@babel/core',
+51 warn ERESOLVE       version: '7.26.0',
+51 warn ERESOLVE       location: 'node_modules/@babel/core',
+51 warn ERESOLVE       isWorkspace: false,
+51 warn ERESOLVE       dependents: [Array]
+51 warn ERESOLVE     },
+51 warn ERESOLVE     peer: {
+51 warn ERESOLVE       name: '@babel/core',
+51 warn ERESOLVE       version: '8.0.1',
+51 warn ERESOLVE       whileInstalling: [Object],
+51 warn ERESOLVE       location: 'node_modules/@babel/core',
+51 warn ERESOLVE       isWorkspace: false,
+51 warn ERESOLVE       dependents: [Array]
+51 warn ERESOLVE     }
+51 warn ERESOLVE   }
+51 warn ERESOLVE }
+52 warn ERESOLVE overriding peer dependency {
+52 warn ERESOLVE   code: 'ERESOLVE',
+52 warn ERESOLVE   edge: {
+52 warn ERESOLVE     type: 'peer',
+52 warn ERESOLVE     name: '@babel/core',
+52 warn ERESOLVE     spec: '^8.0.0',
+52 warn ERESOLVE     error: 'INVALID',
+52 warn ERESOLVE     from: {
+52 warn ERESOLVE       name: '@babel/plugin-transform-dynamic-import',
+52 warn ERESOLVE       version: '8.0.1',
+52 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-dynamic-import',
+52 warn ERESOLVE       isWorkspace: false,
+52 warn ERESOLVE       dependents: [Array]
+52 warn ERESOLVE     }
+52 warn ERESOLVE   },
+52 warn ERESOLVE   dep: {
+52 warn ERESOLVE     name: '@babel/core',
+52 warn ERESOLVE     version: '8.0.1',
+52 warn ERESOLVE     whileInstalling: {
+52 warn ERESOLVE       name: '@babel/plugin-transform-dynamic-import',
+52 warn ERESOLVE       version: '8.0.1',
+52 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-dynamic-import'
+52 warn ERESOLVE     },
+52 warn ERESOLVE     location: 'node_modules/@babel/core',
+52 warn ERESOLVE     isWorkspace: false,
+52 warn ERESOLVE     dependents: [ [Object] ]
+52 warn ERESOLVE   },
+52 warn ERESOLVE   force: false,
+52 warn ERESOLVE   isMine: false,
+52 warn ERESOLVE   strictPeerDeps: false,
+52 warn ERESOLVE   current: {
+52 warn ERESOLVE     name: '@babel/core',
+52 warn ERESOLVE     version: '7.26.0',
+52 warn ERESOLVE     location: 'node_modules/@babel/core',
+52 warn ERESOLVE     isWorkspace: false,
+52 warn ERESOLVE     dependents: [
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object],
+52 warn ERESOLVE       [Object], [Object]
+52 warn ERESOLVE     ]
+52 warn ERESOLVE   },
+52 warn ERESOLVE   peerConflict: {
+52 warn ERESOLVE     current: {
+52 warn ERESOLVE       name: '@babel/core',
+52 warn ERESOLVE       version: '7.26.0',
+52 warn ERESOLVE       location: 'node_modules/@babel/core',
+52 warn ERESOLVE       isWorkspace: false,
+52 warn ERESOLVE       dependents: [Array]
+52 warn ERESOLVE     },
+52 warn ERESOLVE     peer: {
+52 warn ERESOLVE       name: '@babel/core',
+52 warn ERESOLVE       version: '8.0.1',
+52 warn ERESOLVE       whileInstalling: [Object],
+52 warn ERESOLVE       location: 'node_modules/@babel/core',
+52 warn ERESOLVE       isWorkspace: false,
+52 warn ERESOLVE       dependents: [Array]
+52 warn ERESOLVE     }
+52 warn ERESOLVE   }
+52 warn ERESOLVE }
+53 warn ERESOLVE overriding peer dependency {
+53 warn ERESOLVE   code: 'ERESOLVE',
+53 warn ERESOLVE   edge: {
+53 warn ERESOLVE     type: 'peer',
+53 warn ERESOLVE     name: '@babel/core',
+53 warn ERESOLVE     spec: '^8.0.0',
+53 warn ERESOLVE     error: 'INVALID',
+53 warn ERESOLVE     from: {
+53 warn ERESOLVE       name: '@babel/plugin-transform-explicit-resource-management',
+53 warn ERESOLVE       version: '8.0.1',
+53 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-explicit-resource-management',
+53 warn ERESOLVE       isWorkspace: false,
+53 warn ERESOLVE       dependents: [Array]
+53 warn ERESOLVE     }
+53 warn ERESOLVE   },
+53 warn ERESOLVE   dep: {
+53 warn ERESOLVE     name: '@babel/core',
+53 warn ERESOLVE     version: '8.0.1',
+53 warn ERESOLVE     whileInstalling: {
+53 warn ERESOLVE       name: '@babel/plugin-transform-explicit-resource-management',
+53 warn ERESOLVE       version: '8.0.1',
+53 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-explicit-resource-management'
+53 warn ERESOLVE     },
+53 warn ERESOLVE     location: 'node_modules/@babel/core',
+53 warn ERESOLVE     isWorkspace: false,
+53 warn ERESOLVE     dependents: [ [Object] ]
+53 warn ERESOLVE   },
+53 warn ERESOLVE   force: false,
+53 warn ERESOLVE   isMine: false,
+53 warn ERESOLVE   strictPeerDeps: false,
+53 warn ERESOLVE   current: {
+53 warn ERESOLVE     name: '@babel/core',
+53 warn ERESOLVE     version: '7.26.0',
+53 warn ERESOLVE     location: 'node_modules/@babel/core',
+53 warn ERESOLVE     isWorkspace: false,
+53 warn ERESOLVE     dependents: [
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object],
+53 warn ERESOLVE       [Object], [Object]
+53 warn ERESOLVE     ]
+53 warn ERESOLVE   },
+53 warn ERESOLVE   peerConflict: {
+53 warn ERESOLVE     current: {
+53 warn ERESOLVE       name: '@babel/core',
+53 warn ERESOLVE       version: '7.26.0',
+53 warn ERESOLVE       location: 'node_modules/@babel/core',
+53 warn ERESOLVE       isWorkspace: false,
+53 warn ERESOLVE       dependents: [Array]
+53 warn ERESOLVE     },
+53 warn ERESOLVE     peer: {
+53 warn ERESOLVE       name: '@babel/core',
+53 warn ERESOLVE       version: '8.0.1',
+53 warn ERESOLVE       whileInstalling: [Object],
+53 warn ERESOLVE       location: 'node_modules/@babel/core',
+53 warn ERESOLVE       isWorkspace: false,
+53 warn ERESOLVE       dependents: [Array]
+53 warn ERESOLVE     }
+53 warn ERESOLVE   }
+53 warn ERESOLVE }
+54 warn ERESOLVE overriding peer dependency {
+54 warn ERESOLVE   code: 'ERESOLVE',
+54 warn ERESOLVE   edge: {
+54 warn ERESOLVE     type: 'peer',
+54 warn ERESOLVE     name: '@babel/core',
+54 warn ERESOLVE     spec: '^8.0.0',
+54 warn ERESOLVE     error: 'INVALID',
+54 warn ERESOLVE     from: {
+54 warn ERESOLVE       name: '@babel/plugin-transform-exponentiation-operator',
+54 warn ERESOLVE       version: '8.0.1',
+54 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-exponentiation-operator',
+54 warn ERESOLVE       isWorkspace: false,
+54 warn ERESOLVE       dependents: [Array]
+54 warn ERESOLVE     }
+54 warn ERESOLVE   },
+54 warn ERESOLVE   dep: {
+54 warn ERESOLVE     name: '@babel/core',
+54 warn ERESOLVE     version: '8.0.1',
+54 warn ERESOLVE     whileInstalling: {
+54 warn ERESOLVE       name: '@babel/plugin-transform-exponentiation-operator',
+54 warn ERESOLVE       version: '8.0.1',
+54 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-exponentiation-operator'
+54 warn ERESOLVE     },
+54 warn ERESOLVE     location: 'node_modules/@babel/core',
+54 warn ERESOLVE     isWorkspace: false,
+54 warn ERESOLVE     dependents: [ [Object] ]
+54 warn ERESOLVE   },
+54 warn ERESOLVE   force: false,
+54 warn ERESOLVE   isMine: false,
+54 warn ERESOLVE   strictPeerDeps: false,
+54 warn ERESOLVE   current: {
+54 warn ERESOLVE     name: '@babel/core',
+54 warn ERESOLVE     version: '7.26.0',
+54 warn ERESOLVE     location: 'node_modules/@babel/core',
+54 warn ERESOLVE     isWorkspace: false,
+54 warn ERESOLVE     dependents: [
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object],
+54 warn ERESOLVE       [Object], [Object]
+54 warn ERESOLVE     ]
+54 warn ERESOLVE   },
+54 warn ERESOLVE   peerConflict: {
+54 warn ERESOLVE     current: {
+54 warn ERESOLVE       name: '@babel/core',
+54 warn ERESOLVE       version: '7.26.0',
+54 warn ERESOLVE       location: 'node_modules/@babel/core',
+54 warn ERESOLVE       isWorkspace: false,
+54 warn ERESOLVE       dependents: [Array]
+54 warn ERESOLVE     },
+54 warn ERESOLVE     peer: {
+54 warn ERESOLVE       name: '@babel/core',
+54 warn ERESOLVE       version: '8.0.1',
+54 warn ERESOLVE       whileInstalling: [Object],
+54 warn ERESOLVE       location: 'node_modules/@babel/core',
+54 warn ERESOLVE       isWorkspace: false,
+54 warn ERESOLVE       dependents: [Array]
+54 warn ERESOLVE     }
+54 warn ERESOLVE   }
+54 warn ERESOLVE }
+55 warn ERESOLVE overriding peer dependency {
+55 warn ERESOLVE   code: 'ERESOLVE',
+55 warn ERESOLVE   edge: {
+55 warn ERESOLVE     type: 'peer',
+55 warn ERESOLVE     name: '@babel/core',
+55 warn ERESOLVE     spec: '^8.0.0',
+55 warn ERESOLVE     error: 'INVALID',
+55 warn ERESOLVE     from: {
+55 warn ERESOLVE       name: '@babel/plugin-transform-export-namespace-from',
+55 warn ERESOLVE       version: '8.0.1',
+55 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-export-namespace-from',
+55 warn ERESOLVE       isWorkspace: false,
+55 warn ERESOLVE       dependents: [Array]
+55 warn ERESOLVE     }
+55 warn ERESOLVE   },
+55 warn ERESOLVE   dep: {
+55 warn ERESOLVE     name: '@babel/core',
+55 warn ERESOLVE     version: '8.0.1',
+55 warn ERESOLVE     whileInstalling: {
+55 warn ERESOLVE       name: '@babel/plugin-transform-export-namespace-from',
+55 warn ERESOLVE       version: '8.0.1',
+55 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-export-namespace-from'
+55 warn ERESOLVE     },
+55 warn ERESOLVE     location: 'node_modules/@babel/core',
+55 warn ERESOLVE     isWorkspace: false,
+55 warn ERESOLVE     dependents: [ [Object] ]
+55 warn ERESOLVE   },
+55 warn ERESOLVE   force: false,
+55 warn ERESOLVE   isMine: false,
+55 warn ERESOLVE   strictPeerDeps: false,
+55 warn ERESOLVE   current: {
+55 warn ERESOLVE     name: '@babel/core',
+55 warn ERESOLVE     version: '7.26.0',
+55 warn ERESOLVE     location: 'node_modules/@babel/core',
+55 warn ERESOLVE     isWorkspace: false,
+55 warn ERESOLVE     dependents: [
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object],
+55 warn ERESOLVE       [Object], [Object]
+55 warn ERESOLVE     ]
+55 warn ERESOLVE   },
+55 warn ERESOLVE   peerConflict: {
+55 warn ERESOLVE     current: {
+55 warn ERESOLVE       name: '@babel/core',
+55 warn ERESOLVE       version: '7.26.0',
+55 warn ERESOLVE       location: 'node_modules/@babel/core',
+55 warn ERESOLVE       isWorkspace: false,
+55 warn ERESOLVE       dependents: [Array]
+55 warn ERESOLVE     },
+55 warn ERESOLVE     peer: {
+55 warn ERESOLVE       name: '@babel/core',
+55 warn ERESOLVE       version: '8.0.1',
+55 warn ERESOLVE       whileInstalling: [Object],
+55 warn ERESOLVE       location: 'node_modules/@babel/core',
+55 warn ERESOLVE       isWorkspace: false,
+55 warn ERESOLVE       dependents: [Array]
+55 warn ERESOLVE     }
+55 warn ERESOLVE   }
+55 warn ERESOLVE }
+56 warn ERESOLVE overriding peer dependency {
+56 warn ERESOLVE   code: 'ERESOLVE',
+56 warn ERESOLVE   edge: {
+56 warn ERESOLVE     type: 'peer',
+56 warn ERESOLVE     name: '@babel/core',
+56 warn ERESOLVE     spec: '^8.0.0',
+56 warn ERESOLVE     error: 'INVALID',
+56 warn ERESOLVE     from: {
+56 warn ERESOLVE       name: '@babel/plugin-transform-for-of',
+56 warn ERESOLVE       version: '8.0.1',
+56 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-for-of',
+56 warn ERESOLVE       isWorkspace: false,
+56 warn ERESOLVE       dependents: [Array]
+56 warn ERESOLVE     }
+56 warn ERESOLVE   },
+56 warn ERESOLVE   dep: {
+56 warn ERESOLVE     name: '@babel/core',
+56 warn ERESOLVE     version: '8.0.1',
+56 warn ERESOLVE     whileInstalling: {
+56 warn ERESOLVE       name: '@babel/plugin-transform-for-of',
+56 warn ERESOLVE       version: '8.0.1',
+56 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-for-of'
+56 warn ERESOLVE     },
+56 warn ERESOLVE     location: 'node_modules/@babel/core',
+56 warn ERESOLVE     isWorkspace: false,
+56 warn ERESOLVE     dependents: [ [Object] ]
+56 warn ERESOLVE   },
+56 warn ERESOLVE   force: false,
+56 warn ERESOLVE   isMine: false,
+56 warn ERESOLVE   strictPeerDeps: false,
+56 warn ERESOLVE   current: {
+56 warn ERESOLVE     name: '@babel/core',
+56 warn ERESOLVE     version: '7.26.0',
+56 warn ERESOLVE     location: 'node_modules/@babel/core',
+56 warn ERESOLVE     isWorkspace: false,
+56 warn ERESOLVE     dependents: [
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object],
+56 warn ERESOLVE       [Object], [Object]
+56 warn ERESOLVE     ]
+56 warn ERESOLVE   },
+56 warn ERESOLVE   peerConflict: {
+56 warn ERESOLVE     current: {
+56 warn ERESOLVE       name: '@babel/core',
+56 warn ERESOLVE       version: '7.26.0',
+56 warn ERESOLVE       location: 'node_modules/@babel/core',
+56 warn ERESOLVE       isWorkspace: false,
+56 warn ERESOLVE       dependents: [Array]
+56 warn ERESOLVE     },
+56 warn ERESOLVE     peer: {
+56 warn ERESOLVE       name: '@babel/core',
+56 warn ERESOLVE       version: '8.0.1',
+56 warn ERESOLVE       whileInstalling: [Object],
+56 warn ERESOLVE       location: 'node_modules/@babel/core',
+56 warn ERESOLVE       isWorkspace: false,
+56 warn ERESOLVE       dependents: [Array]
+56 warn ERESOLVE     }
+56 warn ERESOLVE   }
+56 warn ERESOLVE }
+57 warn ERESOLVE overriding peer dependency {
+57 warn ERESOLVE   code: 'ERESOLVE',
+57 warn ERESOLVE   edge: {
+57 warn ERESOLVE     type: 'peer',
+57 warn ERESOLVE     name: '@babel/core',
+57 warn ERESOLVE     spec: '^8.0.0',
+57 warn ERESOLVE     error: 'INVALID',
+57 warn ERESOLVE     from: {
+57 warn ERESOLVE       name: '@babel/plugin-transform-function-name',
+57 warn ERESOLVE       version: '8.0.1',
+57 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-function-name',
+57 warn ERESOLVE       isWorkspace: false,
+57 warn ERESOLVE       dependents: [Array]
+57 warn ERESOLVE     }
+57 warn ERESOLVE   },
+57 warn ERESOLVE   dep: {
+57 warn ERESOLVE     name: '@babel/core',
+57 warn ERESOLVE     version: '8.0.1',
+57 warn ERESOLVE     whileInstalling: {
+57 warn ERESOLVE       name: '@babel/plugin-transform-function-name',
+57 warn ERESOLVE       version: '8.0.1',
+57 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-function-name'
+57 warn ERESOLVE     },
+57 warn ERESOLVE     location: 'node_modules/@babel/core',
+57 warn ERESOLVE     isWorkspace: false,
+57 warn ERESOLVE     dependents: [ [Object] ]
+57 warn ERESOLVE   },
+57 warn ERESOLVE   force: false,
+57 warn ERESOLVE   isMine: false,
+57 warn ERESOLVE   strictPeerDeps: false,
+57 warn ERESOLVE   current: {
+57 warn ERESOLVE     name: '@babel/core',
+57 warn ERESOLVE     version: '7.26.0',
+57 warn ERESOLVE     location: 'node_modules/@babel/core',
+57 warn ERESOLVE     isWorkspace: false,
+57 warn ERESOLVE     dependents: [
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object],
+57 warn ERESOLVE       [Object], [Object]
+57 warn ERESOLVE     ]
+57 warn ERESOLVE   },
+57 warn ERESOLVE   peerConflict: {
+57 warn ERESOLVE     current: {
+57 warn ERESOLVE       name: '@babel/core',
+57 warn ERESOLVE       version: '7.26.0',
+57 warn ERESOLVE       location: 'node_modules/@babel/core',
+57 warn ERESOLVE       isWorkspace: false,
+57 warn ERESOLVE       dependents: [Array]
+57 warn ERESOLVE     },
+57 warn ERESOLVE     peer: {
+57 warn ERESOLVE       name: '@babel/core',
+57 warn ERESOLVE       version: '8.0.1',
+57 warn ERESOLVE       whileInstalling: [Object],
+57 warn ERESOLVE       location: 'node_modules/@babel/core',
+57 warn ERESOLVE       isWorkspace: false,
+57 warn ERESOLVE       dependents: [Array]
+57 warn ERESOLVE     }
+57 warn ERESOLVE   }
+57 warn ERESOLVE }
+58 warn ERESOLVE overriding peer dependency {
+58 warn ERESOLVE   code: 'ERESOLVE',
+58 warn ERESOLVE   edge: {
+58 warn ERESOLVE     type: 'peer',
+58 warn ERESOLVE     name: '@babel/core',
+58 warn ERESOLVE     spec: '^8.0.0',
+58 warn ERESOLVE     error: 'INVALID',
+58 warn ERESOLVE     from: {
+58 warn ERESOLVE       name: '@babel/plugin-transform-json-strings',
+58 warn ERESOLVE       version: '8.0.1',
+58 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-json-strings',
+58 warn ERESOLVE       isWorkspace: false,
+58 warn ERESOLVE       dependents: [Array]
+58 warn ERESOLVE     }
+58 warn ERESOLVE   },
+58 warn ERESOLVE   dep: {
+58 warn ERESOLVE     name: '@babel/core',
+58 warn ERESOLVE     version: '8.0.1',
+58 warn ERESOLVE     whileInstalling: {
+58 warn ERESOLVE       name: '@babel/plugin-transform-json-strings',
+58 warn ERESOLVE       version: '8.0.1',
+58 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-json-strings'
+58 warn ERESOLVE     },
+58 warn ERESOLVE     location: 'node_modules/@babel/core',
+58 warn ERESOLVE     isWorkspace: false,
+58 warn ERESOLVE     dependents: [ [Object] ]
+58 warn ERESOLVE   },
+58 warn ERESOLVE   force: false,
+58 warn ERESOLVE   isMine: false,
+58 warn ERESOLVE   strictPeerDeps: false,
+58 warn ERESOLVE   current: {
+58 warn ERESOLVE     name: '@babel/core',
+58 warn ERESOLVE     version: '7.26.0',
+58 warn ERESOLVE     location: 'node_modules/@babel/core',
+58 warn ERESOLVE     isWorkspace: false,
+58 warn ERESOLVE     dependents: [
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object],
+58 warn ERESOLVE       [Object], [Object]
+58 warn ERESOLVE     ]
+58 warn ERESOLVE   },
+58 warn ERESOLVE   peerConflict: {
+58 warn ERESOLVE     current: {
+58 warn ERESOLVE       name: '@babel/core',
+58 warn ERESOLVE       version: '7.26.0',
+58 warn ERESOLVE       location: 'node_modules/@babel/core',
+58 warn ERESOLVE       isWorkspace: false,
+58 warn ERESOLVE       dependents: [Array]
+58 warn ERESOLVE     },
+58 warn ERESOLVE     peer: {
+58 warn ERESOLVE       name: '@babel/core',
+58 warn ERESOLVE       version: '8.0.1',
+58 warn ERESOLVE       whileInstalling: [Object],
+58 warn ERESOLVE       location: 'node_modules/@babel/core',
+58 warn ERESOLVE       isWorkspace: false,
+58 warn ERESOLVE       dependents: [Array]
+58 warn ERESOLVE     }
+58 warn ERESOLVE   }
+58 warn ERESOLVE }
+59 warn ERESOLVE overriding peer dependency {
+59 warn ERESOLVE   code: 'ERESOLVE',
+59 warn ERESOLVE   edge: {
+59 warn ERESOLVE     type: 'peer',
+59 warn ERESOLVE     name: '@babel/core',
+59 warn ERESOLVE     spec: '^8.0.0',
+59 warn ERESOLVE     error: 'INVALID',
+59 warn ERESOLVE     from: {
+59 warn ERESOLVE       name: '@babel/plugin-transform-literals',
+59 warn ERESOLVE       version: '8.0.1',
+59 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-literals',
+59 warn ERESOLVE       isWorkspace: false,
+59 warn ERESOLVE       dependents: [Array]
+59 warn ERESOLVE     }
+59 warn ERESOLVE   },
+59 warn ERESOLVE   dep: {
+59 warn ERESOLVE     name: '@babel/core',
+59 warn ERESOLVE     version: '8.0.1',
+59 warn ERESOLVE     whileInstalling: {
+59 warn ERESOLVE       name: '@babel/plugin-transform-literals',
+59 warn ERESOLVE       version: '8.0.1',
+59 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-literals'
+59 warn ERESOLVE     },
+59 warn ERESOLVE     location: 'node_modules/@babel/core',
+59 warn ERESOLVE     isWorkspace: false,
+59 warn ERESOLVE     dependents: [ [Object] ]
+59 warn ERESOLVE   },
+59 warn ERESOLVE   force: false,
+59 warn ERESOLVE   isMine: false,
+59 warn ERESOLVE   strictPeerDeps: false,
+59 warn ERESOLVE   current: {
+59 warn ERESOLVE     name: '@babel/core',
+59 warn ERESOLVE     version: '7.26.0',
+59 warn ERESOLVE     location: 'node_modules/@babel/core',
+59 warn ERESOLVE     isWorkspace: false,
+59 warn ERESOLVE     dependents: [
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object],
+59 warn ERESOLVE       [Object], [Object]
+59 warn ERESOLVE     ]
+59 warn ERESOLVE   },
+59 warn ERESOLVE   peerConflict: {
+59 warn ERESOLVE     current: {
+59 warn ERESOLVE       name: '@babel/core',
+59 warn ERESOLVE       version: '7.26.0',
+59 warn ERESOLVE       location: 'node_modules/@babel/core',
+59 warn ERESOLVE       isWorkspace: false,
+59 warn ERESOLVE       dependents: [Array]
+59 warn ERESOLVE     },
+59 warn ERESOLVE     peer: {
+59 warn ERESOLVE       name: '@babel/core',
+59 warn ERESOLVE       version: '8.0.1',
+59 warn ERESOLVE       whileInstalling: [Object],
+59 warn ERESOLVE       location: 'node_modules/@babel/core',
+59 warn ERESOLVE       isWorkspace: false,
+59 warn ERESOLVE       dependents: [Array]
+59 warn ERESOLVE     }
+59 warn ERESOLVE   }
+59 warn ERESOLVE }
+60 warn ERESOLVE overriding peer dependency {
+60 warn ERESOLVE   code: 'ERESOLVE',
+60 warn ERESOLVE   edge: {
+60 warn ERESOLVE     type: 'peer',
+60 warn ERESOLVE     name: '@babel/core',
+60 warn ERESOLVE     spec: '^8.0.0',
+60 warn ERESOLVE     error: 'INVALID',
+60 warn ERESOLVE     from: {
+60 warn ERESOLVE       name: '@babel/plugin-transform-logical-assignment-operators',
+60 warn ERESOLVE       version: '8.0.1',
+60 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-logical-assignment-operators',
+60 warn ERESOLVE       isWorkspace: false,
+60 warn ERESOLVE       dependents: [Array]
+60 warn ERESOLVE     }
+60 warn ERESOLVE   },
+60 warn ERESOLVE   dep: {
+60 warn ERESOLVE     name: '@babel/core',
+60 warn ERESOLVE     version: '8.0.1',
+60 warn ERESOLVE     whileInstalling: {
+60 warn ERESOLVE       name: '@babel/plugin-transform-logical-assignment-operators',
+60 warn ERESOLVE       version: '8.0.1',
+60 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-logical-assignment-operators'
+60 warn ERESOLVE     },
+60 warn ERESOLVE     location: 'node_modules/@babel/core',
+60 warn ERESOLVE     isWorkspace: false,
+60 warn ERESOLVE     dependents: [ [Object] ]
+60 warn ERESOLVE   },
+60 warn ERESOLVE   force: false,
+60 warn ERESOLVE   isMine: false,
+60 warn ERESOLVE   strictPeerDeps: false,
+60 warn ERESOLVE   current: {
+60 warn ERESOLVE     name: '@babel/core',
+60 warn ERESOLVE     version: '7.26.0',
+60 warn ERESOLVE     location: 'node_modules/@babel/core',
+60 warn ERESOLVE     isWorkspace: false,
+60 warn ERESOLVE     dependents: [
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object],
+60 warn ERESOLVE       [Object], [Object]
+60 warn ERESOLVE     ]
+60 warn ERESOLVE   },
+60 warn ERESOLVE   peerConflict: {
+60 warn ERESOLVE     current: {
+60 warn ERESOLVE       name: '@babel/core',
+60 warn ERESOLVE       version: '7.26.0',
+60 warn ERESOLVE       location: 'node_modules/@babel/core',
+60 warn ERESOLVE       isWorkspace: false,
+60 warn ERESOLVE       dependents: [Array]
+60 warn ERESOLVE     },
+60 warn ERESOLVE     peer: {
+60 warn ERESOLVE       name: '@babel/core',
+60 warn ERESOLVE       version: '8.0.1',
+60 warn ERESOLVE       whileInstalling: [Object],
+60 warn ERESOLVE       location: 'node_modules/@babel/core',
+60 warn ERESOLVE       isWorkspace: false,
+60 warn ERESOLVE       dependents: [Array]
+60 warn ERESOLVE     }
+60 warn ERESOLVE   }
+60 warn ERESOLVE }
+61 warn ERESOLVE overriding peer dependency {
+61 warn ERESOLVE   code: 'ERESOLVE',
+61 warn ERESOLVE   edge: {
+61 warn ERESOLVE     type: 'peer',
+61 warn ERESOLVE     name: '@babel/core',
+61 warn ERESOLVE     spec: '^8.0.0',
+61 warn ERESOLVE     error: 'INVALID',
+61 warn ERESOLVE     from: {
+61 warn ERESOLVE       name: '@babel/plugin-transform-member-expression-literals',
+61 warn ERESOLVE       version: '8.0.1',
+61 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-member-expression-literals',
+61 warn ERESOLVE       isWorkspace: false,
+61 warn ERESOLVE       dependents: [Array]
+61 warn ERESOLVE     }
+61 warn ERESOLVE   },
+61 warn ERESOLVE   dep: {
+61 warn ERESOLVE     name: '@babel/core',
+61 warn ERESOLVE     version: '8.0.1',
+61 warn ERESOLVE     whileInstalling: {
+61 warn ERESOLVE       name: '@babel/plugin-transform-member-expression-literals',
+61 warn ERESOLVE       version: '8.0.1',
+61 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-member-expression-literals'
+61 warn ERESOLVE     },
+61 warn ERESOLVE     location: 'node_modules/@babel/core',
+61 warn ERESOLVE     isWorkspace: false,
+61 warn ERESOLVE     dependents: [ [Object] ]
+61 warn ERESOLVE   },
+61 warn ERESOLVE   force: false,
+61 warn ERESOLVE   isMine: false,
+61 warn ERESOLVE   strictPeerDeps: false,
+61 warn ERESOLVE   current: {
+61 warn ERESOLVE     name: '@babel/core',
+61 warn ERESOLVE     version: '7.26.0',
+61 warn ERESOLVE     location: 'node_modules/@babel/core',
+61 warn ERESOLVE     isWorkspace: false,
+61 warn ERESOLVE     dependents: [
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object],
+61 warn ERESOLVE       [Object], [Object]
+61 warn ERESOLVE     ]
+61 warn ERESOLVE   },
+61 warn ERESOLVE   peerConflict: {
+61 warn ERESOLVE     current: {
+61 warn ERESOLVE       name: '@babel/core',
+61 warn ERESOLVE       version: '7.26.0',
+61 warn ERESOLVE       location: 'node_modules/@babel/core',
+61 warn ERESOLVE       isWorkspace: false,
+61 warn ERESOLVE       dependents: [Array]
+61 warn ERESOLVE     },
+61 warn ERESOLVE     peer: {
+61 warn ERESOLVE       name: '@babel/core',
+61 warn ERESOLVE       version: '8.0.1',
+61 warn ERESOLVE       whileInstalling: [Object],
+61 warn ERESOLVE       location: 'node_modules/@babel/core',
+61 warn ERESOLVE       isWorkspace: false,
+61 warn ERESOLVE       dependents: [Array]
+61 warn ERESOLVE     }
+61 warn ERESOLVE   }
+61 warn ERESOLVE }
+62 warn ERESOLVE overriding peer dependency {
+62 warn ERESOLVE   code: 'ERESOLVE',
+62 warn ERESOLVE   edge: {
+62 warn ERESOLVE     type: 'peer',
+62 warn ERESOLVE     name: '@babel/core',
+62 warn ERESOLVE     spec: '^8.0.0',
+62 warn ERESOLVE     error: 'INVALID',
+62 warn ERESOLVE     from: {
+62 warn ERESOLVE       name: '@babel/plugin-transform-modules-amd',
+62 warn ERESOLVE       version: '8.0.1',
+62 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-modules-amd',
+62 warn ERESOLVE       isWorkspace: false,
+62 warn ERESOLVE       dependents: [Array]
+62 warn ERESOLVE     }
+62 warn ERESOLVE   },
+62 warn ERESOLVE   dep: {
+62 warn ERESOLVE     name: '@babel/core',
+62 warn ERESOLVE     version: '8.0.1',
+62 warn ERESOLVE     whileInstalling: {
+62 warn ERESOLVE       name: '@babel/plugin-transform-modules-amd',
+62 warn ERESOLVE       version: '8.0.1',
+62 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-modules-amd'
+62 warn ERESOLVE     },
+62 warn ERESOLVE     location: 'node_modules/@babel/core',
+62 warn ERESOLVE     isWorkspace: false,
+62 warn ERESOLVE     dependents: [ [Object] ]
+62 warn ERESOLVE   },
+62 warn ERESOLVE   force: false,
+62 warn ERESOLVE   isMine: false,
+62 warn ERESOLVE   strictPeerDeps: false,
+62 warn ERESOLVE   current: {
+62 warn ERESOLVE     name: '@babel/core',
+62 warn ERESOLVE     version: '7.26.0',
+62 warn ERESOLVE     location: 'node_modules/@babel/core',
+62 warn ERESOLVE     isWorkspace: false,
+62 warn ERESOLVE     dependents: [
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object],
+62 warn ERESOLVE       [Object], [Object]
+62 warn ERESOLVE     ]
+62 warn ERESOLVE   },
+62 warn ERESOLVE   peerConflict: {
+62 warn ERESOLVE     current: {
+62 warn ERESOLVE       name: '@babel/core',
+62 warn ERESOLVE       version: '7.26.0',
+62 warn ERESOLVE       location: 'node_modules/@babel/core',
+62 warn ERESOLVE       isWorkspace: false,
+62 warn ERESOLVE       dependents: [Array]
+62 warn ERESOLVE     },
+62 warn ERESOLVE     peer: {
+62 warn ERESOLVE       name: '@babel/core',
+62 warn ERESOLVE       version: '8.0.1',
+62 warn ERESOLVE       whileInstalling: [Object],
+62 warn ERESOLVE       location: 'node_modules/@babel/core',
+62 warn ERESOLVE       isWorkspace: false,
+62 warn ERESOLVE       dependents: [Array]
+62 warn ERESOLVE     }
+62 warn ERESOLVE   }
+62 warn ERESOLVE }
+63 warn ERESOLVE overriding peer dependency {
+63 warn ERESOLVE   code: 'ERESOLVE',
+63 warn ERESOLVE   edge: {
+63 warn ERESOLVE     type: 'peer',
+63 warn ERESOLVE     name: '@babel/core',
+63 warn ERESOLVE     spec: '^8.0.0',
+63 warn ERESOLVE     error: 'INVALID',
+63 warn ERESOLVE     from: {
+63 warn ERESOLVE       name: '@babel/plugin-transform-modules-commonjs',
+63 warn ERESOLVE       version: '8.0.1',
+63 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-modules-commonjs',
+63 warn ERESOLVE       isWorkspace: false,
+63 warn ERESOLVE       dependents: [Array]
+63 warn ERESOLVE     }
+63 warn ERESOLVE   },
+63 warn ERESOLVE   dep: {
+63 warn ERESOLVE     name: '@babel/core',
+63 warn ERESOLVE     version: '8.0.1',
+63 warn ERESOLVE     whileInstalling: {
+63 warn ERESOLVE       name: '@babel/plugin-transform-modules-commonjs',
+63 warn ERESOLVE       version: '8.0.1',
+63 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-modules-commonjs'
+63 warn ERESOLVE     },
+63 warn ERESOLVE     location: 'node_modules/@babel/core',
+63 warn ERESOLVE     isWorkspace: false,
+63 warn ERESOLVE     dependents: [ [Object] ]
+63 warn ERESOLVE   },
+63 warn ERESOLVE   force: false,
+63 warn ERESOLVE   isMine: false,
+63 warn ERESOLVE   strictPeerDeps: false,
+63 warn ERESOLVE   current: {
+63 warn ERESOLVE     name: '@babel/core',
+63 warn ERESOLVE     version: '7.26.0',
+63 warn ERESOLVE     location: 'node_modules/@babel/core',
+63 warn ERESOLVE     isWorkspace: false,
+63 warn ERESOLVE     dependents: [
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object],
+63 warn ERESOLVE       [Object], [Object]
+63 warn ERESOLVE     ]
+63 warn ERESOLVE   },
+63 warn ERESOLVE   peerConflict: {
+63 warn ERESOLVE     current: {
+63 warn ERESOLVE       name: '@babel/core',
+63 warn ERESOLVE       version: '7.26.0',
+63 warn ERESOLVE       location: 'node_modules/@babel/core',
+63 warn ERESOLVE       isWorkspace: false,
+63 warn ERESOLVE       dependents: [Array]
+63 warn ERESOLVE     },
+63 warn ERESOLVE     peer: {
+63 warn ERESOLVE       name: '@babel/core',
+63 warn ERESOLVE       version: '8.0.1',
+63 warn ERESOLVE       whileInstalling: [Object],
+63 warn ERESOLVE       location: 'node_modules/@babel/core',
+63 warn ERESOLVE       isWorkspace: false,
+63 warn ERESOLVE       dependents: [Array]
+63 warn ERESOLVE     }
+63 warn ERESOLVE   }
+63 warn ERESOLVE }
+64 warn ERESOLVE overriding peer dependency {
+64 warn ERESOLVE   code: 'ERESOLVE',
+64 warn ERESOLVE   edge: {
+64 warn ERESOLVE     type: 'peer',
+64 warn ERESOLVE     name: '@babel/core',
+64 warn ERESOLVE     spec: '^8.0.0',
+64 warn ERESOLVE     error: 'INVALID',
+64 warn ERESOLVE     from: {
+64 warn ERESOLVE       name: '@babel/plugin-transform-modules-systemjs',
+64 warn ERESOLVE       version: '8.0.1',
+64 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-modules-systemjs',
+64 warn ERESOLVE       isWorkspace: false,
+64 warn ERESOLVE       dependents: [Array]
+64 warn ERESOLVE     }
+64 warn ERESOLVE   },
+64 warn ERESOLVE   dep: {
+64 warn ERESOLVE     name: '@babel/core',
+64 warn ERESOLVE     version: '8.0.1',
+64 warn ERESOLVE     whileInstalling: {
+64 warn ERESOLVE       name: '@babel/plugin-transform-modules-systemjs',
+64 warn ERESOLVE       version: '8.0.1',
+64 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-modules-systemjs'
+64 warn ERESOLVE     },
+64 warn ERESOLVE     location: 'node_modules/@babel/core',
+64 warn ERESOLVE     isWorkspace: false,
+64 warn ERESOLVE     dependents: [ [Object] ]
+64 warn ERESOLVE   },
+64 warn ERESOLVE   force: false,
+64 warn ERESOLVE   isMine: false,
+64 warn ERESOLVE   strictPeerDeps: false,
+64 warn ERESOLVE   current: {
+64 warn ERESOLVE     name: '@babel/core',
+64 warn ERESOLVE     version: '7.26.0',
+64 warn ERESOLVE     location: 'node_modules/@babel/core',
+64 warn ERESOLVE     isWorkspace: false,
+64 warn ERESOLVE     dependents: [
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object],
+64 warn ERESOLVE       [Object], [Object]
+64 warn ERESOLVE     ]
+64 warn ERESOLVE   },
+64 warn ERESOLVE   peerConflict: {
+64 warn ERESOLVE     current: {
+64 warn ERESOLVE       name: '@babel/core',
+64 warn ERESOLVE       version: '7.26.0',
+64 warn ERESOLVE       location: 'node_modules/@babel/core',
+64 warn ERESOLVE       isWorkspace: false,
+64 warn ERESOLVE       dependents: [Array]
+64 warn ERESOLVE     },
+64 warn ERESOLVE     peer: {
+64 warn ERESOLVE       name: '@babel/core',
+64 warn ERESOLVE       version: '8.0.1',
+64 warn ERESOLVE       whileInstalling: [Object],
+64 warn ERESOLVE       location: 'node_modules/@babel/core',
+64 warn ERESOLVE       isWorkspace: false,
+64 warn ERESOLVE       dependents: [Array]
+64 warn ERESOLVE     }
+64 warn ERESOLVE   }
+64 warn ERESOLVE }
+65 warn ERESOLVE overriding peer dependency {
+65 warn ERESOLVE   code: 'ERESOLVE',
+65 warn ERESOLVE   edge: {
+65 warn ERESOLVE     type: 'peer',
+65 warn ERESOLVE     name: '@babel/core',
+65 warn ERESOLVE     spec: '^8.0.0',
+65 warn ERESOLVE     error: 'INVALID',
+65 warn ERESOLVE     from: {
+65 warn ERESOLVE       name: '@babel/plugin-transform-modules-umd',
+65 warn ERESOLVE       version: '8.0.1',
+65 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-modules-umd',
+65 warn ERESOLVE       isWorkspace: false,
+65 warn ERESOLVE       dependents: [Array]
+65 warn ERESOLVE     }
+65 warn ERESOLVE   },
+65 warn ERESOLVE   dep: {
+65 warn ERESOLVE     name: '@babel/core',
+65 warn ERESOLVE     version: '8.0.1',
+65 warn ERESOLVE     whileInstalling: {
+65 warn ERESOLVE       name: '@babel/plugin-transform-modules-umd',
+65 warn ERESOLVE       version: '8.0.1',
+65 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-modules-umd'
+65 warn ERESOLVE     },
+65 warn ERESOLVE     location: 'node_modules/@babel/core',
+65 warn ERESOLVE     isWorkspace: false,
+65 warn ERESOLVE     dependents: [ [Object] ]
+65 warn ERESOLVE   },
+65 warn ERESOLVE   force: false,
+65 warn ERESOLVE   isMine: false,
+65 warn ERESOLVE   strictPeerDeps: false,
+65 warn ERESOLVE   current: {
+65 warn ERESOLVE     name: '@babel/core',
+65 warn ERESOLVE     version: '7.26.0',
+65 warn ERESOLVE     location: 'node_modules/@babel/core',
+65 warn ERESOLVE     isWorkspace: false,
+65 warn ERESOLVE     dependents: [
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object],
+65 warn ERESOLVE       [Object], [Object]
+65 warn ERESOLVE     ]
+65 warn ERESOLVE   },
+65 warn ERESOLVE   peerConflict: {
+65 warn ERESOLVE     current: {
+65 warn ERESOLVE       name: '@babel/core',
+65 warn ERESOLVE       version: '7.26.0',
+65 warn ERESOLVE       location: 'node_modules/@babel/core',
+65 warn ERESOLVE       isWorkspace: false,
+65 warn ERESOLVE       dependents: [Array]
+65 warn ERESOLVE     },
+65 warn ERESOLVE     peer: {
+65 warn ERESOLVE       name: '@babel/core',
+65 warn ERESOLVE       version: '8.0.1',
+65 warn ERESOLVE       whileInstalling: [Object],
+65 warn ERESOLVE       location: 'node_modules/@babel/core',
+65 warn ERESOLVE       isWorkspace: false,
+65 warn ERESOLVE       dependents: [Array]
+65 warn ERESOLVE     }
+65 warn ERESOLVE   }
+65 warn ERESOLVE }
+66 warn ERESOLVE overriding peer dependency {
+66 warn ERESOLVE   code: 'ERESOLVE',
+66 warn ERESOLVE   edge: {
+66 warn ERESOLVE     type: 'peer',
+66 warn ERESOLVE     name: '@babel/core',
+66 warn ERESOLVE     spec: '^8.0.0',
+66 warn ERESOLVE     error: 'INVALID',
+66 warn ERESOLVE     from: {
+66 warn ERESOLVE       name: '@babel/plugin-transform-named-capturing-groups-regex',
+66 warn ERESOLVE       version: '8.0.1',
+66 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-named-capturing-groups-regex',
+66 warn ERESOLVE       isWorkspace: false,
+66 warn ERESOLVE       dependents: [Array]
+66 warn ERESOLVE     }
+66 warn ERESOLVE   },
+66 warn ERESOLVE   dep: {
+66 warn ERESOLVE     name: '@babel/core',
+66 warn ERESOLVE     version: '8.0.1',
+66 warn ERESOLVE     whileInstalling: {
+66 warn ERESOLVE       name: '@babel/plugin-transform-named-capturing-groups-regex',
+66 warn ERESOLVE       version: '8.0.1',
+66 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-named-capturing-groups-regex'
+66 warn ERESOLVE     },
+66 warn ERESOLVE     location: 'node_modules/@babel/core',
+66 warn ERESOLVE     isWorkspace: false,
+66 warn ERESOLVE     dependents: [ [Object] ]
+66 warn ERESOLVE   },
+66 warn ERESOLVE   force: false,
+66 warn ERESOLVE   isMine: false,
+66 warn ERESOLVE   strictPeerDeps: false,
+66 warn ERESOLVE   current: {
+66 warn ERESOLVE     name: '@babel/core',
+66 warn ERESOLVE     version: '7.26.0',
+66 warn ERESOLVE     location: 'node_modules/@babel/core',
+66 warn ERESOLVE     isWorkspace: false,
+66 warn ERESOLVE     dependents: [
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object],
+66 warn ERESOLVE       [Object], [Object]
+66 warn ERESOLVE     ]
+66 warn ERESOLVE   },
+66 warn ERESOLVE   peerConflict: {
+66 warn ERESOLVE     current: {
+66 warn ERESOLVE       name: '@babel/core',
+66 warn ERESOLVE       version: '7.26.0',
+66 warn ERESOLVE       location: 'node_modules/@babel/core',
+66 warn ERESOLVE       isWorkspace: false,
+66 warn ERESOLVE       dependents: [Array]
+66 warn ERESOLVE     },
+66 warn ERESOLVE     peer: {
+66 warn ERESOLVE       name: '@babel/core',
+66 warn ERESOLVE       version: '8.0.1',
+66 warn ERESOLVE       whileInstalling: [Object],
+66 warn ERESOLVE       location: 'node_modules/@babel/core',
+66 warn ERESOLVE       isWorkspace: false,
+66 warn ERESOLVE       dependents: [Array]
+66 warn ERESOLVE     }
+66 warn ERESOLVE   }
+66 warn ERESOLVE }
+67 warn ERESOLVE overriding peer dependency {
+67 warn ERESOLVE   code: 'ERESOLVE',
+67 warn ERESOLVE   edge: {
+67 warn ERESOLVE     type: 'peer',
+67 warn ERESOLVE     name: '@babel/core',
+67 warn ERESOLVE     spec: '^8.0.0',
+67 warn ERESOLVE     error: 'INVALID',
+67 warn ERESOLVE     from: {
+67 warn ERESOLVE       name: '@babel/plugin-transform-new-target',
+67 warn ERESOLVE       version: '8.0.1',
+67 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-new-target',
+67 warn ERESOLVE       isWorkspace: false,
+67 warn ERESOLVE       dependents: [Array]
+67 warn ERESOLVE     }
+67 warn ERESOLVE   },
+67 warn ERESOLVE   dep: {
+67 warn ERESOLVE     name: '@babel/core',
+67 warn ERESOLVE     version: '8.0.1',
+67 warn ERESOLVE     whileInstalling: {
+67 warn ERESOLVE       name: '@babel/plugin-transform-new-target',
+67 warn ERESOLVE       version: '8.0.1',
+67 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-new-target'
+67 warn ERESOLVE     },
+67 warn ERESOLVE     location: 'node_modules/@babel/core',
+67 warn ERESOLVE     isWorkspace: false,
+67 warn ERESOLVE     dependents: [ [Object] ]
+67 warn ERESOLVE   },
+67 warn ERESOLVE   force: false,
+67 warn ERESOLVE   isMine: false,
+67 warn ERESOLVE   strictPeerDeps: false,
+67 warn ERESOLVE   current: {
+67 warn ERESOLVE     name: '@babel/core',
+67 warn ERESOLVE     version: '7.26.0',
+67 warn ERESOLVE     location: 'node_modules/@babel/core',
+67 warn ERESOLVE     isWorkspace: false,
+67 warn ERESOLVE     dependents: [
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object],
+67 warn ERESOLVE       [Object], [Object]
+67 warn ERESOLVE     ]
+67 warn ERESOLVE   },
+67 warn ERESOLVE   peerConflict: {
+67 warn ERESOLVE     current: {
+67 warn ERESOLVE       name: '@babel/core',
+67 warn ERESOLVE       version: '7.26.0',
+67 warn ERESOLVE       location: 'node_modules/@babel/core',
+67 warn ERESOLVE       isWorkspace: false,
+67 warn ERESOLVE       dependents: [Array]
+67 warn ERESOLVE     },
+67 warn ERESOLVE     peer: {
+67 warn ERESOLVE       name: '@babel/core',
+67 warn ERESOLVE       version: '8.0.1',
+67 warn ERESOLVE       whileInstalling: [Object],
+67 warn ERESOLVE       location: 'node_modules/@babel/core',
+67 warn ERESOLVE       isWorkspace: false,
+67 warn ERESOLVE       dependents: [Array]
+67 warn ERESOLVE     }
+67 warn ERESOLVE   }
+67 warn ERESOLVE }
+68 warn ERESOLVE overriding peer dependency {
+68 warn ERESOLVE   code: 'ERESOLVE',
+68 warn ERESOLVE   edge: {
+68 warn ERESOLVE     type: 'peer',
+68 warn ERESOLVE     name: '@babel/core',
+68 warn ERESOLVE     spec: '^8.0.0',
+68 warn ERESOLVE     error: 'INVALID',
+68 warn ERESOLVE     from: {
+68 warn ERESOLVE       name: '@babel/plugin-transform-nullish-coalescing-operator',
+68 warn ERESOLVE       version: '8.0.1',
+68 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-nullish-coalescing-operator',
+68 warn ERESOLVE       isWorkspace: false,
+68 warn ERESOLVE       dependents: [Array]
+68 warn ERESOLVE     }
+68 warn ERESOLVE   },
+68 warn ERESOLVE   dep: {
+68 warn ERESOLVE     name: '@babel/core',
+68 warn ERESOLVE     version: '8.0.1',
+68 warn ERESOLVE     whileInstalling: {
+68 warn ERESOLVE       name: '@babel/plugin-transform-nullish-coalescing-operator',
+68 warn ERESOLVE       version: '8.0.1',
+68 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-nullish-coalescing-operator'
+68 warn ERESOLVE     },
+68 warn ERESOLVE     location: 'node_modules/@babel/core',
+68 warn ERESOLVE     isWorkspace: false,
+68 warn ERESOLVE     dependents: [ [Object] ]
+68 warn ERESOLVE   },
+68 warn ERESOLVE   force: false,
+68 warn ERESOLVE   isMine: false,
+68 warn ERESOLVE   strictPeerDeps: false,
+68 warn ERESOLVE   current: {
+68 warn ERESOLVE     name: '@babel/core',
+68 warn ERESOLVE     version: '7.26.0',
+68 warn ERESOLVE     location: 'node_modules/@babel/core',
+68 warn ERESOLVE     isWorkspace: false,
+68 warn ERESOLVE     dependents: [
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object],
+68 warn ERESOLVE       [Object], [Object]
+68 warn ERESOLVE     ]
+68 warn ERESOLVE   },
+68 warn ERESOLVE   peerConflict: {
+68 warn ERESOLVE     current: {
+68 warn ERESOLVE       name: '@babel/core',
+68 warn ERESOLVE       version: '7.26.0',
+68 warn ERESOLVE       location: 'node_modules/@babel/core',
+68 warn ERESOLVE       isWorkspace: false,
+68 warn ERESOLVE       dependents: [Array]
+68 warn ERESOLVE     },
+68 warn ERESOLVE     peer: {
+68 warn ERESOLVE       name: '@babel/core',
+68 warn ERESOLVE       version: '8.0.1',
+68 warn ERESOLVE       whileInstalling: [Object],
+68 warn ERESOLVE       location: 'node_modules/@babel/core',
+68 warn ERESOLVE       isWorkspace: false,
+68 warn ERESOLVE       dependents: [Array]
+68 warn ERESOLVE     }
+68 warn ERESOLVE   }
+68 warn ERESOLVE }
+69 warn ERESOLVE overriding peer dependency {
+69 warn ERESOLVE   code: 'ERESOLVE',
+69 warn ERESOLVE   edge: {
+69 warn ERESOLVE     type: 'peer',
+69 warn ERESOLVE     name: '@babel/core',
+69 warn ERESOLVE     spec: '^8.0.0',
+69 warn ERESOLVE     error: 'INVALID',
+69 warn ERESOLVE     from: {
+69 warn ERESOLVE       name: '@babel/plugin-transform-numeric-separator',
+69 warn ERESOLVE       version: '8.0.1',
+69 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-numeric-separator',
+69 warn ERESOLVE       isWorkspace: false,
+69 warn ERESOLVE       dependents: [Array]
+69 warn ERESOLVE     }
+69 warn ERESOLVE   },
+69 warn ERESOLVE   dep: {
+69 warn ERESOLVE     name: '@babel/core',
+69 warn ERESOLVE     version: '8.0.1',
+69 warn ERESOLVE     whileInstalling: {
+69 warn ERESOLVE       name: '@babel/plugin-transform-numeric-separator',
+69 warn ERESOLVE       version: '8.0.1',
+69 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-numeric-separator'
+69 warn ERESOLVE     },
+69 warn ERESOLVE     location: 'node_modules/@babel/core',
+69 warn ERESOLVE     isWorkspace: false,
+69 warn ERESOLVE     dependents: [ [Object] ]
+69 warn ERESOLVE   },
+69 warn ERESOLVE   force: false,
+69 warn ERESOLVE   isMine: false,
+69 warn ERESOLVE   strictPeerDeps: false,
+69 warn ERESOLVE   current: {
+69 warn ERESOLVE     name: '@babel/core',
+69 warn ERESOLVE     version: '7.26.0',
+69 warn ERESOLVE     location: 'node_modules/@babel/core',
+69 warn ERESOLVE     isWorkspace: false,
+69 warn ERESOLVE     dependents: [
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object],
+69 warn ERESOLVE       [Object], [Object]
+69 warn ERESOLVE     ]
+69 warn ERESOLVE   },
+69 warn ERESOLVE   peerConflict: {
+69 warn ERESOLVE     current: {
+69 warn ERESOLVE       name: '@babel/core',
+69 warn ERESOLVE       version: '7.26.0',
+69 warn ERESOLVE       location: 'node_modules/@babel/core',
+69 warn ERESOLVE       isWorkspace: false,
+69 warn ERESOLVE       dependents: [Array]
+69 warn ERESOLVE     },
+69 warn ERESOLVE     peer: {
+69 warn ERESOLVE       name: '@babel/core',
+69 warn ERESOLVE       version: '8.0.1',
+69 warn ERESOLVE       whileInstalling: [Object],
+69 warn ERESOLVE       location: 'node_modules/@babel/core',
+69 warn ERESOLVE       isWorkspace: false,
+69 warn ERESOLVE       dependents: [Array]
+69 warn ERESOLVE     }
+69 warn ERESOLVE   }
+69 warn ERESOLVE }
+70 warn ERESOLVE overriding peer dependency {
+70 warn ERESOLVE   code: 'ERESOLVE',
+70 warn ERESOLVE   edge: {
+70 warn ERESOLVE     type: 'peer',
+70 warn ERESOLVE     name: '@babel/core',
+70 warn ERESOLVE     spec: '^8.0.0',
+70 warn ERESOLVE     error: 'INVALID',
+70 warn ERESOLVE     from: {
+70 warn ERESOLVE       name: '@babel/plugin-transform-object-rest-spread',
+70 warn ERESOLVE       version: '8.0.1',
+70 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-object-rest-spread',
+70 warn ERESOLVE       isWorkspace: false,
+70 warn ERESOLVE       dependents: [Array]
+70 warn ERESOLVE     }
+70 warn ERESOLVE   },
+70 warn ERESOLVE   dep: {
+70 warn ERESOLVE     name: '@babel/core',
+70 warn ERESOLVE     version: '8.0.1',
+70 warn ERESOLVE     whileInstalling: {
+70 warn ERESOLVE       name: '@babel/plugin-transform-object-rest-spread',
+70 warn ERESOLVE       version: '8.0.1',
+70 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-object-rest-spread'
+70 warn ERESOLVE     },
+70 warn ERESOLVE     location: 'node_modules/@babel/core',
+70 warn ERESOLVE     isWorkspace: false,
+70 warn ERESOLVE     dependents: [ [Object] ]
+70 warn ERESOLVE   },
+70 warn ERESOLVE   force: false,
+70 warn ERESOLVE   isMine: false,
+70 warn ERESOLVE   strictPeerDeps: false,
+70 warn ERESOLVE   current: {
+70 warn ERESOLVE     name: '@babel/core',
+70 warn ERESOLVE     version: '7.26.0',
+70 warn ERESOLVE     location: 'node_modules/@babel/core',
+70 warn ERESOLVE     isWorkspace: false,
+70 warn ERESOLVE     dependents: [
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object],
+70 warn ERESOLVE       [Object], [Object]
+70 warn ERESOLVE     ]
+70 warn ERESOLVE   },
+70 warn ERESOLVE   peerConflict: {
+70 warn ERESOLVE     current: {
+70 warn ERESOLVE       name: '@babel/core',
+70 warn ERESOLVE       version: '7.26.0',
+70 warn ERESOLVE       location: 'node_modules/@babel/core',
+70 warn ERESOLVE       isWorkspace: false,
+70 warn ERESOLVE       dependents: [Array]
+70 warn ERESOLVE     },
+70 warn ERESOLVE     peer: {
+70 warn ERESOLVE       name: '@babel/core',
+70 warn ERESOLVE       version: '8.0.1',
+70 warn ERESOLVE       whileInstalling: [Object],
+70 warn ERESOLVE       location: 'node_modules/@babel/core',
+70 warn ERESOLVE       isWorkspace: false,
+70 warn ERESOLVE       dependents: [Array]
+70 warn ERESOLVE     }
+70 warn ERESOLVE   }
+70 warn ERESOLVE }
+71 warn ERESOLVE overriding peer dependency {
+71 warn ERESOLVE   code: 'ERESOLVE',
+71 warn ERESOLVE   edge: {
+71 warn ERESOLVE     type: 'peer',
+71 warn ERESOLVE     name: '@babel/core',
+71 warn ERESOLVE     spec: '^8.0.0',
+71 warn ERESOLVE     error: 'INVALID',
+71 warn ERESOLVE     from: {
+71 warn ERESOLVE       name: '@babel/plugin-transform-object-super',
+71 warn ERESOLVE       version: '8.0.1',
+71 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-object-super',
+71 warn ERESOLVE       isWorkspace: false,
+71 warn ERESOLVE       dependents: [Array]
+71 warn ERESOLVE     }
+71 warn ERESOLVE   },
+71 warn ERESOLVE   dep: {
+71 warn ERESOLVE     name: '@babel/core',
+71 warn ERESOLVE     version: '8.0.1',
+71 warn ERESOLVE     whileInstalling: {
+71 warn ERESOLVE       name: '@babel/plugin-transform-object-super',
+71 warn ERESOLVE       version: '8.0.1',
+71 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-object-super'
+71 warn ERESOLVE     },
+71 warn ERESOLVE     location: 'node_modules/@babel/core',
+71 warn ERESOLVE     isWorkspace: false,
+71 warn ERESOLVE     dependents: [ [Object] ]
+71 warn ERESOLVE   },
+71 warn ERESOLVE   force: false,
+71 warn ERESOLVE   isMine: false,
+71 warn ERESOLVE   strictPeerDeps: false,
+71 warn ERESOLVE   current: {
+71 warn ERESOLVE     name: '@babel/core',
+71 warn ERESOLVE     version: '7.26.0',
+71 warn ERESOLVE     location: 'node_modules/@babel/core',
+71 warn ERESOLVE     isWorkspace: false,
+71 warn ERESOLVE     dependents: [
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object],
+71 warn ERESOLVE       [Object], [Object]
+71 warn ERESOLVE     ]
+71 warn ERESOLVE   },
+71 warn ERESOLVE   peerConflict: {
+71 warn ERESOLVE     current: {
+71 warn ERESOLVE       name: '@babel/core',
+71 warn ERESOLVE       version: '7.26.0',
+71 warn ERESOLVE       location: 'node_modules/@babel/core',
+71 warn ERESOLVE       isWorkspace: false,
+71 warn ERESOLVE       dependents: [Array]
+71 warn ERESOLVE     },
+71 warn ERESOLVE     peer: {
+71 warn ERESOLVE       name: '@babel/core',
+71 warn ERESOLVE       version: '8.0.1',
+71 warn ERESOLVE       whileInstalling: [Object],
+71 warn ERESOLVE       location: 'node_modules/@babel/core',
+71 warn ERESOLVE       isWorkspace: false,
+71 warn ERESOLVE       dependents: [Array]
+71 warn ERESOLVE     }
+71 warn ERESOLVE   }
+71 warn ERESOLVE }
+72 warn ERESOLVE overriding peer dependency {
+72 warn ERESOLVE   code: 'ERESOLVE',
+72 warn ERESOLVE   edge: {
+72 warn ERESOLVE     type: 'peer',
+72 warn ERESOLVE     name: '@babel/core',
+72 warn ERESOLVE     spec: '^8.0.0',
+72 warn ERESOLVE     error: 'INVALID',
+72 warn ERESOLVE     from: {
+72 warn ERESOLVE       name: '@babel/plugin-transform-optional-catch-binding',
+72 warn ERESOLVE       version: '8.0.1',
+72 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-optional-catch-binding',
+72 warn ERESOLVE       isWorkspace: false,
+72 warn ERESOLVE       dependents: [Array]
+72 warn ERESOLVE     }
+72 warn ERESOLVE   },
+72 warn ERESOLVE   dep: {
+72 warn ERESOLVE     name: '@babel/core',
+72 warn ERESOLVE     version: '8.0.1',
+72 warn ERESOLVE     whileInstalling: {
+72 warn ERESOLVE       name: '@babel/plugin-transform-optional-catch-binding',
+72 warn ERESOLVE       version: '8.0.1',
+72 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-optional-catch-binding'
+72 warn ERESOLVE     },
+72 warn ERESOLVE     location: 'node_modules/@babel/core',
+72 warn ERESOLVE     isWorkspace: false,
+72 warn ERESOLVE     dependents: [ [Object] ]
+72 warn ERESOLVE   },
+72 warn ERESOLVE   force: false,
+72 warn ERESOLVE   isMine: false,
+72 warn ERESOLVE   strictPeerDeps: false,
+72 warn ERESOLVE   current: {
+72 warn ERESOLVE     name: '@babel/core',
+72 warn ERESOLVE     version: '7.26.0',
+72 warn ERESOLVE     location: 'node_modules/@babel/core',
+72 warn ERESOLVE     isWorkspace: false,
+72 warn ERESOLVE     dependents: [
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object],
+72 warn ERESOLVE       [Object], [Object]
+72 warn ERESOLVE     ]
+72 warn ERESOLVE   },
+72 warn ERESOLVE   peerConflict: {
+72 warn ERESOLVE     current: {
+72 warn ERESOLVE       name: '@babel/core',
+72 warn ERESOLVE       version: '7.26.0',
+72 warn ERESOLVE       location: 'node_modules/@babel/core',
+72 warn ERESOLVE       isWorkspace: false,
+72 warn ERESOLVE       dependents: [Array]
+72 warn ERESOLVE     },
+72 warn ERESOLVE     peer: {
+72 warn ERESOLVE       name: '@babel/core',
+72 warn ERESOLVE       version: '8.0.1',
+72 warn ERESOLVE       whileInstalling: [Object],
+72 warn ERESOLVE       location: 'node_modules/@babel/core',
+72 warn ERESOLVE       isWorkspace: false,
+72 warn ERESOLVE       dependents: [Array]
+72 warn ERESOLVE     }
+72 warn ERESOLVE   }
+72 warn ERESOLVE }
+73 warn ERESOLVE overriding peer dependency {
+73 warn ERESOLVE   code: 'ERESOLVE',
+73 warn ERESOLVE   edge: {
+73 warn ERESOLVE     type: 'peer',
+73 warn ERESOLVE     name: '@babel/core',
+73 warn ERESOLVE     spec: '^8.0.0',
+73 warn ERESOLVE     error: 'INVALID',
+73 warn ERESOLVE     from: {
+73 warn ERESOLVE       name: '@babel/plugin-transform-optional-chaining',
+73 warn ERESOLVE       version: '8.0.1',
+73 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-optional-chaining',
+73 warn ERESOLVE       isWorkspace: false,
+73 warn ERESOLVE       dependents: [Array]
+73 warn ERESOLVE     }
+73 warn ERESOLVE   },
+73 warn ERESOLVE   dep: {
+73 warn ERESOLVE     name: '@babel/core',
+73 warn ERESOLVE     version: '8.0.1',
+73 warn ERESOLVE     whileInstalling: {
+73 warn ERESOLVE       name: '@babel/plugin-transform-optional-chaining',
+73 warn ERESOLVE       version: '8.0.1',
+73 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-optional-chaining'
+73 warn ERESOLVE     },
+73 warn ERESOLVE     location: 'node_modules/@babel/core',
+73 warn ERESOLVE     isWorkspace: false,
+73 warn ERESOLVE     dependents: [ [Object] ]
+73 warn ERESOLVE   },
+73 warn ERESOLVE   force: false,
+73 warn ERESOLVE   isMine: false,
+73 warn ERESOLVE   strictPeerDeps: false,
+73 warn ERESOLVE   current: {
+73 warn ERESOLVE     name: '@babel/core',
+73 warn ERESOLVE     version: '7.26.0',
+73 warn ERESOLVE     location: 'node_modules/@babel/core',
+73 warn ERESOLVE     isWorkspace: false,
+73 warn ERESOLVE     dependents: [
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object],
+73 warn ERESOLVE       [Object], [Object]
+73 warn ERESOLVE     ]
+73 warn ERESOLVE   },
+73 warn ERESOLVE   peerConflict: {
+73 warn ERESOLVE     current: {
+73 warn ERESOLVE       name: '@babel/core',
+73 warn ERESOLVE       version: '7.26.0',
+73 warn ERESOLVE       location: 'node_modules/@babel/core',
+73 warn ERESOLVE       isWorkspace: false,
+73 warn ERESOLVE       dependents: [Array]
+73 warn ERESOLVE     },
+73 warn ERESOLVE     peer: {
+73 warn ERESOLVE       name: '@babel/core',
+73 warn ERESOLVE       version: '8.0.1',
+73 warn ERESOLVE       whileInstalling: [Object],
+73 warn ERESOLVE       location: 'node_modules/@babel/core',
+73 warn ERESOLVE       isWorkspace: false,
+73 warn ERESOLVE       dependents: [Array]
+73 warn ERESOLVE     }
+73 warn ERESOLVE   }
+73 warn ERESOLVE }
+74 warn ERESOLVE overriding peer dependency {
+74 warn ERESOLVE   code: 'ERESOLVE',
+74 warn ERESOLVE   edge: {
+74 warn ERESOLVE     type: 'peer',
+74 warn ERESOLVE     name: '@babel/core',
+74 warn ERESOLVE     spec: '^8.0.0',
+74 warn ERESOLVE     error: 'INVALID',
+74 warn ERESOLVE     from: {
+74 warn ERESOLVE       name: '@babel/plugin-transform-private-methods',
+74 warn ERESOLVE       version: '8.0.1',
+74 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-private-methods',
+74 warn ERESOLVE       isWorkspace: false,
+74 warn ERESOLVE       dependents: [Array]
+74 warn ERESOLVE     }
+74 warn ERESOLVE   },
+74 warn ERESOLVE   dep: {
+74 warn ERESOLVE     name: '@babel/core',
+74 warn ERESOLVE     version: '8.0.1',
+74 warn ERESOLVE     whileInstalling: {
+74 warn ERESOLVE       name: '@babel/plugin-transform-private-methods',
+74 warn ERESOLVE       version: '8.0.1',
+74 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-private-methods'
+74 warn ERESOLVE     },
+74 warn ERESOLVE     location: 'node_modules/@babel/core',
+74 warn ERESOLVE     isWorkspace: false,
+74 warn ERESOLVE     dependents: [ [Object] ]
+74 warn ERESOLVE   },
+74 warn ERESOLVE   force: false,
+74 warn ERESOLVE   isMine: false,
+74 warn ERESOLVE   strictPeerDeps: false,
+74 warn ERESOLVE   current: {
+74 warn ERESOLVE     name: '@babel/core',
+74 warn ERESOLVE     version: '7.26.0',
+74 warn ERESOLVE     location: 'node_modules/@babel/core',
+74 warn ERESOLVE     isWorkspace: false,
+74 warn ERESOLVE     dependents: [
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object],
+74 warn ERESOLVE       [Object], [Object]
+74 warn ERESOLVE     ]
+74 warn ERESOLVE   },
+74 warn ERESOLVE   peerConflict: {
+74 warn ERESOLVE     current: {
+74 warn ERESOLVE       name: '@babel/core',
+74 warn ERESOLVE       version: '7.26.0',
+74 warn ERESOLVE       location: 'node_modules/@babel/core',
+74 warn ERESOLVE       isWorkspace: false,
+74 warn ERESOLVE       dependents: [Array]
+74 warn ERESOLVE     },
+74 warn ERESOLVE     peer: {
+74 warn ERESOLVE       name: '@babel/core',
+74 warn ERESOLVE       version: '8.0.1',
+74 warn ERESOLVE       whileInstalling: [Object],
+74 warn ERESOLVE       location: 'node_modules/@babel/core',
+74 warn ERESOLVE       isWorkspace: false,
+74 warn ERESOLVE       dependents: [Array]
+74 warn ERESOLVE     }
+74 warn ERESOLVE   }
+74 warn ERESOLVE }
+75 warn ERESOLVE overriding peer dependency {
+75 warn ERESOLVE   code: 'ERESOLVE',
+75 warn ERESOLVE   edge: {
+75 warn ERESOLVE     type: 'peer',
+75 warn ERESOLVE     name: '@babel/core',
+75 warn ERESOLVE     spec: '^8.0.0',
+75 warn ERESOLVE     error: 'INVALID',
+75 warn ERESOLVE     from: {
+75 warn ERESOLVE       name: '@babel/plugin-transform-private-property-in-object',
+75 warn ERESOLVE       version: '8.0.1',
+75 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-private-property-in-object',
+75 warn ERESOLVE       isWorkspace: false,
+75 warn ERESOLVE       dependents: [Array]
+75 warn ERESOLVE     }
+75 warn ERESOLVE   },
+75 warn ERESOLVE   dep: {
+75 warn ERESOLVE     name: '@babel/core',
+75 warn ERESOLVE     version: '8.0.1',
+75 warn ERESOLVE     whileInstalling: {
+75 warn ERESOLVE       name: '@babel/plugin-transform-private-property-in-object',
+75 warn ERESOLVE       version: '8.0.1',
+75 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-private-property-in-object'
+75 warn ERESOLVE     },
+75 warn ERESOLVE     location: 'node_modules/@babel/core',
+75 warn ERESOLVE     isWorkspace: false,
+75 warn ERESOLVE     dependents: [ [Object] ]
+75 warn ERESOLVE   },
+75 warn ERESOLVE   force: false,
+75 warn ERESOLVE   isMine: false,
+75 warn ERESOLVE   strictPeerDeps: false,
+75 warn ERESOLVE   current: {
+75 warn ERESOLVE     name: '@babel/core',
+75 warn ERESOLVE     version: '7.26.0',
+75 warn ERESOLVE     location: 'node_modules/@babel/core',
+75 warn ERESOLVE     isWorkspace: false,
+75 warn ERESOLVE     dependents: [
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object],
+75 warn ERESOLVE       [Object], [Object]
+75 warn ERESOLVE     ]
+75 warn ERESOLVE   },
+75 warn ERESOLVE   peerConflict: {
+75 warn ERESOLVE     current: {
+75 warn ERESOLVE       name: '@babel/core',
+75 warn ERESOLVE       version: '7.26.0',
+75 warn ERESOLVE       location: 'node_modules/@babel/core',
+75 warn ERESOLVE       isWorkspace: false,
+75 warn ERESOLVE       dependents: [Array]
+75 warn ERESOLVE     },
+75 warn ERESOLVE     peer: {
+75 warn ERESOLVE       name: '@babel/core',
+75 warn ERESOLVE       version: '8.0.1',
+75 warn ERESOLVE       whileInstalling: [Object],
+75 warn ERESOLVE       location: 'node_modules/@babel/core',
+75 warn ERESOLVE       isWorkspace: false,
+75 warn ERESOLVE       dependents: [Array]
+75 warn ERESOLVE     }
+75 warn ERESOLVE   }
+75 warn ERESOLVE }
+76 warn ERESOLVE overriding peer dependency {
+76 warn ERESOLVE   code: 'ERESOLVE',
+76 warn ERESOLVE   edge: {
+76 warn ERESOLVE     type: 'peer',
+76 warn ERESOLVE     name: '@babel/core',
+76 warn ERESOLVE     spec: '^8.0.0',
+76 warn ERESOLVE     error: 'INVALID',
+76 warn ERESOLVE     from: {
+76 warn ERESOLVE       name: '@babel/plugin-transform-property-literals',
+76 warn ERESOLVE       version: '8.0.1',
+76 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-property-literals',
+76 warn ERESOLVE       isWorkspace: false,
+76 warn ERESOLVE       dependents: [Array]
+76 warn ERESOLVE     }
+76 warn ERESOLVE   },
+76 warn ERESOLVE   dep: {
+76 warn ERESOLVE     name: '@babel/core',
+76 warn ERESOLVE     version: '8.0.1',
+76 warn ERESOLVE     whileInstalling: {
+76 warn ERESOLVE       name: '@babel/plugin-transform-property-literals',
+76 warn ERESOLVE       version: '8.0.1',
+76 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-property-literals'
+76 warn ERESOLVE     },
+76 warn ERESOLVE     location: 'node_modules/@babel/core',
+76 warn ERESOLVE     isWorkspace: false,
+76 warn ERESOLVE     dependents: [ [Object] ]
+76 warn ERESOLVE   },
+76 warn ERESOLVE   force: false,
+76 warn ERESOLVE   isMine: false,
+76 warn ERESOLVE   strictPeerDeps: false,
+76 warn ERESOLVE   current: {
+76 warn ERESOLVE     name: '@babel/core',
+76 warn ERESOLVE     version: '7.26.0',
+76 warn ERESOLVE     location: 'node_modules/@babel/core',
+76 warn ERESOLVE     isWorkspace: false,
+76 warn ERESOLVE     dependents: [
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object],
+76 warn ERESOLVE       [Object], [Object]
+76 warn ERESOLVE     ]
+76 warn ERESOLVE   },
+76 warn ERESOLVE   peerConflict: {
+76 warn ERESOLVE     current: {
+76 warn ERESOLVE       name: '@babel/core',
+76 warn ERESOLVE       version: '7.26.0',
+76 warn ERESOLVE       location: 'node_modules/@babel/core',
+76 warn ERESOLVE       isWorkspace: false,
+76 warn ERESOLVE       dependents: [Array]
+76 warn ERESOLVE     },
+76 warn ERESOLVE     peer: {
+76 warn ERESOLVE       name: '@babel/core',
+76 warn ERESOLVE       version: '8.0.1',
+76 warn ERESOLVE       whileInstalling: [Object],
+76 warn ERESOLVE       location: 'node_modules/@babel/core',
+76 warn ERESOLVE       isWorkspace: false,
+76 warn ERESOLVE       dependents: [Array]
+76 warn ERESOLVE     }
+76 warn ERESOLVE   }
+76 warn ERESOLVE }
+77 warn ERESOLVE overriding peer dependency {
+77 warn ERESOLVE   code: 'ERESOLVE',
+77 warn ERESOLVE   edge: {
+77 warn ERESOLVE     type: 'peer',
+77 warn ERESOLVE     name: '@babel/core',
+77 warn ERESOLVE     spec: '^8.0.0',
+77 warn ERESOLVE     error: 'INVALID',
+77 warn ERESOLVE     from: {
+77 warn ERESOLVE       name: '@babel/plugin-transform-regenerator',
+77 warn ERESOLVE       version: '8.0.2',
+77 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-regenerator',
+77 warn ERESOLVE       isWorkspace: false,
+77 warn ERESOLVE       dependents: [Array]
+77 warn ERESOLVE     }
+77 warn ERESOLVE   },
+77 warn ERESOLVE   dep: {
+77 warn ERESOLVE     name: '@babel/core',
+77 warn ERESOLVE     version: '8.0.1',
+77 warn ERESOLVE     whileInstalling: {
+77 warn ERESOLVE       name: '@babel/plugin-transform-regenerator',
+77 warn ERESOLVE       version: '8.0.2',
+77 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-regenerator'
+77 warn ERESOLVE     },
+77 warn ERESOLVE     location: 'node_modules/@babel/core',
+77 warn ERESOLVE     isWorkspace: false,
+77 warn ERESOLVE     dependents: [ [Object] ]
+77 warn ERESOLVE   },
+77 warn ERESOLVE   force: false,
+77 warn ERESOLVE   isMine: false,
+77 warn ERESOLVE   strictPeerDeps: false,
+77 warn ERESOLVE   current: {
+77 warn ERESOLVE     name: '@babel/core',
+77 warn ERESOLVE     version: '7.26.0',
+77 warn ERESOLVE     location: 'node_modules/@babel/core',
+77 warn ERESOLVE     isWorkspace: false,
+77 warn ERESOLVE     dependents: [
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object],
+77 warn ERESOLVE       [Object], [Object]
+77 warn ERESOLVE     ]
+77 warn ERESOLVE   },
+77 warn ERESOLVE   peerConflict: {
+77 warn ERESOLVE     current: {
+77 warn ERESOLVE       name: '@babel/core',
+77 warn ERESOLVE       version: '7.26.0',
+77 warn ERESOLVE       location: 'node_modules/@babel/core',
+77 warn ERESOLVE       isWorkspace: false,
+77 warn ERESOLVE       dependents: [Array]
+77 warn ERESOLVE     },
+77 warn ERESOLVE     peer: {
+77 warn ERESOLVE       name: '@babel/core',
+77 warn ERESOLVE       version: '8.0.1',
+77 warn ERESOLVE       whileInstalling: [Object],
+77 warn ERESOLVE       location: 'node_modules/@babel/core',
+77 warn ERESOLVE       isWorkspace: false,
+77 warn ERESOLVE       dependents: [Array]
+77 warn ERESOLVE     }
+77 warn ERESOLVE   }
+77 warn ERESOLVE }
+78 warn ERESOLVE overriding peer dependency {
+78 warn ERESOLVE   code: 'ERESOLVE',
+78 warn ERESOLVE   edge: {
+78 warn ERESOLVE     type: 'peer',
+78 warn ERESOLVE     name: '@babel/core',
+78 warn ERESOLVE     spec: '^8.0.0',
+78 warn ERESOLVE     error: 'INVALID',
+78 warn ERESOLVE     from: {
+78 warn ERESOLVE       name: '@babel/plugin-transform-regexp-modifiers',
+78 warn ERESOLVE       version: '8.0.1',
+78 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-regexp-modifiers',
+78 warn ERESOLVE       isWorkspace: false,
+78 warn ERESOLVE       dependents: [Array]
+78 warn ERESOLVE     }
+78 warn ERESOLVE   },
+78 warn ERESOLVE   dep: {
+78 warn ERESOLVE     name: '@babel/core',
+78 warn ERESOLVE     version: '8.0.1',
+78 warn ERESOLVE     whileInstalling: {
+78 warn ERESOLVE       name: '@babel/plugin-transform-regexp-modifiers',
+78 warn ERESOLVE       version: '8.0.1',
+78 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-regexp-modifiers'
+78 warn ERESOLVE     },
+78 warn ERESOLVE     location: 'node_modules/@babel/core',
+78 warn ERESOLVE     isWorkspace: false,
+78 warn ERESOLVE     dependents: [ [Object] ]
+78 warn ERESOLVE   },
+78 warn ERESOLVE   force: false,
+78 warn ERESOLVE   isMine: false,
+78 warn ERESOLVE   strictPeerDeps: false,
+78 warn ERESOLVE   current: {
+78 warn ERESOLVE     name: '@babel/core',
+78 warn ERESOLVE     version: '7.26.0',
+78 warn ERESOLVE     location: 'node_modules/@babel/core',
+78 warn ERESOLVE     isWorkspace: false,
+78 warn ERESOLVE     dependents: [
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object],
+78 warn ERESOLVE       [Object], [Object]
+78 warn ERESOLVE     ]
+78 warn ERESOLVE   },
+78 warn ERESOLVE   peerConflict: {
+78 warn ERESOLVE     current: {
+78 warn ERESOLVE       name: '@babel/core',
+78 warn ERESOLVE       version: '7.26.0',
+78 warn ERESOLVE       location: 'node_modules/@babel/core',
+78 warn ERESOLVE       isWorkspace: false,
+78 warn ERESOLVE       dependents: [Array]
+78 warn ERESOLVE     },
+78 warn ERESOLVE     peer: {
+78 warn ERESOLVE       name: '@babel/core',
+78 warn ERESOLVE       version: '8.0.1',
+78 warn ERESOLVE       whileInstalling: [Object],
+78 warn ERESOLVE       location: 'node_modules/@babel/core',
+78 warn ERESOLVE       isWorkspace: false,
+78 warn ERESOLVE       dependents: [Array]
+78 warn ERESOLVE     }
+78 warn ERESOLVE   }
+78 warn ERESOLVE }
+79 warn ERESOLVE overriding peer dependency {
+79 warn ERESOLVE   code: 'ERESOLVE',
+79 warn ERESOLVE   edge: {
+79 warn ERESOLVE     type: 'peer',
+79 warn ERESOLVE     name: '@babel/core',
+79 warn ERESOLVE     spec: '^8.0.0',
+79 warn ERESOLVE     error: 'INVALID',
+79 warn ERESOLVE     from: {
+79 warn ERESOLVE       name: '@babel/plugin-transform-reserved-words',
+79 warn ERESOLVE       version: '8.0.1',
+79 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-reserved-words',
+79 warn ERESOLVE       isWorkspace: false,
+79 warn ERESOLVE       dependents: [Array]
+79 warn ERESOLVE     }
+79 warn ERESOLVE   },
+79 warn ERESOLVE   dep: {
+79 warn ERESOLVE     name: '@babel/core',
+79 warn ERESOLVE     version: '8.0.1',
+79 warn ERESOLVE     whileInstalling: {
+79 warn ERESOLVE       name: '@babel/plugin-transform-reserved-words',
+79 warn ERESOLVE       version: '8.0.1',
+79 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-reserved-words'
+79 warn ERESOLVE     },
+79 warn ERESOLVE     location: 'node_modules/@babel/core',
+79 warn ERESOLVE     isWorkspace: false,
+79 warn ERESOLVE     dependents: [ [Object] ]
+79 warn ERESOLVE   },
+79 warn ERESOLVE   force: false,
+79 warn ERESOLVE   isMine: false,
+79 warn ERESOLVE   strictPeerDeps: false,
+79 warn ERESOLVE   current: {
+79 warn ERESOLVE     name: '@babel/core',
+79 warn ERESOLVE     version: '7.26.0',
+79 warn ERESOLVE     location: 'node_modules/@babel/core',
+79 warn ERESOLVE     isWorkspace: false,
+79 warn ERESOLVE     dependents: [
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object],
+79 warn ERESOLVE       [Object], [Object]
+79 warn ERESOLVE     ]
+79 warn ERESOLVE   },
+79 warn ERESOLVE   peerConflict: {
+79 warn ERESOLVE     current: {
+79 warn ERESOLVE       name: '@babel/core',
+79 warn ERESOLVE       version: '7.26.0',
+79 warn ERESOLVE       location: 'node_modules/@babel/core',
+79 warn ERESOLVE       isWorkspace: false,
+79 warn ERESOLVE       dependents: [Array]
+79 warn ERESOLVE     },
+79 warn ERESOLVE     peer: {
+79 warn ERESOLVE       name: '@babel/core',
+79 warn ERESOLVE       version: '8.0.1',
+79 warn ERESOLVE       whileInstalling: [Object],
+79 warn ERESOLVE       location: 'node_modules/@babel/core',
+79 warn ERESOLVE       isWorkspace: false,
+79 warn ERESOLVE       dependents: [Array]
+79 warn ERESOLVE     }
+79 warn ERESOLVE   }
+79 warn ERESOLVE }
+80 warn ERESOLVE overriding peer dependency {
+80 warn ERESOLVE   code: 'ERESOLVE',
+80 warn ERESOLVE   edge: {
+80 warn ERESOLVE     type: 'peer',
+80 warn ERESOLVE     name: '@babel/core',
+80 warn ERESOLVE     spec: '^8.0.0',
+80 warn ERESOLVE     error: 'INVALID',
+80 warn ERESOLVE     from: {
+80 warn ERESOLVE       name: '@babel/plugin-transform-runtime',
+80 warn ERESOLVE       version: '8.0.1',
+80 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-runtime',
+80 warn ERESOLVE       isWorkspace: false,
+80 warn ERESOLVE       dependents: []
+80 warn ERESOLVE     }
+80 warn ERESOLVE   },
+80 warn ERESOLVE   dep: {
+80 warn ERESOLVE     name: '@babel/core',
+80 warn ERESOLVE     version: '8.0.1',
+80 warn ERESOLVE     whileInstalling: {
+80 warn ERESOLVE       name: '@babel/plugin-transform-runtime',
+80 warn ERESOLVE       version: '8.0.1',
+80 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-runtime'
+80 warn ERESOLVE     },
+80 warn ERESOLVE     location: 'node_modules/@babel/core',
+80 warn ERESOLVE     isWorkspace: false,
+80 warn ERESOLVE     dependents: [ [Object] ]
+80 warn ERESOLVE   },
+80 warn ERESOLVE   force: false,
+80 warn ERESOLVE   isMine: false,
+80 warn ERESOLVE   strictPeerDeps: false,
+80 warn ERESOLVE   current: {
+80 warn ERESOLVE     name: '@babel/core',
+80 warn ERESOLVE     version: '7.26.0',
+80 warn ERESOLVE     location: 'node_modules/@babel/core',
+80 warn ERESOLVE     isWorkspace: false,
+80 warn ERESOLVE     dependents: [
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object],
+80 warn ERESOLVE       [Object], [Object]
+80 warn ERESOLVE     ]
+80 warn ERESOLVE   },
+80 warn ERESOLVE   peerConflict: {
+80 warn ERESOLVE     current: {
+80 warn ERESOLVE       name: '@babel/core',
+80 warn ERESOLVE       version: '7.26.0',
+80 warn ERESOLVE       location: 'node_modules/@babel/core',
+80 warn ERESOLVE       isWorkspace: false,
+80 warn ERESOLVE       dependents: [Array]
+80 warn ERESOLVE     },
+80 warn ERESOLVE     peer: {
+80 warn ERESOLVE       name: '@babel/core',
+80 warn ERESOLVE       version: '8.0.1',
+80 warn ERESOLVE       whileInstalling: [Object],
+80 warn ERESOLVE       location: 'node_modules/@babel/core',
+80 warn ERESOLVE       isWorkspace: false,
+80 warn ERESOLVE       dependents: [Array]
+80 warn ERESOLVE     }
+80 warn ERESOLVE   }
+80 warn ERESOLVE }
+81 warn ERESOLVE overriding peer dependency {
+81 warn ERESOLVE   code: 'ERESOLVE',
+81 warn ERESOLVE   edge: {
+81 warn ERESOLVE     type: 'peer',
+81 warn ERESOLVE     name: '@babel/core',
+81 warn ERESOLVE     spec: '^8.0.0',
+81 warn ERESOLVE     error: 'INVALID',
+81 warn ERESOLVE     from: {
+81 warn ERESOLVE       name: '@babel/plugin-transform-shorthand-properties',
+81 warn ERESOLVE       version: '8.0.1',
+81 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-shorthand-properties',
+81 warn ERESOLVE       isWorkspace: false,
+81 warn ERESOLVE       dependents: [Array]
+81 warn ERESOLVE     }
+81 warn ERESOLVE   },
+81 warn ERESOLVE   dep: {
+81 warn ERESOLVE     name: '@babel/core',
+81 warn ERESOLVE     version: '8.0.1',
+81 warn ERESOLVE     whileInstalling: {
+81 warn ERESOLVE       name: '@babel/plugin-transform-shorthand-properties',
+81 warn ERESOLVE       version: '8.0.1',
+81 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-shorthand-properties'
+81 warn ERESOLVE     },
+81 warn ERESOLVE     location: 'node_modules/@babel/core',
+81 warn ERESOLVE     isWorkspace: false,
+81 warn ERESOLVE     dependents: [ [Object] ]
+81 warn ERESOLVE   },
+81 warn ERESOLVE   force: false,
+81 warn ERESOLVE   isMine: false,
+81 warn ERESOLVE   strictPeerDeps: false,
+81 warn ERESOLVE   current: {
+81 warn ERESOLVE     name: '@babel/core',
+81 warn ERESOLVE     version: '7.26.0',
+81 warn ERESOLVE     location: 'node_modules/@babel/core',
+81 warn ERESOLVE     isWorkspace: false,
+81 warn ERESOLVE     dependents: [
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object],
+81 warn ERESOLVE       [Object], [Object]
+81 warn ERESOLVE     ]
+81 warn ERESOLVE   },
+81 warn ERESOLVE   peerConflict: {
+81 warn ERESOLVE     current: {
+81 warn ERESOLVE       name: '@babel/core',
+81 warn ERESOLVE       version: '7.26.0',
+81 warn ERESOLVE       location: 'node_modules/@babel/core',
+81 warn ERESOLVE       isWorkspace: false,
+81 warn ERESOLVE       dependents: [Array]
+81 warn ERESOLVE     },
+81 warn ERESOLVE     peer: {
+81 warn ERESOLVE       name: '@babel/core',
+81 warn ERESOLVE       version: '8.0.1',
+81 warn ERESOLVE       whileInstalling: [Object],
+81 warn ERESOLVE       location: 'node_modules/@babel/core',
+81 warn ERESOLVE       isWorkspace: false,
+81 warn ERESOLVE       dependents: [Array]
+81 warn ERESOLVE     }
+81 warn ERESOLVE   }
+81 warn ERESOLVE }
+82 warn ERESOLVE overriding peer dependency {
+82 warn ERESOLVE   code: 'ERESOLVE',
+82 warn ERESOLVE   edge: {
+82 warn ERESOLVE     type: 'peer',
+82 warn ERESOLVE     name: '@babel/core',
+82 warn ERESOLVE     spec: '^8.0.0',
+82 warn ERESOLVE     error: 'INVALID',
+82 warn ERESOLVE     from: {
+82 warn ERESOLVE       name: '@babel/plugin-transform-spread',
+82 warn ERESOLVE       version: '8.0.1',
+82 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-spread',
+82 warn ERESOLVE       isWorkspace: false,
+82 warn ERESOLVE       dependents: [Array]
+82 warn ERESOLVE     }
+82 warn ERESOLVE   },
+82 warn ERESOLVE   dep: {
+82 warn ERESOLVE     name: '@babel/core',
+82 warn ERESOLVE     version: '8.0.1',
+82 warn ERESOLVE     whileInstalling: {
+82 warn ERESOLVE       name: '@babel/plugin-transform-spread',
+82 warn ERESOLVE       version: '8.0.1',
+82 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-spread'
+82 warn ERESOLVE     },
+82 warn ERESOLVE     location: 'node_modules/@babel/core',
+82 warn ERESOLVE     isWorkspace: false,
+82 warn ERESOLVE     dependents: [ [Object] ]
+82 warn ERESOLVE   },
+82 warn ERESOLVE   force: false,
+82 warn ERESOLVE   isMine: false,
+82 warn ERESOLVE   strictPeerDeps: false,
+82 warn ERESOLVE   current: {
+82 warn ERESOLVE     name: '@babel/core',
+82 warn ERESOLVE     version: '7.26.0',
+82 warn ERESOLVE     location: 'node_modules/@babel/core',
+82 warn ERESOLVE     isWorkspace: false,
+82 warn ERESOLVE     dependents: [
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object],
+82 warn ERESOLVE       [Object], [Object]
+82 warn ERESOLVE     ]
+82 warn ERESOLVE   },
+82 warn ERESOLVE   peerConflict: {
+82 warn ERESOLVE     current: {
+82 warn ERESOLVE       name: '@babel/core',
+82 warn ERESOLVE       version: '7.26.0',
+82 warn ERESOLVE       location: 'node_modules/@babel/core',
+82 warn ERESOLVE       isWorkspace: false,
+82 warn ERESOLVE       dependents: [Array]
+82 warn ERESOLVE     },
+82 warn ERESOLVE     peer: {
+82 warn ERESOLVE       name: '@babel/core',
+82 warn ERESOLVE       version: '8.0.1',
+82 warn ERESOLVE       whileInstalling: [Object],
+82 warn ERESOLVE       location: 'node_modules/@babel/core',
+82 warn ERESOLVE       isWorkspace: false,
+82 warn ERESOLVE       dependents: [Array]
+82 warn ERESOLVE     }
+82 warn ERESOLVE   }
+82 warn ERESOLVE }
+83 warn ERESOLVE overriding peer dependency {
+83 warn ERESOLVE   code: 'ERESOLVE',
+83 warn ERESOLVE   edge: {
+83 warn ERESOLVE     type: 'peer',
+83 warn ERESOLVE     name: '@babel/core',
+83 warn ERESOLVE     spec: '^8.0.0',
+83 warn ERESOLVE     error: 'INVALID',
+83 warn ERESOLVE     from: {
+83 warn ERESOLVE       name: '@babel/plugin-transform-sticky-regex',
+83 warn ERESOLVE       version: '8.0.1',
+83 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-sticky-regex',
+83 warn ERESOLVE       isWorkspace: false,
+83 warn ERESOLVE       dependents: [Array]
+83 warn ERESOLVE     }
+83 warn ERESOLVE   },
+83 warn ERESOLVE   dep: {
+83 warn ERESOLVE     name: '@babel/core',
+83 warn ERESOLVE     version: '8.0.1',
+83 warn ERESOLVE     whileInstalling: {
+83 warn ERESOLVE       name: '@babel/plugin-transform-sticky-regex',
+83 warn ERESOLVE       version: '8.0.1',
+83 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-sticky-regex'
+83 warn ERESOLVE     },
+83 warn ERESOLVE     location: 'node_modules/@babel/core',
+83 warn ERESOLVE     isWorkspace: false,
+83 warn ERESOLVE     dependents: [ [Object] ]
+83 warn ERESOLVE   },
+83 warn ERESOLVE   force: false,
+83 warn ERESOLVE   isMine: false,
+83 warn ERESOLVE   strictPeerDeps: false,
+83 warn ERESOLVE   current: {
+83 warn ERESOLVE     name: '@babel/core',
+83 warn ERESOLVE     version: '7.26.0',
+83 warn ERESOLVE     location: 'node_modules/@babel/core',
+83 warn ERESOLVE     isWorkspace: false,
+83 warn ERESOLVE     dependents: [
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object],
+83 warn ERESOLVE       [Object], [Object]
+83 warn ERESOLVE     ]
+83 warn ERESOLVE   },
+83 warn ERESOLVE   peerConflict: {
+83 warn ERESOLVE     current: {
+83 warn ERESOLVE       name: '@babel/core',
+83 warn ERESOLVE       version: '7.26.0',
+83 warn ERESOLVE       location: 'node_modules/@babel/core',
+83 warn ERESOLVE       isWorkspace: false,
+83 warn ERESOLVE       dependents: [Array]
+83 warn ERESOLVE     },
+83 warn ERESOLVE     peer: {
+83 warn ERESOLVE       name: '@babel/core',
+83 warn ERESOLVE       version: '8.0.1',
+83 warn ERESOLVE       whileInstalling: [Object],
+83 warn ERESOLVE       location: 'node_modules/@babel/core',
+83 warn ERESOLVE       isWorkspace: false,
+83 warn ERESOLVE       dependents: [Array]
+83 warn ERESOLVE     }
+83 warn ERESOLVE   }
+83 warn ERESOLVE }
+84 warn ERESOLVE overriding peer dependency {
+84 warn ERESOLVE   code: 'ERESOLVE',
+84 warn ERESOLVE   edge: {
+84 warn ERESOLVE     type: 'peer',
+84 warn ERESOLVE     name: '@babel/core',
+84 warn ERESOLVE     spec: '^8.0.0',
+84 warn ERESOLVE     error: 'INVALID',
+84 warn ERESOLVE     from: {
+84 warn ERESOLVE       name: '@babel/plugin-transform-template-literals',
+84 warn ERESOLVE       version: '8.0.1',
+84 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-template-literals',
+84 warn ERESOLVE       isWorkspace: false,
+84 warn ERESOLVE       dependents: [Array]
+84 warn ERESOLVE     }
+84 warn ERESOLVE   },
+84 warn ERESOLVE   dep: {
+84 warn ERESOLVE     name: '@babel/core',
+84 warn ERESOLVE     version: '8.0.1',
+84 warn ERESOLVE     whileInstalling: {
+84 warn ERESOLVE       name: '@babel/plugin-transform-template-literals',
+84 warn ERESOLVE       version: '8.0.1',
+84 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-template-literals'
+84 warn ERESOLVE     },
+84 warn ERESOLVE     location: 'node_modules/@babel/core',
+84 warn ERESOLVE     isWorkspace: false,
+84 warn ERESOLVE     dependents: [ [Object] ]
+84 warn ERESOLVE   },
+84 warn ERESOLVE   force: false,
+84 warn ERESOLVE   isMine: false,
+84 warn ERESOLVE   strictPeerDeps: false,
+84 warn ERESOLVE   current: {
+84 warn ERESOLVE     name: '@babel/core',
+84 warn ERESOLVE     version: '7.26.0',
+84 warn ERESOLVE     location: 'node_modules/@babel/core',
+84 warn ERESOLVE     isWorkspace: false,
+84 warn ERESOLVE     dependents: [
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object],
+84 warn ERESOLVE       [Object], [Object]
+84 warn ERESOLVE     ]
+84 warn ERESOLVE   },
+84 warn ERESOLVE   peerConflict: {
+84 warn ERESOLVE     current: {
+84 warn ERESOLVE       name: '@babel/core',
+84 warn ERESOLVE       version: '7.26.0',
+84 warn ERESOLVE       location: 'node_modules/@babel/core',
+84 warn ERESOLVE       isWorkspace: false,
+84 warn ERESOLVE       dependents: [Array]
+84 warn ERESOLVE     },
+84 warn ERESOLVE     peer: {
+84 warn ERESOLVE       name: '@babel/core',
+84 warn ERESOLVE       version: '8.0.1',
+84 warn ERESOLVE       whileInstalling: [Object],
+84 warn ERESOLVE       location: 'node_modules/@babel/core',
+84 warn ERESOLVE       isWorkspace: false,
+84 warn ERESOLVE       dependents: [Array]
+84 warn ERESOLVE     }
+84 warn ERESOLVE   }
+84 warn ERESOLVE }
+85 warn ERESOLVE overriding peer dependency {
+85 warn ERESOLVE   code: 'ERESOLVE',
+85 warn ERESOLVE   edge: {
+85 warn ERESOLVE     type: 'peer',
+85 warn ERESOLVE     name: '@babel/core',
+85 warn ERESOLVE     spec: '^8.0.0',
+85 warn ERESOLVE     error: 'INVALID',
+85 warn ERESOLVE     from: {
+85 warn ERESOLVE       name: '@babel/plugin-transform-typeof-symbol',
+85 warn ERESOLVE       version: '8.0.1',
+85 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-typeof-symbol',
+85 warn ERESOLVE       isWorkspace: false,
+85 warn ERESOLVE       dependents: [Array]
+85 warn ERESOLVE     }
+85 warn ERESOLVE   },
+85 warn ERESOLVE   dep: {
+85 warn ERESOLVE     name: '@babel/core',
+85 warn ERESOLVE     version: '8.0.1',
+85 warn ERESOLVE     whileInstalling: {
+85 warn ERESOLVE       name: '@babel/plugin-transform-typeof-symbol',
+85 warn ERESOLVE       version: '8.0.1',
+85 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-typeof-symbol'
+85 warn ERESOLVE     },
+85 warn ERESOLVE     location: 'node_modules/@babel/core',
+85 warn ERESOLVE     isWorkspace: false,
+85 warn ERESOLVE     dependents: [ [Object] ]
+85 warn ERESOLVE   },
+85 warn ERESOLVE   force: false,
+85 warn ERESOLVE   isMine: false,
+85 warn ERESOLVE   strictPeerDeps: false,
+85 warn ERESOLVE   current: {
+85 warn ERESOLVE     name: '@babel/core',
+85 warn ERESOLVE     version: '7.26.0',
+85 warn ERESOLVE     location: 'node_modules/@babel/core',
+85 warn ERESOLVE     isWorkspace: false,
+85 warn ERESOLVE     dependents: [
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object],
+85 warn ERESOLVE       [Object], [Object]
+85 warn ERESOLVE     ]
+85 warn ERESOLVE   },
+85 warn ERESOLVE   peerConflict: {
+85 warn ERESOLVE     current: {
+85 warn ERESOLVE       name: '@babel/core',
+85 warn ERESOLVE       version: '7.26.0',
+85 warn ERESOLVE       location: 'node_modules/@babel/core',
+85 warn ERESOLVE       isWorkspace: false,
+85 warn ERESOLVE       dependents: [Array]
+85 warn ERESOLVE     },
+85 warn ERESOLVE     peer: {
+85 warn ERESOLVE       name: '@babel/core',
+85 warn ERESOLVE       version: '8.0.1',
+85 warn ERESOLVE       whileInstalling: [Object],
+85 warn ERESOLVE       location: 'node_modules/@babel/core',
+85 warn ERESOLVE       isWorkspace: false,
+85 warn ERESOLVE       dependents: [Array]
+85 warn ERESOLVE     }
+85 warn ERESOLVE   }
+85 warn ERESOLVE }
+86 warn ERESOLVE overriding peer dependency {
+86 warn ERESOLVE   code: 'ERESOLVE',
+86 warn ERESOLVE   edge: {
+86 warn ERESOLVE     type: 'peer',
+86 warn ERESOLVE     name: '@babel/core',
+86 warn ERESOLVE     spec: '^8.0.0',
+86 warn ERESOLVE     error: 'INVALID',
+86 warn ERESOLVE     from: {
+86 warn ERESOLVE       name: '@babel/plugin-transform-unicode-escapes',
+86 warn ERESOLVE       version: '8.0.1',
+86 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-unicode-escapes',
+86 warn ERESOLVE       isWorkspace: false,
+86 warn ERESOLVE       dependents: [Array]
+86 warn ERESOLVE     }
+86 warn ERESOLVE   },
+86 warn ERESOLVE   dep: {
+86 warn ERESOLVE     name: '@babel/core',
+86 warn ERESOLVE     version: '8.0.1',
+86 warn ERESOLVE     whileInstalling: {
+86 warn ERESOLVE       name: '@babel/plugin-transform-unicode-escapes',
+86 warn ERESOLVE       version: '8.0.1',
+86 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-unicode-escapes'
+86 warn ERESOLVE     },
+86 warn ERESOLVE     location: 'node_modules/@babel/core',
+86 warn ERESOLVE     isWorkspace: false,
+86 warn ERESOLVE     dependents: [ [Object] ]
+86 warn ERESOLVE   },
+86 warn ERESOLVE   force: false,
+86 warn ERESOLVE   isMine: false,
+86 warn ERESOLVE   strictPeerDeps: false,
+86 warn ERESOLVE   current: {
+86 warn ERESOLVE     name: '@babel/core',
+86 warn ERESOLVE     version: '7.26.0',
+86 warn ERESOLVE     location: 'node_modules/@babel/core',
+86 warn ERESOLVE     isWorkspace: false,
+86 warn ERESOLVE     dependents: [
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object],
+86 warn ERESOLVE       [Object], [Object]
+86 warn ERESOLVE     ]
+86 warn ERESOLVE   },
+86 warn ERESOLVE   peerConflict: {
+86 warn ERESOLVE     current: {
+86 warn ERESOLVE       name: '@babel/core',
+86 warn ERESOLVE       version: '7.26.0',
+86 warn ERESOLVE       location: 'node_modules/@babel/core',
+86 warn ERESOLVE       isWorkspace: false,
+86 warn ERESOLVE       dependents: [Array]
+86 warn ERESOLVE     },
+86 warn ERESOLVE     peer: {
+86 warn ERESOLVE       name: '@babel/core',
+86 warn ERESOLVE       version: '8.0.1',
+86 warn ERESOLVE       whileInstalling: [Object],
+86 warn ERESOLVE       location: 'node_modules/@babel/core',
+86 warn ERESOLVE       isWorkspace: false,
+86 warn ERESOLVE       dependents: [Array]
+86 warn ERESOLVE     }
+86 warn ERESOLVE   }
+86 warn ERESOLVE }
+87 warn ERESOLVE overriding peer dependency {
+87 warn ERESOLVE   code: 'ERESOLVE',
+87 warn ERESOLVE   edge: {
+87 warn ERESOLVE     type: 'peer',
+87 warn ERESOLVE     name: '@babel/core',
+87 warn ERESOLVE     spec: '^8.0.0',
+87 warn ERESOLVE     error: 'INVALID',
+87 warn ERESOLVE     from: {
+87 warn ERESOLVE       name: '@babel/plugin-transform-unicode-property-regex',
+87 warn ERESOLVE       version: '8.0.1',
+87 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-unicode-property-regex',
+87 warn ERESOLVE       isWorkspace: false,
+87 warn ERESOLVE       dependents: [Array]
+87 warn ERESOLVE     }
+87 warn ERESOLVE   },
+87 warn ERESOLVE   dep: {
+87 warn ERESOLVE     name: '@babel/core',
+87 warn ERESOLVE     version: '8.0.1',
+87 warn ERESOLVE     whileInstalling: {
+87 warn ERESOLVE       name: '@babel/plugin-transform-unicode-property-regex',
+87 warn ERESOLVE       version: '8.0.1',
+87 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-unicode-property-regex'
+87 warn ERESOLVE     },
+87 warn ERESOLVE     location: 'node_modules/@babel/core',
+87 warn ERESOLVE     isWorkspace: false,
+87 warn ERESOLVE     dependents: [ [Object] ]
+87 warn ERESOLVE   },
+87 warn ERESOLVE   force: false,
+87 warn ERESOLVE   isMine: false,
+87 warn ERESOLVE   strictPeerDeps: false,
+87 warn ERESOLVE   current: {
+87 warn ERESOLVE     name: '@babel/core',
+87 warn ERESOLVE     version: '7.26.0',
+87 warn ERESOLVE     location: 'node_modules/@babel/core',
+87 warn ERESOLVE     isWorkspace: false,
+87 warn ERESOLVE     dependents: [
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object],
+87 warn ERESOLVE       [Object], [Object]
+87 warn ERESOLVE     ]
+87 warn ERESOLVE   },
+87 warn ERESOLVE   peerConflict: {
+87 warn ERESOLVE     current: {
+87 warn ERESOLVE       name: '@babel/core',
+87 warn ERESOLVE       version: '7.26.0',
+87 warn ERESOLVE       location: 'node_modules/@babel/core',
+87 warn ERESOLVE       isWorkspace: false,
+87 warn ERESOLVE       dependents: [Array]
+87 warn ERESOLVE     },
+87 warn ERESOLVE     peer: {
+87 warn ERESOLVE       name: '@babel/core',
+87 warn ERESOLVE       version: '8.0.1',
+87 warn ERESOLVE       whileInstalling: [Object],
+87 warn ERESOLVE       location: 'node_modules/@babel/core',
+87 warn ERESOLVE       isWorkspace: false,
+87 warn ERESOLVE       dependents: [Array]
+87 warn ERESOLVE     }
+87 warn ERESOLVE   }
+87 warn ERESOLVE }
+88 warn ERESOLVE overriding peer dependency {
+88 warn ERESOLVE   code: 'ERESOLVE',
+88 warn ERESOLVE   edge: {
+88 warn ERESOLVE     type: 'peer',
+88 warn ERESOLVE     name: '@babel/core',
+88 warn ERESOLVE     spec: '^8.0.0',
+88 warn ERESOLVE     error: 'INVALID',
+88 warn ERESOLVE     from: {
+88 warn ERESOLVE       name: '@babel/plugin-transform-unicode-regex',
+88 warn ERESOLVE       version: '8.0.1',
+88 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-unicode-regex',
+88 warn ERESOLVE       isWorkspace: false,
+88 warn ERESOLVE       dependents: [Array]
+88 warn ERESOLVE     }
+88 warn ERESOLVE   },
+88 warn ERESOLVE   dep: {
+88 warn ERESOLVE     name: '@babel/core',
+88 warn ERESOLVE     version: '8.0.1',
+88 warn ERESOLVE     whileInstalling: {
+88 warn ERESOLVE       name: '@babel/plugin-transform-unicode-regex',
+88 warn ERESOLVE       version: '8.0.1',
+88 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-unicode-regex'
+88 warn ERESOLVE     },
+88 warn ERESOLVE     location: 'node_modules/@babel/core',
+88 warn ERESOLVE     isWorkspace: false,
+88 warn ERESOLVE     dependents: [ [Object] ]
+88 warn ERESOLVE   },
+88 warn ERESOLVE   force: false,
+88 warn ERESOLVE   isMine: false,
+88 warn ERESOLVE   strictPeerDeps: false,
+88 warn ERESOLVE   current: {
+88 warn ERESOLVE     name: '@babel/core',
+88 warn ERESOLVE     version: '7.26.0',
+88 warn ERESOLVE     location: 'node_modules/@babel/core',
+88 warn ERESOLVE     isWorkspace: false,
+88 warn ERESOLVE     dependents: [
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object],
+88 warn ERESOLVE       [Object], [Object]
+88 warn ERESOLVE     ]
+88 warn ERESOLVE   },
+88 warn ERESOLVE   peerConflict: {
+88 warn ERESOLVE     current: {
+88 warn ERESOLVE       name: '@babel/core',
+88 warn ERESOLVE       version: '7.26.0',
+88 warn ERESOLVE       location: 'node_modules/@babel/core',
+88 warn ERESOLVE       isWorkspace: false,
+88 warn ERESOLVE       dependents: [Array]
+88 warn ERESOLVE     },
+88 warn ERESOLVE     peer: {
+88 warn ERESOLVE       name: '@babel/core',
+88 warn ERESOLVE       version: '8.0.1',
+88 warn ERESOLVE       whileInstalling: [Object],
+88 warn ERESOLVE       location: 'node_modules/@babel/core',
+88 warn ERESOLVE       isWorkspace: false,
+88 warn ERESOLVE       dependents: [Array]
+88 warn ERESOLVE     }
+88 warn ERESOLVE   }
+88 warn ERESOLVE }
+89 warn ERESOLVE overriding peer dependency {
+89 warn ERESOLVE   code: 'ERESOLVE',
+89 warn ERESOLVE   edge: {
+89 warn ERESOLVE     type: 'peer',
+89 warn ERESOLVE     name: '@babel/core',
+89 warn ERESOLVE     spec: '^8.0.0',
+89 warn ERESOLVE     error: 'INVALID',
+89 warn ERESOLVE     from: {
+89 warn ERESOLVE       name: '@babel/plugin-transform-unicode-sets-regex',
+89 warn ERESOLVE       version: '8.0.1',
+89 warn ERESOLVE       location: 'node_modules/@babel/plugin-transform-unicode-sets-regex',
+89 warn ERESOLVE       isWorkspace: false,
+89 warn ERESOLVE       dependents: [Array]
+89 warn ERESOLVE     }
+89 warn ERESOLVE   },
+89 warn ERESOLVE   dep: {
+89 warn ERESOLVE     name: '@babel/core',
+89 warn ERESOLVE     version: '8.0.1',
+89 warn ERESOLVE     whileInstalling: {
+89 warn ERESOLVE       name: '@babel/plugin-transform-unicode-sets-regex',
+89 warn ERESOLVE       version: '8.0.1',
+89 warn ERESOLVE       path: 'D:\\workspaces\\project-template-v3\\utils\\node_modules\\@babel\\plugin-transform-unicode-sets-regex'
+89 warn ERESOLVE     },
+89 warn ERESOLVE     location: 'node_modules/@babel/core',
+89 warn ERESOLVE     isWorkspace: false,
+89 warn ERESOLVE     dependents: [ [Object] ]
+89 warn ERESOLVE   },
+89 warn ERESOLVE   force: false,
+89 warn ERESOLVE   isMine: false,
+89 warn ERESOLVE   strictPeerDeps: false,
+89 warn ERESOLVE   current: {
+89 warn ERESOLVE     name: '@babel/core',
+89 warn ERESOLVE     version: '7.26.0',
+89 warn ERESOLVE     location: 'node_modules/@babel/core',
+89 warn ERESOLVE     isWorkspace: false,
+89 warn ERESOLVE     dependents: [
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object],
+89 warn ERESOLVE       [Object], [Object]
+89 warn ERESOLVE     ]
+89 warn ERESOLVE   },
+89 warn ERESOLVE   peerConflict: {
+89 warn ERESOLVE     current: {
+89 warn ERESOLVE       name: '@babel/core',
+89 warn ERESOLVE       version: '7.26.0',
+89 warn ERESOLVE       location: 'node_modules/@babel/core',
+89 warn ERESOLVE       isWorkspace: false,
+89 warn ERESOLVE       dependents: [Array]
+89 warn ERESOLVE     },
+89 warn ERESOLVE     peer: {
+89 warn ERESOLVE       name: '@babel/core',
+89 warn ERESOLVE       version: '8.0.1',
+89 warn ERESOLVE       whileInstalling: [Object],
+89 warn ERESOLVE       location: 'node_modules/@babel/core',
+89 warn ERESOLVE       isWorkspace: false,
+89 warn ERESOLVE       dependents: [Array]
+89 warn ERESOLVE     }
+89 warn ERESOLVE   }
+89 warn ERESOLVE }
+90 verbose stack Error: could not resolve
+90 verbose stack     at PlaceDep.failPeerConflict (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:503:25)
+90 verbose stack     at new PlaceDep (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:157:21)
+90 verbose stack     at #buildDepStep (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:995:18)
+90 verbose stack     at async Arborist.buildIdealTree (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:178:7)
+90 verbose stack     at async Promise.all (index 1)
+90 verbose stack     at async Arborist.reify (E:\node\nvm\v24.18.0\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:112:5)
+90 verbose stack     at async Uninstall.exec (E:\node\nvm\v24.18.0\node_modules\npm\lib\commands\uninstall.js:49:5)
+90 verbose stack     at async Npm.exec (E:\node\nvm\v24.18.0\node_modules\npm\lib\npm.js:193:9)
+90 verbose stack     at async module.exports (E:\node\nvm\v24.18.0\node_modules\npm\lib\cli\entry.js:67:5)
+91 error code ERESOLVE
+92 error ERESOLVE could not resolve
+93 error
+94 error While resolving: @babel/preset-env@8.0.2
+94 error Found: @babel/core@7.26.0[2m[22m
+94 error [2mnode_modules/@babel/core[22m
+94 error   [95mpeer[39m @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.26.0[2m[22m
+94 error   [2mnode_modules/@babel/core/node_modules/@babel/helper-module-transforms[22m
+94 error     @babel/helper-module-transforms@"^7.26.0" from @babel/core@7.26.0
+94 error   [95mpeer[39m @babel/core@"^7.4.0 || ^8.0.0" from babel-plugin-polyfill-corejs3@1.0.0[2m[22m
+94 error   [2mnode_modules/babel-plugin-polyfill-corejs3[22m
+94 error     babel-plugin-polyfill-corejs3@"^1.0.0" from @babel/preset-env@8.0.2[2m[22m
+94 error     [2mnode_modules/@babel/preset-env[22m
+94 error       [34mdev[39m @babel/preset-env@"^8.0.2" from the root project
+94 error   14 more (@babel/helper-define-polyfill-provider, ...)
+94 error
+94 error Could not resolve dependency:
+94 error [95mpeer[39m @babel/core@"^8.0.0" from @babel/preset-env@8.0.2[2m[22m
+94 error [2mnode_modules/@babel/preset-env[22m
+94 error   [34mdev[39m @babel/preset-env@"^8.0.2" from the root project
+94 error
+94 error Conflicting peer dependency: @babel/core@8.0.1[2m[22m
+94 error [2mnode_modules/@babel/core[22m
+94 error   [95mpeer[39m @babel/core@"^8.0.0" from @babel/preset-env@8.0.2[2m[22m
+94 error   [2mnode_modules/@babel/preset-env[22m
+94 error     [34mdev[39m @babel/preset-env@"^8.0.2" from the root project
+94 error
+94 error Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
+95 error
+95 error
+95 error For a full report see:
+95 error D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_27_769Z-eresolve-report.txt
+96 silly unfinished npm timer reify 1787470889331
+97 silly unfinished npm timer reify:loadTrees 1787470889332
+98 silly unfinished npm timer idealTree:buildDeps 1787470889962
+99 silly unfinished npm timer idealTree:node_modules/@babel/preset-env 1787470890519
+100 verbose cwd D:\workspaces\project-template-v3\utils
+101 verbose os Windows_NT 10.0.19045
+102 verbose node v24.18.0
+103 verbose npm  v11.16.0
+104 verbose exit 1
+105 verbose code 1
+106 error A complete log of this run can be found in: D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_27_769Z-debug-0.log

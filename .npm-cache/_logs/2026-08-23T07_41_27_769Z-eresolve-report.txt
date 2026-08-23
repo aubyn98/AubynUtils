@@ -1,0 +1,74 @@
+'Log files:
+D:\workspaces\project-template-v3\utils\.npm-cache\_logs\2026-08-23T07_41_27_769Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: @babel/preset-env@8.0.2
+Found: @babel/core@7.26.0
+node_modules/@babel/core
+  peer @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.26.0
+  node_modules/@babel/core/node_modules/@babel/helper-module-transforms
+    @babel/helper-module-transforms@"^7.26.0" from @babel/core@7.26.0
+  peer @babel/core@"^7.4.0 || ^8.0.0" from babel-plugin-polyfill-corejs3@1.0.0
+  node_modules/babel-plugin-polyfill-corejs3
+    babel-plugin-polyfill-corejs3@"^1.0.0" from @babel/preset-env@8.0.2
+    node_modules/@babel/preset-env
+      dev @babel/preset-env@"^8.0.2" from the root project
+  peer @babel/core@"^7.4.0 || ^8.0.0" from @babel/helper-define-polyfill-provider@1.0.0
+  node_modules/@babel/helper-define-polyfill-provider
+    @babel/helper-define-polyfill-provider@"^1.0.0" from babel-plugin-polyfill-corejs3@1.0.0
+    node_modules/babel-plugin-polyfill-corejs3
+      babel-plugin-polyfill-corejs3@"^1.0.0" from @babel/preset-env@8.0.2
+      node_modules/@babel/preset-env
+        dev @babel/preset-env@"^8.0.2" from the root project
+  peer @babel/core@"^7.0.0" from @babel/helper-remap-async-to-generator@7.27.1
+  node_modules/@babel/helper-remap-async-to-generator
+    @babel/helper-remap-async-to-generator@"^7.18.9" from @babel/plugin-proposal-async-generator-functions@7.20.7
+    node_modules/@babel/plugin-proposal-async-generator-functions
+    @babel/helper-remap-async-to-generator@"^7.27.1" from @babel/plugin-transform-async-to-generator@7.28.6
+    node_modules/@babel/plugin-transform-async-to-generator
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-proposal-async-generator-functions@7.20.7
+  node_modules/@babel/plugin-proposal-async-generator-functions
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-proposal-logical-assignment-operators@7.20.7
+  node_modules/@babel/plugin-proposal-logical-assignment-operators
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-proposal-nullish-coalescing-operator@7.18.6
+  node_modules/@babel/plugin-proposal-nullish-coalescing-operator
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-logical-assignment-operators@7.10.4
+  node_modules/@babel/plugin-syntax-logical-assignment-operators
+    @babel/plugin-syntax-logical-assignment-operators@"^7.10.4" from @babel/plugin-proposal-logical-assignment-operators@7.20.7
+    node_modules/@babel/plugin-proposal-logical-assignment-operators
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-proposal-optional-chaining@7.21.0
+  node_modules/@babel/plugin-proposal-optional-chaining
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-async-generators@7.8.4
+  node_modules/@babel/plugin-syntax-async-generators
+    @babel/plugin-syntax-async-generators@"^7.8.4" from @babel/plugin-proposal-async-generator-functions@7.20.7
+    node_modules/@babel/plugin-proposal-async-generator-functions
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+  node_modules/@babel/plugin-syntax-nullish-coalescing-operator
+    @babel/plugin-syntax-nullish-coalescing-operator@"^7.8.3" from @babel/plugin-proposal-nullish-coalescing-operator@7.18.6
+    node_modules/@babel/plugin-proposal-nullish-coalescing-operator
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-transform-async-to-generator@7.28.6
+  node_modules/@babel/plugin-transform-async-to-generator
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-syntax-optional-chaining@7.8.3
+  node_modules/@babel/plugin-syntax-optional-chaining
+    @babel/plugin-syntax-optional-chaining@"^7.8.3" from @babel/plugin-proposal-optional-chaining@7.21.0
+    node_modules/@babel/plugin-proposal-optional-chaining
+  peer @babel/core@"^7.0.0" from @rollup/plugin-babel@6.0.4
+  node_modules/@rollup/plugin-babel
+    dev @rollup/plugin-babel@"^6.0.4" from the root project
+  peer @babel/core@"^7.0.0-0" from @babel/plugin-transform-parameters@7.25.9
+  node_modules/@babel/plugin-transform-parameters
+  dev @babel/core@"^7.23.3" from the root project
+
+Could not resolve dependency:
+peer @babel/core@"^8.0.0" from @babel/preset-env@8.0.2
+node_modules/@babel/preset-env
+  dev @babel/preset-env@"^8.0.2" from the root project
+
+Conflicting peer dependency: @babel/core@8.0.1
+node_modules/@babel/core
+  peer @babel/core@"^8.0.0" from @babel/preset-env@8.0.2
+  node_modules/@babel/preset-env
+    dev @babel/preset-env@"^8.0.2" from the root project
+
+Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.

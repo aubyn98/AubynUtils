@@ -15,6 +15,9 @@ export default defineConfig({
   },
   publicDir: false,
   build: {
+    // es2015: 防止 esbuild 压缩时把 babel 已降级的语法（如 ??）重新升回去
+    // （不能设 es5：rollup 生成的 chunk 胶水代码含 const，esbuild 无法降级）
+    target: 'es2015',
     lib: {
       entry: {
         ...entrys,
@@ -31,14 +34,8 @@ export default defineConfig({
       },
       plugins: [
         babel({
-          plugins: [
-            '@babel/plugin-proposal-nullish-coalescing-operator',
-            '@babel/plugin-proposal-logical-assignment-operators',
-            '@babel/plugin-proposal-optional-chaining',
-            '@babel/plugin-transform-parameters',
-            '@babel/plugin-transform-async-to-generator',
-            '@babel/plugin-proposal-async-generator-functions'
-          ]
+          // preset-env 全量降级到 ES5（含 ??/?. /async 等），regenerator 助手会被内联进产物
+          presets: [['@babel/preset-env', { targets: { ie: 11 } }]]
         }),
         copy({
           targets: [{ src: `types/*`, dest: `lib` }],
