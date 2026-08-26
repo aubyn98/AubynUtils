@@ -47,23 +47,28 @@ export function debouncePromise<T extends (...argvs: any[]) => any>(
  */
 export function throttle<T extends (...argvs: any[]) => any>(func: T, wait?: number, immediate?: boolean): T;
 
+type AnyFn<T = any> = (...args: any[]) => T;
+type FirstFn = (next: <T>(e: T) => T, ...args: any[]) => any;
+type NextFn = (next: AnyFn, ...args: any[]) => any;
+type DropFirst<T extends readonly any[]> = T extends [any, ...infer Rest] ? Rest : [];
+type DropRes<T extends AnyFn> = T extends (...args: infer A) => infer P ? (...argvs: DropFirst<A>) => P : never;
 // 基础组合类型
 type Compose<T extends any[]> = T extends [infer F]
   ? F
-  : T extends [infer F, ...infer R]
-  ? F extends (...args: any[]) => any
-    ? Compose<R> extends (...args: any[]) => any
-      ? (...args: Parameters<Compose<R>>) => ReturnType<F>
+  : T extends [...infer Left, infer Last]
+  ? Last extends NextFn
+    ? Compose<Left> extends AnyFn
+      ? (...args: DropFirst<Parameters<Extract<Last, AnyFn>>>) => ReturnType<Compose<Left>>
       : never
     : never
   : never;
 
 type ComposeAsync<T extends any[]> = T extends [infer F]
   ? F
-  : T extends [infer F, ...infer R]
-  ? F extends (...args: any[]) => any
-    ? ComposeAsync<R> extends (...args: any[]) => any
-      ? (...args: Parameters<ComposeAsync<R>>) => Promise<Awaited<ReturnType<F>>>
+  : T extends [...infer Left, infer Last]
+  ? Last extends AnyFn
+    ? ComposeAsync<Left> extends AnyFn
+      ? (...args: DropFirst<Parameters<Extract<Last, AnyFn>>>) => Promise<Awaited<ReturnType<Extract<Compose<Left>, AnyFn>>>>
       : never
     : never
   : never;
@@ -75,16 +80,16 @@ type Pipe<T extends any[]> = Compose<Reverse<T>>;
 type PipeAsync<T extends any[]> = ComposeAsync<Reverse<T>>;
 
 /** 同步 compose - 支持任意数量函数 */
-export function compose<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => U : Compose<T>;
+export function compose<T extends [FirstFn, ...NextFn[]]>(...fns: T): T extends [] ? <U>(arg: U) => U : Compose<T>;
 
 /** 异步 compose - 支持任意数量函数 */
-export function composeAsync<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : ComposeAsync<T>;
+export function composeAsync<T extends [FirstFn, ...NextFn[]]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : ComposeAsync<T>;
 
 /** 同步 pipe - 支持任意数量函数 */
-export function pipe<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => U : Pipe<T>;
+export function pipe<T extends [...NextFn[], FirstFn]>(...fns: T): T extends [] ? <U>(arg: U) => U : Pipe<T>;
 
 /** 异步 pipe - 支持任意数量函数 */
-export function pipeAsync<T extends any[]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : PipeAsync<T>;
+export function pipeAsync<T extends [...NextFn[], FirstFn]>(...fns: T): T extends [] ? <U>(arg: U) => Promise<U> : PipeAsync<T>;
 
 /**
  * 复制文字

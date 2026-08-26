@@ -67,61 +67,76 @@ export function throttle(func, wait = 500, immediate = true) {
 
 // 组合函数
 export function compose(...fns) {
-	if (fns.some(fn => typeof fn !== 'function')) {
-		throw new TypeError('compose 参数必须是函数');
-	}
-	if (fns.length === 0) return (...args) => args.length === 1 ? args[0] : args;
-	return fns.reduce(
-		(l, r) =>
-		function(...args) {
-			return r.call(this, (...nArgs) => l.apply(this, nArgs.concat(args)), ...args)
-		}
-	)
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('compose 参数必须是函数');
+  }
+  if (fns.length === 0) return (...args) => (args.length === 1 ? args[0] : args);
+  return fns.reduce(
+    (l, r) =>
+      function (...args) {
+        return r.call(this, (...nArgs) => l.apply(this, nArgs.concat(args)), ...args);
+      },
+    function (e) {
+      return e;
+    }
+  );
 }
 
 export function composeAsync(...fns) {
-	if (fns.some(fn => typeof fn !== 'function')) {
-		throw new TypeError('composeAsync 参数必须是函数');
-	}
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('composeAsync 参数必须是函数');
+  }
 
-	if (fns.length === 0) {
-		return async (...args) => args.length === 1 ? args[0] : args;
-	}
-
-	return fns.reduce((l, r) => {
-		return async function(...args) {
-			return r.call(this, async (...nArgs) => l.apply(this, nArgs.concat(args)), ...args);
-		};
-	});
+  if (fns.length === 0) {
+    return async (...args) => (args.length === 1 ? args[0] : args);
+  }
+  return fns.reduce(
+    (l, r) => {
+      return async function (...args) {
+        return r.call(this, async (...nArgs) => l.apply(this, nArgs.concat(args)), ...args);
+      };
+    },
+    async function (e) {
+      return e;
+    }
+  );
 }
 
 export function pipe(...fns) {
-	if (fns.some(fn => typeof fn !== 'function')) {
-		throw new TypeError('pipe 参数必须是函数');
-	}
-	if (fns.length === 0) return (...args) => args.length === 1 ? args[0] : args;
-	return fns.reduce(
-		(l, r) =>
-		function(...args) {
-			return l.call(this, (...nArgs) => r.apply(this, nArgs.concat(args)), ...args)
-		}
-	)
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('pipe 参数必须是函数');
+  }
+  if (fns.length === 0) return (...args) => (args.length === 1 ? args[0] : args);
+  return fns.reverse().reduce(
+    (l, r) =>
+      function (...args) {
+        return r.call(this, (...nArgs) => l.apply(this, nArgs.concat(args)), ...args);
+      },
+    function (e) {
+      return e;
+    }
+  );
 }
 
 export function pipeAsync(...fns) {
-	if (fns.some(fn => typeof fn !== 'function')) {
-		throw new TypeError('pipeAsync 参数必须是函数');
-	}
+  if (fns.some(fn => typeof fn !== 'function')) {
+    throw new TypeError('pipeAsync 参数必须是函数');
+  }
 
-	if (fns.length === 0) {
-		return async (...args) => args.length === 1 ? args[0] : args;
-	}
+  if (fns.length === 0) {
+    return async (...args) => (args.length === 1 ? args[0] : args);
+  }
 
-	return fns.reduce((l, r) => {
-		return async function(...args) {
-			return l.call(this, async (...nArgs) => r.apply(this, nArgs.concat(args)), ...args);
-		};
-	});
+  return fns.reverse().reduce(
+    (l, r) => {
+      return async function (...args) {
+        return r.call(this, async (...nArgs) => l.apply(this, nArgs.concat(args)), ...args);
+      };
+    },
+    async function (e) {
+      return e;
+    }
+  );
 }
 
 // 复制
@@ -162,7 +177,7 @@ const dict = {
 
 function timerFactory(key) {
   return function (...arvgs) {
-    const target = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : {})
+    const target = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {};
     let timerId = dict[key].set.call(target, ...arvgs);
     function remove() {
       dict[key].clear.call(target, timerId);
@@ -190,7 +205,7 @@ export function convertFn(string) {
 
 // 插入一个函数在空闲时调用
 export const idleHandle = (function () {
-  const target = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : {})
+  const target = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {};
   if (target.requestIdleCallback) return target.requestIdleCallback;
   if (target.requestAnimationFrame)
     return cb => {
