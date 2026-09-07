@@ -25,7 +25,7 @@ export function getPascalCase(str) {
 }
 
 /**
- * 解析 URL query 字符串，相同 key 自动转为数组
+ * 解析 URL query 字符串，自动识别多种数组形式：a=1&a=2、a[]=1&a[]=2、a[0]=1&a[1]=2
  * 支持传入完整 URL / query 字符串，自动剔除 hash
  *
  * @param {string} [str=''] 完整 url / query 字符串，可以带开头 ?，可携带 #hash
@@ -37,6 +37,7 @@ export function getPascalCase(str) {
  */
 export function getQueryParams(str = '', options = {}) {
   const { silent = false, decodePlus = true, strict = false } = options;
+
   const collect = {};
   if (typeof str !== 'string') return collect;
 
@@ -64,8 +65,8 @@ export function getQueryParams(str = '', options = {}) {
   const withoutHash = str.split('#')[0];
   const qIndex = withoutHash.indexOf('?');
   const query = qIndex >= 0 ? withoutHash.slice(qIndex + 1) : withoutHash;
-
   if (!query) return collect;
+
   const pairs = query.split('&');
 
   for (let i = 0; i < pairs.length; i++) {
@@ -83,21 +84,35 @@ export function getQueryParams(str = '', options = {}) {
     }
 
     const k = decodePart(rawK, true);
-    if (k === null) continue;
+    if (k === null || !k) continue;
     const v = decodePart(rawV, false);
     if (v === null) continue;
 
-    if (!k) continue;
+    let realKey = k;
+    let isArrayNotation = false;
 
-    const existing = collect[k];
+    // 自动识别 a[]
+    if (/\[\]$/.test(k)) {
+      realKey = k.slice(0, -2);
+      isArrayNotation = true;
+    }
+    // 自动识别 a[0] a[1] 数字下标
+    else if (/^(.+)\[\d+\]$/.test(k)) {
+      realKey = k.replace(/\[\d+\]$/, '');
+      isArrayNotation = true;
+    }
+
+    const existing = collect[realKey];
     if (existing === undefined) {
-      collect[k] = v;
+      collect[realKey] = isArrayNotation ? [v] : v;
     } else if (Array.isArray(existing)) {
       existing.push(v);
     } else {
-      collect[k] = [existing, v];
+      // 已有普通值，再次出现该key，转为数组（重复key自动数组）
+      collect[realKey] = [existing, v];
     }
   }
+
   return collect;
 }
 
@@ -139,41 +154,74 @@ export function getQueryParamsFromHash(options) {
 
 /**
  * 对象转url query字符串
- * 数组自动展开为重复key，与 getQueryParams 解析行为双向对称
  * @param {Record<string, any>} params 参数对象
- * @param {boolean} [addQuestionMark=false] 是否添加开头问号 ?
- * @returns {string} query串
+ * @param {Object} [options={}] 配置项
+ * @param {boolean} [options.addQuestionMark=false] 是否前置 ?
+ * @param {'indices'|'brackets'|'repeat'|'comma'} [options.arrayFormat='comma'] 数组格式化模式
+ * @param {boolean} [options.keepEmptyArray=false] true:空数组输出key=；false:空数组直接丢弃
+ * @returns {string}
  */
-export function toQueryString(params, addQuestionMark = false) {
+export function toQueryString(params, options = {}) {
   if (!params || typeof params !== 'object') return '';
 
+  const { addQuestionMark = false, arrayFormat = 'comma', keepEmptyArray = false } = options;
+
   const parts = [];
+
+  const arrayStrategies = {
+    indices: (encodedKey, items) => {
+      items.forEach((item, idx) => {
+        parts.push(`${encodedKey}[${idx}]=${encodeURIComponent(item)}`);
+      });
+    },
+    brackets: (encodedKey, items) => {
+      items.forEach(item => {
+        parts.push(`${encodedKey}[]=${encodeURIComponent(item)}`);
+      });
+    },
+    repeat: (encodedKey, items) => {
+      items.forEach(item => {
+        parts.push(`${encodedKey}=${encodeURIComponent(item)}`);
+      });
+    },
+    comma: (encodedKey, items) => {
+      const val = items.map(i => encodeURIComponent(i)).join(',');
+      parts.push(`${encodedKey}=${val}`);
+    }
+  };
+
+  const handleArray = arrayStrategies[arrayFormat] ?? arrayStrategies.comma;
+
   Object.keys(params).forEach(key => {
     const rawValue = params[key];
-    // 忽略 undefined / null
-    if (rawValue === undefined || rawValue === null) return;
+    if (rawValue === null || rawValue === undefined) return;
 
     const encodedKey = encodeURIComponent(key);
 
-    // 数组：展开成重复 key=value
     if (Array.isArray(rawValue)) {
-      rawValue.forEach(item => {
-        const encodedVal = encodeURIComponent(item);
-        parts.push(`${encodedKey}=${encodedVal}`);
-      });
+      const validItems = rawValue.filter(item => item != null);
+
+      // 空数组分支
+      if (validItems.length === 0) {
+        if (keepEmptyArray) {
+          parts.push(`${encodedKey}=`);
+        }
+        return;
+      }
+
+      handleArray(encodedKey, validItems);
       return;
     }
 
-    // 普通对象/Date：JSON序列化
-    let val = rawValue;
-    if (typeof val === 'object' && val !== null) {
-      val = JSON.stringify(val);
+    let value = rawValue;
+    if (typeof value === 'object' && value !== null) {
+      value = JSON.stringify(value);
     }
-    parts.push(`${encodedKey}=${encodeURIComponent(val)}`);
+    parts.push(`${encodedKey}=${encodeURIComponent(value)}`);
   });
 
-  const query = parts.join('&');
-  return addQuestionMark && query ? `?${query}` : query;
+  const queryStr = parts.join('&');
+  return addQuestionMark && queryStr ? `?${queryStr}` : queryStr;
 }
 
 export function compareVersion(v1, v2) {

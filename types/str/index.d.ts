@@ -19,55 +19,62 @@ export function getRandomStr(len?: number, $chars?: string): string;
  */
 export function getPascalCase(str: string): string;
 
+export interface GetQueryParamsOptions {
+  /** 是否静默模式，不输出警告 */
+  silent?: boolean;
+  /** 是否将 + 号解码为空格 */
+  decodePlus?: boolean;
+  /** 严格模式，解码失败时跳过该参数 */
+  strict?: boolean;
+}
+
 /**
- * 解析 URL query 字符串，相同 key 自动转为数组
+ * 解析 URL query 字符串，自动识别多种数组形式：a=1&a=2、a[]=1&a[]=2、a[0]=1&a[1]=2
  * 支持传入完整 URL / query 字符串，自动剔除 hash
- *
  * @param str 完整 url / query 字符串，可以带开头 ?，可携带 #hash
  * @param options 配置选项
+ * @returns 解析结果对象
+ */
+export function getQueryParams(str?: string, options?: GetQueryParamsOptions): Record<string, string | string[]>;
+
+/**
+ * 从当前页面 URL 的 search 部分解析参数（仅浏览器环境）
+ * @param options 同 getQueryParams 的 options
  * @returns 解析结果
  */
-export declare function getQueryParams(
-    str?: string,
-    options?: GetQueryParamsOptions
-  ): Record<string, string | string[]>;
-  
-  /**
-   * 从当前页面 URL 的 search 部分解析参数（仅浏览器环境）
-   * @param options 同 getQueryParams 的 options
-   * @returns 解析结果
-   */
-  export declare function getQueryParamsFromSearch(
-    options?: GetQueryParamsOptions
-  ): Record<string, string | string[]>;
-  
-  /**
-   * 从当前页面 URL 的 hash 部分解析参数（仅浏览器环境）
-   * 自动提取 hash 中 ? 后的 query 参数
-   *
-   * @example
-   * // URL: https://example.com#/pages/index?a=1&b=2
-   * getQueryParamsFromHash() // => { a: '1', b: '2' }
-   *
-   * @param options 同 getQueryParams 的 options
-   * @returns 解析结果
-   */
-  export declare function getQueryParamsFromHash(
-    options?: GetQueryParamsOptions
-  ): Record<string, string | string[]>;
-  
+export declare function getQueryParamsFromSearch(options?: GetQueryParamsOptions): Record<string, string | string[]>;
+
+/**
+ * 从当前页面 URL 的 hash 部分解析参数（仅浏览器环境）
+ * 自动提取 hash 中 ? 后的 query 参数
+ *
+ * @example
+ * // URL: https://example.com#/pages/index?a=1&b=2
+ * getQueryParamsFromHash() // => { a: '1', b: '2' }
+ *
+ * @param options 同 getQueryParams 的 options
+ * @returns 解析结果
+ */
+export declare function getQueryParamsFromHash(options?: GetQueryParamsOptions): Record<string, string | string[]>;
+
+export type ArrayFormatType = 'indices' | 'brackets' | 'repeat' | 'comma';
+
+export interface ToQueryStringOptions {
+  /** 是否前置 ? */
+  addQuestionMark?: boolean;
+  /** 数组格式化模式，默认 comma */
+  arrayFormat?: ArrayFormatType;
+  /** true:空数组输出key=；false:空数组直接丢弃，默认 false */
+  keepEmptyArray?: boolean;
+}
 
 /**
  * 对象转url query字符串
- * 数组自动展开为重复key，与 getQueryParams 解析行为双向对称
  * @param params 参数对象
- * @param addQuestionMark 是否添加开头问号 ?
- * @returns query串
+ * @param options 配置项
+ * @returns query字符串
  */
-export declare function toQueryString(
-    params: Record<string, any>,
-    addQuestionMark?: boolean
-  ): string;
+export function toQueryString(params: Record<string, any> | null | undefined, options?: ToQueryStringOptions): string;
 
 /**
  * 版本号比较
