@@ -42,7 +42,13 @@ export class WebSocketClient {
   // 触发事件
   emit(event, ...args) {
     if (!this.events[event]) return;
-    this.events[event].forEach(cb => cb(...args));
+    this.events[event].forEach(cb => {
+      try {
+        cb(...args);
+      } catch (e) {
+        console.error(`[${event}] callback error:`, e);
+      }
+    });
   }
   // 别名，方便链式调用
   on(event, fn) {
@@ -57,6 +63,7 @@ export class WebSocketClient {
     if (this.ws) {
       const oldWs = this.ws;
       this.ws = null;
+      oldWs.onclose = oldWs.onerror = oldWs.onopen = oldWs.onmessage = null;
       oldWs.close();
     }
     this.manualClose = false;
@@ -89,7 +96,7 @@ export class WebSocketClient {
       this.reconnect();
     };
     ws.onerror = event => {
-      console.error('WebSocket error: ' + event);
+      console.error('WebSocket error:', event);
       this.emit('error', event);
       // 关闭连接，由 close 流程触发重连
       if (ws === this.ws) {
@@ -158,6 +165,7 @@ export class WebSocketClient {
     this.reconnectCount += 1;
     console.log(`Reconnecting in ${this.reconnectDelay / 1000} seconds... count:${this.reconnectCount}`);
     this.reconnectTimer = setTimeout(() => {
+      this.reconnectTimer = null;
       this.connect();
     }, this.reconnectDelay);
   }
