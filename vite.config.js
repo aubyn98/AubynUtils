@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import babel from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
 
-const folders = ['array', 'date', 'EventBus', 'file', 'magic', 'num', 'object', 'storage', 'str'];
+const folders = ['array', 'date', 'EventBus', 'file', 'magic', 'num', 'object', 'storage', 'str', 'WebSocketClient'];
 const entrys = folders.reduce((_, k) => {
   // 'array/index': './src/array'
   _[`${k}/index`] = `./src/${k}`;
