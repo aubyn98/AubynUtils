@@ -23,29 +23,35 @@ export function removeEventListener<U, K extends keyof eventMaps>(target: U, eve
 export function debounce<A extends any[], R>(
   fn: (...argvs: A) => R,
   delay?: number
-): ((...argvs: A) => void) & {
+): ((...argvs: A) => number) & {
   stop(): void;
 };
 
 /**
- * 防抖(Promise版)
+ * 防抖(Promise版)，被取消时reject('cancel')
  * @param { function } fn  要执行的函数
  * @param { number } delay  防抖延迟时间
  */
-export function debouncePromise<T extends (...argvs: any[]) => any>(
-  fn: T,
+export function debouncePromise<A extends any[], R>(
+  fn: (...argvs: A) => R,
   delay?: number
-): T & {
+): ((...argvs: A) => Promise<R>) & {
   stop(): void;
 };
 
 /**
  * 节流
  * @param { function } func  要执行的函数
- * @param { number } wait  节流时间
+ * @param { number } wait  节流时间，默认500
  * @param { boolean } immediate  是否立即执行，默认true
  */
-export function throttle<T extends (...argvs: any[]) => any>(func: T, wait?: number, immediate?: boolean): T;
+export function throttle<A extends any[], R>(
+  func: (...argvs: A) => R,
+  wait?: number,
+  immediate?: boolean
+): ((...argvs: A) => number) & {
+  stop(): void;
+};
 
 type AnyFn<T = any> = (...args: any[]) => T;
 type FirstFn = (next: <T>(e: T) => T, ...args: any[]) => any;

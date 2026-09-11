@@ -16,6 +16,7 @@ export function debounce(fn, delay) {
     timer = setTimeout(() => {
       fn.apply(this, argvs);
     }, delay);
+    return timer;
   }
   return _;
 }
@@ -44,25 +45,27 @@ export function debouncePromise(fn, delay) {
 // 节流
 export function throttle(func, wait = 500, immediate = true) {
   let timer, flag;
-  return immediate
+  const fn = immediate
     ? function (...argvs) {
         if (flag) return;
         flag = true;
-        // 如果是立即执行，则在wait毫秒内开始时执行
         typeof func === 'function' && func.apply(this, argvs);
         timer = setTimeout(() => {
           flag = false;
         }, wait);
+        return timer;
       }
     : function (...argvs) {
         if (flag) return;
         flag = true;
-        // 如果是非立即执行，则在wait毫秒内的结束处执行
         timer = setTimeout(() => {
           flag = false;
           typeof func === 'function' && func.apply(this, argvs);
         }, wait);
+        return timer;
       };
+  fn.stop = () => timer && clearTimeout(timer);
+  return fn;
 }
 
 // 组合函数
