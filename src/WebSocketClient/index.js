@@ -34,9 +34,11 @@ export class WebSocketClient {
   // 移除事件
   removeEventListener(event, fn, options) {
     if (!this.events[event]) return this;
-    const index = this.events[event].indexOf(fn);
+    const list = this.events[event];
+    // 匹配函数本身，或 once 包装函数记录的原始函数
+    const index = list.findIndex(cb => cb === fn || cb._origin === fn);
     if (index > -1) {
-      this.events[event].splice(index, 1);
+      list.splice(index, 1);
     }
     return this;
   }
@@ -58,6 +60,17 @@ export class WebSocketClient {
   off(event, fn) {
     return this.removeEventListener(event, fn);
   }
+  once(event, fn) {
+    if (!this.events[event]?.some(cb => cb === fn || cb._origin === fn)) {
+      const w = (...args) => {
+        this.off(event, w);
+        fn(...args);
+      };
+      w._origin = fn;
+      this.on(event, w);
+    }
+    return this;
+  }
 
   connect() {
     // 防止重复创建：先断开旧实例引用再关闭，旧实例的 close 不会触发重连
@@ -70,7 +83,7 @@ export class WebSocketClient {
     this.manualClose = false;
     const ws = (this.ws = new WebSocket(this.url));
 
-    ws.onopen = (ev) => {
+    ws.onopen = ev => {
       const isReconnect = this.reconnectCount > 0; // 先记录，再重置
       this.isConnected = true;
       this.reconnectCount = 0; // 连接成功，重置重连计数
@@ -172,6 +185,7 @@ export class WebSocketClient {
       this.emit('fail', {
         type: 'maxReconnect',
         maxReconnect: this.maxReconnect,
+        willRetry: false,
         url: this.url
       });
       return;

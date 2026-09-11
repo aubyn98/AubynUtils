@@ -78,6 +78,14 @@ export class WebSocketClient {
   /** 移除事件监听（等价于 removeEventListener） */
   off<K extends EventName>(event: K, fn: EventHandler<K>): this;
 
+  /**
+   * 注册只触发一次的事件监听，触发后自动移除。
+   * 支持用 off(event, fn) 传入原始函数提前移除。
+   * @param event 事件名
+   * @param fn 事件回调
+   */
+  once<K extends EventName>(event: K, fn: EventHandler<K>): this;
+
   /** 注册事件监听，重连后不丢失 */
   addEventListener<K extends EventName>(event: K, fn: EventHandler<K>, options?: boolean | AddEventListenerOptions): this;
 
