@@ -1,102 +1,299 @@
-export interface WebSocketClientOptions {
-  /** 重连间隔时间，默认 1000ms */
+// WebSocketClient.d.ts
+// 统一版类型声明（浏览器 / uni-app 共用一份 JS 实现），文件请与统一后的
+// WebSocketClient.js 同目录同名放置（原 WebSocketClient.uni.d.ts 更名而来）。
+//
+// 设计：类通过泛型参数 P（"平台档案"）描述底层传输类型与各事件的原生载荷类型。
+// 默认 P = UniAppProfile（依赖 @dcloudio/types 的全局 UniApp 命名空间），
+// 即 uni 工程中 new WebSocketClient(url, opts) 不写泛型即可获得完整 uni 类型，
+// 与旧版 d.ts 用法完全一致。浏览器 / Node 等平台见文末「自定义平台类型指引」。
+//
+// 相对旧版 WebSocketClient.uni.d.ts 的变更（配合 JS 终版）：
+// 1. 字段 socketTask → transport（类型随 P）；新增 adapter 字段、构造器第三参、options.adapter
+// 2. 'reconnect' 事件载荷从 { event } 改为直接透传原生事件（与 'open' 同形）；WebSocketReconnectedInfo 已删除
+// 3. 'fail' / WebSocketDropReason 新增 { type: 'heartbeatTimeout' } 变体（心跳超时直接走掉线流程）
+// 4. 方法 resetHeartbeatTimeout 已删除（改用 clearHeartbeatTimeout）
+// 5. 补充声明 addEventListener / removeEventListener（终版实现保留了这对别名）
+// 6. 新增导出：UniWebSocketAdapter / BrowserWebSocketAdapter / UniWebSocketClient 及适配器契约类型
+/** 可发送的数据类型（心跳消息与 send 的载荷） */
+export type WebSocketData = string | ArrayBuffer;
+// ============ 平台档案（泛型参数 P） ============
+/** 平台档案：底层传输类型 + 四类原生事件载荷 + 失败详情携带的 event 类型 */
+export interface WebSocketPlatformProfile {
+  /** 底层传输对象（uni: SocketTask；浏览器: WebSocket；自定义适配器: create 返回值） */
+  transport: unknown;
+  /** open / reconnect 事件载荷 */
+  open: unknown;
+  /** message 事件载荷 */
+  message: unknown;
+  /** close 事件载荷 */
+  close: unknown;
+  /** error 事件载荷 */
+  error: unknown;
+  /** fail(type: 'connectError') 中携带的 event：onError 载荷或同步抛出的 Error */
+  errorEvent: unknown;
+}
+/** uni-app 档案（默认） */
+export interface UniAppProfile extends WebSocketPlatformProfile {
+  transport: UniApp.SocketTask;
+  open: UniApp.OnSocketOpenCallbackResult;
+  message: UniApp.OnSocketMessageCallbackResult;
+  close: UniApp.OnSocketCloseCallbackResult;
+  error: UniApp.GeneralCallbackResult;
+  errorEvent: UniApp.GeneralCallbackResult | Error;
+}
+// ============ 适配器契约（对应 JS 终版导出的两个适配器；自定义平台实现同契约） ============
+/** bind 绑定的四个回调：载荷类型由档案 P 决定 */
+export interface WebSocketTransportHandlers<P extends WebSocketPlatformProfile = UniAppProfile> {
+  open(res: P['open']): void;
+  message(res: P['message']): void;
+  close(res: P['close']): void;
+  error(err: P['error']): void;
+}
+/** 适配器五方法契约 */
+export interface WebSocketAdapter<P extends WebSocketPlatformProfile = any> {
+  /** 创建传输对象；失败/返回无效对象必须 throw（核心只接同步异常） */
+  create(url: string): P['transport'];
+  /** 绑定 { open, message, close, error } 回调 */
+  bind(transport: P['transport'], handlers: WebSocketTransportHandlers<P>): void;
+  /** 摘除回调；无法摘除的平台可空实现（核心有身份比对兜底） */
+  unbind(transport: P['transport']): void;
+  /** 发送 */
+  send(transport: P['transport'], message: WebSocketData): void;
+  /** 关闭；code 缺省时走平台默认关闭 */
+  close(transport: P['transport'], code?: number, reason?: string): void;
+}
+// ============ 事件 / 失败载荷 ============
+/** handleDrop 的入参：连接阶段失败原因（willRetry 由内部补上后再对外 emit fail） */
+export type WebSocketDropReason<P extends WebSocketPlatformProfile = UniAppProfile> =
+  | { type: 'connectTimeout'; url: string }
+  | { type: 'connectError'; url: string; event: P['errorEvent'] }
+  | { type: 'heartbeatTimeout' };
+/**
+ * fail 事件载荷：
+ * - connectTimeout / connectError / heartbeatTimeout：本轮失败，是否还会重连看 willRetry
+ * - tooManyDrops / maxReconnect：终态，不再重连，willRetry 恒为 false
+ */
+export type WebSocketFailInfo<P extends WebSocketPlatformProfile = UniAppProfile> =
+  | { type: 'connectTimeout'; url: string; willRetry: boolean }
+  | { type: 'connectError'; url: string; willRetry: boolean; event: P['errorEvent'] }
+  | { type: 'heartbeatTimeout'; willRetry: boolean }
+  | { type: 'tooManyDrops'; dropCount: number; stablePeriod: number; willRetry: false }
+  | { type: 'maxReconnect'; maxReconnect: number; url: string; willRetry: false };
+/** reconnecting 事件载荷：即将发起第 count 次重连，延迟 delay ms */
+export interface WebSocketReconnectingInfo {
+  /** 本次重连延迟 ms（已含指数退避与抖动） */
+  delay: number;
+  /** 本轮连续重连序号（连接成功后清零） */
+  count: number;
+}
+/** getStats() 返回的运行状态快照 */
+export interface WebSocketClientStats {
+  /** 当前是否已连接 */
+  connected: boolean;
+  /** 本轮连续重连次数（成功清零） */
+  reconnectCount: number;
+  /** 当前不稳定窗口内"连上又掉"的次数 */
+  dropCount: number;
+  /** 最近一次掉线时间戳 ms，未掉过线为 0 */
+  lastDropTime: number;
+  /** 本次连接已存活时长 ms，未连接为 0 */
+  uptime: number;
+}
+export interface WebSocketClientOptions<P extends WebSocketPlatformProfile = any> {
+  /** 初始重连间隔 ms，默认 1000 */
   reconnectDelay?: number;
-  /** 心跳发送间隔，默认 30000ms */
+  /** 重连间隔上限 ms，默认 30000 */
+  maxReconnectDelay?: number;
+  /** 指数退避乘数，默认 2 */
+  backoffFactor?: number;
+  /** 抖动比例（0~1），默认 0.3；设为 0 关闭抖动 */
+  jitter?: number;
+  /** 最大重连次数，-1 为无限重连，默认 -1 */
+  maxReconnect?: number;
+  /** 连接存活超过该时长(ms)视为"稳定"，掉线计数清零，默认 60000 */
+  stablePeriod?: number;
+  /** 一个不稳定窗口内容忍的掉线次数，默认 5（第 maxDrops+1 次终止） */
+  maxDrops?: number;
+  /** 心跳发送间隔 ms，默认 30000 */
   heartbeatInterval?: number;
-  /** 心跳超时时间，收不到应答则断开，默认 10000ms */
+  /** 心跳超时 ms（该时间内收不到任何服务端消息则判死并走掉线流程），默认 10000 */
   heartbeatTimeout?: number;
   /** 心跳消息内容，默认 'ping' */
-  heartbeatMsg?: string;
-  /** 最大重连次数，-1 表示无限重连，默认 -1 */
-  maxReconnect?: number;
+  heartbeatMsg?: WebSocketData;
+  /** 连接建立超时兜底 ms（无 open/error/close 时判死），默认 15000 */
+  connectTimeout?: number;
+  /**
+   * 传输适配器：实例级注入，优先级最高（高于构造器第三参与平台自动探测）。
+   * Node 等无内置适配器的环境必传。
+   */
+  adapter?: WebSocketAdapter<P>;
 }
-
-export type WebSocketFailInfo =
-  | {
-      type: 'connectError';
-      url: string;
-      willRetry: boolean;
-      event: Event;
-    }
-  | {
-      type: 'maxReconnect';
-      url: string;
-      willRetry: false;
-      maxReconnect: number;
-    };
-
-/** 事件名 -> 回调参数列表 */
-export interface WebSocketClientEventMap {
-  /** 连接成功（首次连接） */
-  open: [ev: Event];
-  /** 收到消息 */
-  message: [ev: MessageEvent];
-  /** 连接关闭 */
-  close: [ev: CloseEvent];
-  /** 发生错误 */
-  error: [event: Event];
-  /** 重连成功 */
-  reconnect: [ev: Event];
-  /** 链接失败 */
-  fail: [info: WebSocketFailInfo];
+// ============ 事件映射 ============
+export type WebSocketEventName = 'open' | 'message' | 'close' | 'error' | 'reconnect' | 'reconnecting' | 'fail';
+export interface WebSocketClientEventMap<P extends WebSocketPlatformProfile = UniAppProfile> {
+  /** 连接建立（首次与重连都会触发） */
+  open: (res: P['open']) => void;
+  /** 收到服务端消息 */
+  message: (res: P['message']) => void;
+  /** 底层连接关闭 */
+  close: (res: P['close']) => void;
+  /** 底层连接错误 */
+  error: (err: P['error']) => void;
+  /** 断线后重新连接成功（reconnectCount 曾 > 0 时才触发）；与 open 同形，直接透传原生事件 */
+  reconnect: (res: P['open']) => void;
+  /** 已安排重连，等待 delay ms 后发起 */
+  reconnecting: (info: WebSocketReconnectingInfo) => void;
+  /** 连接失败，注意区分 willRetry（可重试）与终态失败 */
+  fail: (info: WebSocketFailInfo<P>) => void;
 }
-
-type EventName = keyof WebSocketClientEventMap;
-type EventHandler<K extends EventName> = (...args: WebSocketClientEventMap[K]) => void;
-
-export class WebSocketClient {
+export type WebSocketEventHandler<P extends WebSocketPlatformProfile, K extends WebSocketEventName> = WebSocketClientEventMap<P>[K];
+// ============ 客户端 ============
+export declare class WebSocketClient<P extends WebSocketPlatformProfile = UniAppProfile> {
+  /**
+   * @param url WebSocket 地址
+   * @param options 配置项，全部可选，均有默认值；options.adapter 可注入适配器（优先级最高）
+   * @param adapter 适配器；缺省时按平台自动探测（uni → UniWebSocketAdapter，浏览器 → BrowserWebSocketAdapter），
+   *                uni 工程也可直接使用 UniWebSocketClient 子类
+   */
+  constructor(url: string, options?: WebSocketClientOptions<P>, adapter?: WebSocketAdapter<P>);
+  // ============ 配置 ============
   /** 连接的 URL */
   url: string;
-  /** 重连间隔时间(ms) */
+  /** 当前使用的传输适配器（优先级：options.adapter > 构造器第三参 > 平台自动探测） */
+  adapter: WebSocketAdapter<P>;
+  /** 初始重连间隔 ms */
   reconnectDelay: number;
-  /** 心跳发送间隔(ms) */
-  heartbeatInterval: number;
-  /** 心跳超时时间(ms) */
-  heartbeatTimeout: number;
-  /** 心跳消息内容 */
-  heartbeatMsg: string;
+  /** 重连间隔上限 ms */
+  maxReconnectDelay: number;
+  /** 指数退避乘数 */
+  backoffFactor: number;
+  /** 抖动比例 */
+  jitter: number;
   /** 最大重连次数，-1 为无限重连 */
   maxReconnect: number;
-  /** 当前底层 WebSocket 实例，未连接时为 null */
-  ws: WebSocket | null;
+  /** 稳定期阈值 ms */
+  stablePeriod: number;
+  /** 不稳定窗口内容忍掉线次数 */
+  maxDrops: number;
+  /** 心跳发送间隔 ms */
+  heartbeatInterval: number;
+  /** 心跳超时 ms */
+  heartbeatTimeout: number;
+  /** 心跳消息内容 */
+  heartbeatMsg: WebSocketData;
+  /** 连接超时兜底 ms */
+  connectTimeout: number;
+  // ============ 运行时状态 ============
+  /** 当前底层连接：uni 默认适配器下为 SocketTask，自定义适配器时为 create() 返回值；未连接为 null */
+  transport: P['transport'] | null;
   /** 是否已连接 */
   isConnected: boolean;
-  /** 当前重连计数 */
+  /** 是否为主动关闭（主动关闭后不再自动重连） */
+  manualClose: boolean;
+  /** 心跳定时器 */
+  heartbeatTimer: ReturnType<typeof setInterval> | null;
+  /** 心跳超时定时器 */
+  heartbeatTimeoutTimer: ReturnType<typeof setTimeout> | null;
+  /** 挂起的重连定时器 */
+  reconnectTimer: ReturnType<typeof setTimeout> | null;
+  /** 连接建立超时定时器 */
+  connectTimeoutTimer: ReturnType<typeof setTimeout> | null;
+  /** 本轮连续重连次数（连接成功清零） */
   reconnectCount: number;
+  /** 不稳定窗口内掉线次数 */
+  dropCount: number;
+  /** 最近一次掉线时间戳 ms（仅统计展示用） */
+  lastDropTime: number;
+  /** 本次连接建立时间戳 ms，未连接为 0 */
+  connectedAt: number;
+  /** 连接周期号，每次 connect()/close() 递增 */
+  dropCycle: number;
+  /** 已处理过掉线的周期号（同周期幂等） */
+  handledCycle: number;
+  /** 各事件监听器列表 */
+  events: {
+    [K in WebSocketEventName]: Array<WebSocketClientEventMap<P>[K]>;
+  };
+  // ============ 事件系统 ============
+  /** 注册事件监听，支持链式调用 */
+  on<K extends WebSocketEventName>(event: K, fn: WebSocketEventHandler<P, K>): this;
+  /** 移除事件监听；once 包装过的回调可直接传入原始函数移除 */
+  off<K extends WebSocketEventName>(event: K, fn: WebSocketEventHandler<P, K>): this;
+  /** 注册只触发一次的事件监听，触发后自动移除 */
+  once<K extends WebSocketEventName>(event: K, fn: WebSocketEventHandler<P, K>): this;
+  /** on 的 DOM 风格别名 */
+  addEventListener<K extends WebSocketEventName>(event: K, fn: WebSocketEventHandler<P, K>): this;
+  /** off 的 DOM 风格别名 */
+  removeEventListener<K extends WebSocketEventName>(event: K, fn: WebSocketEventHandler<P, K>): this;
+  /** 触发事件（内部使用，外部一般不需要） */
+  emit<K extends WebSocketEventName>(event: K, ...args: Parameters<WebSocketClientEventMap<P>[K]>): void;
+  // ============ 连接 / 重连 ============
   /**
-   * @param url websocket地址
-   * @param options 配置项
+   * 建立连接；连接存活时重复调用会先关掉旧连接再建新连接；
+   * 适配器 create / bind 异常同样走统一掉线流程
    */
-  constructor(url: string, options?: WebSocketClientOptions);
-
-  /** 建立连接（重连也会走到这里） */
   connect(): this;
-
-  /** 注册事件监听（等价于 addEventListener） */
-  on<K extends EventName>(event: K, fn: EventHandler<K>): this;
-
-  /** 移除事件监听（等价于 removeEventListener） */
-  off<K extends EventName>(event: K, fn: EventHandler<K>): this;
-
   /**
-   * 注册只触发一次的事件监听，触发后自动移除。
-   * 支持用 off(event, fn) 传入原始函数提前移除。
-   * @param event 事件名
-   * @param fn 事件回调
+   * 调度一次自动重连（指数退避 + 抖动）
+   * @returns 是否成功安排重连；已连接 / 已有挂起重连 / 达到上限时返回 false
    */
-  once<K extends EventName>(event: K, fn: EventHandler<K>): this;
-
-  /** 注册事件监听，重连后不丢失 */
-  addEventListener<K extends EventName>(event: K, fn: EventHandler<K>, options?: boolean | AddEventListenerOptions): this;
-
-  /** 移除事件监听 */
-  removeEventListener<K extends EventName>(event: K, fn: EventHandler<K>, options?: boolean | EventListenerOptions): this;
-
-  /** 发送消息，仅在已连接时有效 */
-  send(message: string | ArrayBuffer | Blob | ArrayBufferView): this;
-
-  /** 主动关闭连接，不会触发重连 */
+  reconnect(): boolean;
+  /** 计算下一次重连延迟：reconnectDelay * backoffFactor^n，封顶并加抖动 */
+  getBackoffDelay(): number;
+  /** 唯一掉线处理入口（按周期号幂等）；connectTimeout / connectError / heartbeatTimeout 均经此入口，外部一般不直接调用 */
+  handleDrop(cycle: number, failInfo?: WebSocketDropReason<P>): void;
+  // ============ 发送 / 心跳 ============
+  /** 发送消息；未连接时仅打印错误、不抛异常、不缓存 */
+  send(message: WebSocketData): this;
+  /** 开启心跳定时发送（会先清理旧定时器） */
+  startHeartbeat(): void;
+  /** 停止心跳并清理心跳超时定时器 */
+  stopHeartbeat(): void;
+  /**
+   * 启动一次心跳超时计时；超时后直接走掉线流程（emit fail: heartbeatTimeout）
+   * 并关闭底层连接，不依赖平台 close 回调送达
+   */
+  startHeartbeatTimeout(): void;
+  /** 清理心跳超时定时器（收到任意消息时内部即调用） */
+  clearHeartbeatTimeout(): void;
+  /** 清理连接建立超时定时器 */
+  clearConnectTimeout(): void;
+  // ============ 关闭 / 状态 ============
+  /**
+   * 主动关闭连接：立即复位 isConnected（不等底层 close 回调送达），
+   * 关闭后不再自动重连并重置计数
+   * @param code 关闭码，默认 1000
+   * @param reason 关闭原因，默认空串
+   */
   close(code?: number, reason?: string): void;
+  /** 获取当前运行状态快照 */
+  getStats(): WebSocketClientStats;
 }
-
+// ============ 内置适配器与平台子类（对应 JS 终版的具名导出） ============
+/** uni-app SocketTask 适配器 */
+export declare const UniWebSocketAdapter: WebSocketAdapter<UniAppProfile>;
+/**
+ * 浏览器原生 WebSocket 适配器。
+ * 载荷实为 DOM 事件（open: Event / message: MessageEvent / close: CloseEvent / error: Event），
+ * 因纯小程序工程可能未启用 DOM lib，此处以宽松类型导出；
+ * 启用 DOM lib 的浏览器工程可按文末指引自定义 BrowserProfile 获得精确类型。
+ */
+export declare const BrowserWebSocketAdapter: WebSocketAdapter<any>;
+/** uni-app 版：显式换用 SocketTask 适配器，其余逻辑完全复用核心 */
+export declare class UniWebSocketClient extends WebSocketClient<UniAppProfile> {
+  constructor(url: string, options?: WebSocketClientOptions<UniAppProfile>);
+}
 export default WebSocketClient;
+// ============ 浏览器 / 自定义平台类型指引 ============
+// 1. 浏览器（启用 DOM lib 的工程）：自定义档案获得精确事件类型——
+//      interface BrowserProfile extends WebSocketPlatformProfile {
+//        transport: WebSocket;
+//        open: Event;
+//        message: MessageEvent;
+//        close: CloseEvent;
+//        error: Event;
+//        errorEvent: Event | Error;
+//      }
+//      const ws = new WebSocketClient<BrowserProfile>(url, { adapter: BrowserWebSocketAdapter });
+// 2. Node（ws 包）等自定义平台：定义档案 + 实现 WebSocketAdapter 五方法，
+//    然后 new WebSocketClient<MyProfile>(url, { adapter: myAdapter })。
