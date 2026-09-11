@@ -11,10 +11,24 @@ export interface WebSocketClientOptions {
   maxReconnect?: number;
 }
 
+export type WebSocketFailInfo =
+  | {
+      type: 'connectError';
+      url: string;
+      willRetry: boolean;
+      event: Event;
+    }
+  | {
+      type: 'maxReconnect';
+      url: string;
+      willRetry: false;
+      maxReconnect: number;
+    };
+
 /** 事件名 -> 回调参数列表 */
 export interface WebSocketClientEventMap {
   /** 连接成功（首次连接） */
-  open: [ws: WebSocket];
+  open: [ev: Event];
   /** 收到消息 */
   message: [ev: MessageEvent];
   /** 连接关闭 */
@@ -22,7 +36,9 @@ export interface WebSocketClientEventMap {
   /** 发生错误 */
   error: [event: Event];
   /** 重连成功 */
-  reconnect: [ws: WebSocket];
+  reconnect: [ev: Event];
+  /** 链接失败 */
+  fail: [info: WebSocketFailInfo];
 }
 
 type EventName = keyof WebSocketClientEventMap;

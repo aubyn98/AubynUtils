@@ -19,7 +19,8 @@ export class WebSocketClient {
       message: [],
       close: [],
       error: [],
-      reconnect: []
+      reconnect: [],
+      fail: []
     };
   }
 
@@ -69,15 +70,15 @@ export class WebSocketClient {
     this.manualClose = false;
     const ws = (this.ws = new WebSocket(this.url));
 
-    ws.onopen = () => {
+    ws.onopen = (ev) => {
       const isReconnect = this.reconnectCount > 0; // 先记录，再重置
       this.isConnected = true;
       this.reconnectCount = 0; // 连接成功，重置重连计数
       console.log('Connection established');
-      this.emit('open', ws);
+      this.emit('open', ev);
       if (isReconnect) {
         console.log('Reconnected successfully');
-        this.emit('reconnect', ws); // 重连成功事件
+        this.emit('reconnect', ev); // 重连成功事件
       }
       this.startHeartbeat();
     };
@@ -100,6 +101,15 @@ export class WebSocketClient {
       this.emit('error', event);
       // 关闭连接，由 close 流程触发重连
       if (ws === this.ws) {
+        if (!this.isConnected) {
+          const willRetry = this.maxReconnect === -1 || this.reconnectCount < this.maxReconnect;
+          this.emit('fail', {
+            type: 'connectError',
+            url: this.url,
+            willRetry,
+            event
+          });
+        }
         ws.close();
       }
     };
@@ -159,6 +169,11 @@ export class WebSocketClient {
     // 判断是否达到最大重连次数
     if (this.maxReconnect !== -1 && this.reconnectCount >= this.maxReconnect) {
       console.log(`已到达最大重连次数(${this.maxReconnect})，停止重连`);
+      this.emit('fail', {
+        type: 'maxReconnect',
+        maxReconnect: this.maxReconnect,
+        url: this.url
+      });
       return;
     }
     if (this.reconnectTimer) clearTimeout(this.reconnectTimer);
