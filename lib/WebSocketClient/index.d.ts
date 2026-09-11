@@ -63,7 +63,10 @@ export class WebSocketClient {
   isConnected: boolean;
   /** 当前重连计数 */
   reconnectCount: number;
-
+  /**
+   * @param url websocket地址
+   * @param options 配置项
+   */
   constructor(url: string, options?: WebSocketClientOptions);
 
   /** 建立连接（重连也会走到这里） */
