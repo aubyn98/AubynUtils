@@ -54,7 +54,7 @@ const BrowserWebSocketAdapter = {
 /** uni-app SocketTask 适配器 */
 const UniWebSocketAdapter = {
   create(url) {
-    const task = uni.connectSocket({ url });
+    const task = uni.connectSocket({ url, complete: () => {} });
     // 个别平台未同步返回有效 SocketTask：抛错走核心的掉线流程
     if (!task || typeof task.onOpen !== 'function') {
       throw new Error('uni.connectSocket did not return a valid SocketTask');
@@ -470,5 +470,5 @@ class UniWebSocketClient extends WebSocketClient {
 // 3. 心跳超时新增 fail 事件 { type: 'heartbeatTimeout', willRetry }
 // 4. Node 等无 WebSocket/uni 全局的环境：必须传 options.adapter，否则 create 抛错进入重连循环
 
-export { BrowserWebSocketAdapter, UniWebSocketAdapter, UniWebSocketClient };
+export { BrowserWebSocketAdapter, UniWebSocketAdapter, UniWebSocketClient, WebSocketClient };
 export default WebSocketClient;
