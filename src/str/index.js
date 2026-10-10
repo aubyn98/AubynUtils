@@ -30,18 +30,20 @@ export function getPascalCase(str) {
  *
  * @param {string} [str=''] 完整 url / query 字符串，可以带开头 ?，可携带 #hash
  * @param {Object} [options] 配置选项
+ * @param {boolean} [options.decode=true] 是否解码，默认true
  * @param {boolean} [options.silent=false] 是否静默模式，不输出警告
  * @param {boolean} [options.decodePlus=true] 是否将 + 号解码为空格
  * @param {boolean} [options.strict=false] 严格模式，解码失败时跳过该参数
  * @returns {Record<string, string | string[]>}
  */
 export function getQueryParams(str = '', options = {}) {
-  const { silent = false, decodePlus = true, strict = false } = options;
+  const { decode = true, silent = false, decodePlus = true, strict = false } = options;
 
   const collect = {};
   if (typeof str !== 'string') return collect;
 
   function decodePart(raw, isKey) {
+    if (!decode) return raw;
     let s = raw;
     if (decodePlus) {
       s = s.replace(/\+/g, ' ');
@@ -157,6 +159,7 @@ export function getQueryParamsFromHash(options) {
  * @param {Record<string, any>} params 参数对象
  * @param {Object} [options={}] 配置项
  * @param {boolean} [options.addQuestionMark=false] 是否前置 ?
+ * @param {boolean} [options.encode=true] 是否编码，默认true
  * @param {'indices'|'brackets'|'repeat'|'comma'} [options.arrayFormat='comma'] 数组格式化模式
  * @param {boolean} [options.keepEmptyArray=false] true:空数组输出key=；false:空数组直接丢弃
  * @returns {string}
@@ -164,28 +167,32 @@ export function getQueryParamsFromHash(options) {
 export function toQueryString(params, options = {}) {
   if (!params || typeof params !== 'object') return '';
 
-  const { addQuestionMark = false, arrayFormat = 'comma', keepEmptyArray = false } = options;
+  const { addQuestionMark = false, encode = true, arrayFormat = 'comma', keepEmptyArray = false } = options;
 
   const parts = [];
+
+  function encodePart(raw) {
+    return encode ? encodeURIComponent(raw) : raw;
+  }
 
   const arrayStrategies = {
     indices: (encodedKey, items) => {
       items.forEach((item, idx) => {
-        parts.push(`${encodedKey}[${idx}]=${encodeURIComponent(item)}`);
+        parts.push(`${encodedKey}[${idx}]=${encodePart(item)}`);
       });
     },
     brackets: (encodedKey, items) => {
       items.forEach(item => {
-        parts.push(`${encodedKey}[]=${encodeURIComponent(item)}`);
+        parts.push(`${encodedKey}[]=${encodePart(item)}`);
       });
     },
     repeat: (encodedKey, items) => {
       items.forEach(item => {
-        parts.push(`${encodedKey}=${encodeURIComponent(item)}`);
+        parts.push(`${encodedKey}=${encodePart(item)}`);
       });
     },
     comma: (encodedKey, items) => {
-      const val = items.map(i => encodeURIComponent(i)).join(',');
+      const val = items.map(i => encodePart(i)).join(',');
       parts.push(`${encodedKey}=${val}`);
     }
   };
@@ -196,7 +203,7 @@ export function toQueryString(params, options = {}) {
     const rawValue = params[key];
     if (rawValue === null || rawValue === undefined) return;
 
-    const encodedKey = encodeURIComponent(key);
+    const encodedKey = encodePart(key);
 
     if (Array.isArray(rawValue)) {
       const validItems = rawValue.filter(item => item != null);
@@ -217,7 +224,7 @@ export function toQueryString(params, options = {}) {
     if (typeof value === 'object' && value !== null) {
       value = JSON.stringify(value);
     }
-    parts.push(`${encodedKey}=${encodeURIComponent(value)}`);
+    parts.push(`${encodedKey}=${encodePart(value)}`);
   });
 
   const queryStr = parts.join('&');

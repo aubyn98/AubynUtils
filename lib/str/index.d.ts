@@ -22,6 +22,8 @@ export function getPascalCase(str: string): string;
 export interface GetQueryParamsOptions {
   /** 是否静默模式，不输出警告 */
   silent?: boolean;
+  /** 是否解码，默认true */
+  decode?: boolean;
   /** 是否将 + 号解码为空格 */
   decodePlus?: boolean;
   /** 严格模式，解码失败时跳过该参数 */
@@ -62,6 +64,8 @@ export type ArrayFormatType = 'indices' | 'brackets' | 'repeat' | 'comma';
 export interface ToQueryStringOptions {
   /** 是否前置 ? */
   addQuestionMark?: boolean;
+  /** 是否编码，默认true */
+  encode?: boolean;
   /** 数组格式化模式，默认 comma */
   arrayFormat?: ArrayFormatType;
   /** true:空数组输出key=；false:空数组直接丢弃，默认 false */
