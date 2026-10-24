@@ -1,6 +1,6 @@
 // 人员信息校验工具
-// getNameError：中文姓名校验，返回错误提示文案，合法返回''
-// getIdcardInfo：从身份证号提取性别与周岁年龄，号码不合法返回null
+// validateName：中文姓名校验，返回错误提示文案，合法返回''
+// parseGenderAge：从身份证号提取性别与周岁年龄，号码不合法返回null
 
 // ========== 中文姓名校验 ==========
 // 姓名长度范围（按Unicode码点计，间隔点计入）
@@ -27,7 +27,7 @@ const codePointCount = str => {
 
 // 校验中文姓名
 // options: { min, max, forbiddenWords, emptyMsg } 均可选
-const getNameError = (name, options) => {
+const validateName = (name, options) => {
   const opts = options || {};
   const min = opts.min != null ? opts.min : DEFAULT_MIN;
   const max = opts.max != null ? opts.max : DEFAULT_MAX;
@@ -115,7 +115,7 @@ function validIdCard(input) {
 
 // 从身份证号提取性别与周岁年龄
 // 返回 { gender: '1'男 / '2'女, age: 周岁 }，号码不合法返回null
-const getIdcardInfo = idcard => {
+const parseGenderAge = idcard => {
   if (!idcard || !validIdCard(idcard)) return null;
   let birth;
   let genderCode;
@@ -140,4 +140,4 @@ const getIdcardInfo = idcard => {
   };
 };
 
-export { getNameError, getIdcardInfo, validIdCard };
+export { validateName, parseGenderAge, validIdCard };

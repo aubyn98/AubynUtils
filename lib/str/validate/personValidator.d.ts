@@ -20,7 +20,7 @@ export interface NameOptions {
  * 规则：仅允许汉字（含扩展A区/基本区/兼容区/扩展B区及以上）与间隔点·；
  * 汉字开头结尾，间隔点不能连续；长度按Unicode码点计；不能含禁用词。
  */
-export declare function getNameError(name: string, options?: NameOptions): string;
+export declare function validateName(name: string, options?: NameOptions): string;
 
 /** 身份证号信息提取结果 */
 export interface IdcardInfo {
@@ -38,7 +38,7 @@ export interface IdcardInfo {
  *
  * @returns 号码不合法返回 null
  */
-export declare function getIdcardInfo(idcard: string): IdcardInfo | null;
+export declare function parseGenderAge(idcard: string): IdcardInfo | null;
 
 /**
  * 校验身份证号（18位或15位）是否合法
