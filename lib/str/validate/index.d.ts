@@ -54,15 +54,10 @@ export function validDate(str): boolean;
 export function validPhone(str): boolean;
 
 /**
- * 校验身份证号码
- * @param {string} str
- * @returns {Boolean}
- */
-export function validIDCard(str): boolean;
-
-/**
  * 校验邮政编码
  * @param {string} str
  * @returns {Boolean}
  */
 export function validPostalCode(str): boolean;
+
+export * from './personValidator'
